@@ -1,0 +1,5 @@
+D:\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\MiCalculadora\obj\Debug\MiCalculadora.csproj.AssemblyReference.cache
+D:\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\MiCalculadora\obj\Debug\MiCalculadora.FormCalculadora.resources
+D:\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\MiCalculadora\obj\Debug\MiCalculadora.Properties.Resources.resources
+D:\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\MiCalculadora\obj\Debug\MiCalculadora.csproj.GenerateResource.cache
+D:\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\MiCalculadora\obj\Debug\MiCalculadora.csproj.CoreCompileInputs.cache
