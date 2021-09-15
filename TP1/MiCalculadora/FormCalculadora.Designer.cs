@@ -34,12 +34,12 @@ namespace MiCalculadora
             this.lblResultado = new System.Windows.Forms.Label();
             this.txtNumero1 = new System.Windows.Forms.TextBox();
             this.txtNumero2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.btnOperar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.ctnConvertirABinario = new System.Windows.Forms.Button();
+            this.btnConvertirADecimal = new System.Windows.Forms.Button();
+            this.lstOperaciones = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // cmbOperador
@@ -62,10 +62,11 @@ namespace MiCalculadora
             this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResultado.Location = new System.Drawing.Point(31, 12);
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblResultado.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblResultado.Size = new System.Drawing.Size(575, 44);
             this.lblResultado.TabIndex = 0;
-            this.lblResultado.Text = "Resultado";
+            this.lblResultado.Text = "0";
+            this.lblResultado.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // txtNumero1
             // 
@@ -84,71 +85,76 @@ namespace MiCalculadora
             this.txtNumero2.Size = new System.Drawing.Size(227, 49);
             this.txtNumero2.TabIndex = 3;
             // 
-            // button1
+            // btnOperar
             // 
-            this.button1.Location = new System.Drawing.Point(31, 147);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(185, 46);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Operar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnOperar.Location = new System.Drawing.Point(31, 147);
+            this.btnOperar.Name = "btnOperar";
+            this.btnOperar.Size = new System.Drawing.Size(185, 46);
+            this.btnOperar.TabIndex = 4;
+            this.btnOperar.Text = "Operar";
+            this.btnOperar.UseVisualStyleBackColor = true;
+            this.btnOperar.Click += new System.EventHandler(this.btnOperar_Click);
             // 
-            // button2
+            // btnLimpiar
             // 
-            this.button2.Location = new System.Drawing.Point(222, 147);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(185, 46);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Limpiar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Location = new System.Drawing.Point(222, 147);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(185, 46);
+            this.btnLimpiar.TabIndex = 5;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // button3
+            // btnCerrar
             // 
-            this.button3.Location = new System.Drawing.Point(413, 147);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(193, 46);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Cerrar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnCerrar.Location = new System.Drawing.Point(413, 147);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(193, 46);
+            this.btnCerrar.TabIndex = 6;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // button4
+            // ctnConvertirABinario
             // 
-            this.button4.Location = new System.Drawing.Point(31, 199);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(287, 46);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Convertir a Binario";
-            this.button4.UseVisualStyleBackColor = true;
+            this.ctnConvertirABinario.Location = new System.Drawing.Point(31, 194);
+            this.ctnConvertirABinario.Name = "ctnConvertirABinario";
+            this.ctnConvertirABinario.Size = new System.Drawing.Size(287, 46);
+            this.ctnConvertirABinario.TabIndex = 7;
+            this.ctnConvertirABinario.Text = "Convertir a Binario";
+            this.ctnConvertirABinario.UseVisualStyleBackColor = true;
+            this.ctnConvertirABinario.Click += new System.EventHandler(this.ctnConvertirABinario_Click);
             // 
-            // button5
+            // btnConvertirADecimal
             // 
-            this.button5.Location = new System.Drawing.Point(324, 199);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(282, 46);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Convertir a Decimal";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnConvertirADecimal.Location = new System.Drawing.Point(324, 194);
+            this.btnConvertirADecimal.Name = "btnConvertirADecimal";
+            this.btnConvertirADecimal.Size = new System.Drawing.Size(282, 46);
+            this.btnConvertirADecimal.TabIndex = 8;
+            this.btnConvertirADecimal.Text = "Convertir a Decimal";
+            this.btnConvertirADecimal.UseVisualStyleBackColor = true;
+            this.btnConvertirADecimal.Click += new System.EventHandler(this.btnConvertirADecimal_Click);
             // 
-            // richTextBox1
+            // lstOperaciones
             // 
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Location = new System.Drawing.Point(612, 12);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(275, 233);
-            this.richTextBox1.TabIndex = 9;
-            this.richTextBox1.Text = "";
+            this.lstOperaciones.FormattingEnabled = true;
+            this.lstOperaciones.ItemHeight = 16;
+            this.lstOperaciones.Location = new System.Drawing.Point(612, 12);
+            this.lstOperaciones.Name = "lstOperaciones";
+            this.lstOperaciones.Size = new System.Drawing.Size(275, 228);
+            this.lstOperaciones.TabIndex = 10;
             // 
             // FormCalculadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(899, 259);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(899, 249);
+            this.Controls.Add(this.lstOperaciones);
+            this.Controls.Add(this.btnConvertirADecimal);
+            this.Controls.Add(this.ctnConvertirABinario);
+            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.btnOperar);
             this.Controls.Add(this.txtNumero2);
             this.Controls.Add(this.txtNumero1);
             this.Controls.Add(this.lblResultado);
@@ -160,6 +166,7 @@ namespace MiCalculadora
             this.Name = "FormCalculadora";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculadora de Facundo Caffaro 2°C";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCalculadora_FormClosing);
             this.Load += new System.EventHandler(this.FormCalculadora_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -172,12 +179,12 @@ namespace MiCalculadora
         private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.TextBox txtNumero1;
         private System.Windows.Forms.TextBox txtNumero2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button btnOperar;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Button ctnConvertirABinario;
+        private System.Windows.Forms.Button btnConvertirADecimal;
+        private System.Windows.Forms.ListBox lstOperaciones;
     }
 }
 
