@@ -110,5 +110,108 @@ namespace MiCalculadora
         }
 
         #endregion
+
+        #region TextBox error letras
+
+        private void txtNumero1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (e.KeyChar.ToString().Equals("."))
+            {
+                foreach (char item in this.txtNumero1.Text)
+                {
+                    if (item == '.')
+                    {
+                        e.Handled = true;
+                        MessageBox.Show("Solo se puede ingresar un solo punto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
+                    else
+                    {
+                        e.Handled = false;
+                    }
+                }
+            }
+            else if (e.KeyChar.ToString().Equals("-"))
+            {
+                foreach (char item in this.txtNumero1.Text)
+                {
+                    if (item == '-')
+                    {
+                        e.Handled = true;
+                        MessageBox.Show("Solo se puede ingresar un solo menos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
+                    else
+                    {
+                        e.Handled = false;
+                    }
+                }
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Ingresar solo numeros o numeros decimales", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtNumero2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (e.KeyChar.ToString().Equals("."))
+            {
+                foreach (char item in this.txtNumero2.Text)
+                {
+                    if (item == '.')
+                    {
+                        e.Handled = true;
+                        MessageBox.Show("Solo se puede ingresar un solo punto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
+                    else
+                    {
+                        e.Handled = false;
+                    }
+                }
+            }
+            else if (e.KeyChar.ToString().Equals("-"))
+            {
+                foreach (char item in this.txtNumero2.Text)
+                {
+                    if (item == '-')
+                    {
+                        e.Handled = true;
+                        MessageBox.Show("Solo se puede ingresar un solo menos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
+                    else
+                    {
+                        e.Handled = false;
+                    }
+                }
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Ingresar solo numeros o numeros decimales", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        #endregion
+
     }
 }

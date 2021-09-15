@@ -76,6 +76,7 @@ namespace MiCalculadora
             this.txtNumero1.Name = "txtNumero1";
             this.txtNumero1.Size = new System.Drawing.Size(227, 49);
             this.txtNumero1.TabIndex = 1;
+            this.txtNumero1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero1_KeyPress);
             // 
             // txtNumero2
             // 
@@ -84,6 +85,7 @@ namespace MiCalculadora
             this.txtNumero2.Name = "txtNumero2";
             this.txtNumero2.Size = new System.Drawing.Size(227, 49);
             this.txtNumero2.TabIndex = 3;
+            this.txtNumero2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero2_KeyPress);
             // 
             // btnOperar
             // 
