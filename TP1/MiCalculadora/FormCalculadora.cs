@@ -98,14 +98,11 @@ namespace MiCalculadora
         private void btnOperar_Click(object sender, EventArgs e)
         {
             double respuesta = 0;
+            
+            respuesta = Operar(this.txtNumero1.Text, this.txtNumero2.Text, this.cmbOperador.Text);
 
-            if(!(this.txtNumero1.Text == string.Empty || this.cmbOperador.Text == string.Empty || this.txtNumero2.Text == string.Empty))
-            {
-                respuesta = Operar(this.txtNumero1.Text, this.txtNumero2.Text, this.cmbOperador.Text);
-
-                this.lblResultado.Text = respuesta.ToString();
-                this.lstOperaciones.Items.Add(this.txtNumero1.Text + " " + this.cmbOperador.Text + " " + this.txtNumero2.Text + " = " + respuesta.ToString());
-            }
+            this.lblResultado.Text = respuesta.ToString();
+            this.lstOperaciones.Items.Add(this.txtNumero1.Text + " " + this.cmbOperador.Text + " " + this.txtNumero2.Text + " = " + respuesta.ToString());
         }
 
         /// <summary>
@@ -188,7 +185,7 @@ namespace MiCalculadora
                     if (item == '.')
                     {
                         e.Handled = true;
-                        MessageBox.Show("Solo se puede ingresar un solo punto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //MessageBox.Show("Solo se puede ingresar un solo punto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         break;
                     }
                     else
@@ -204,7 +201,7 @@ namespace MiCalculadora
                     if (item == '-')
                     {
                         e.Handled = true;
-                        MessageBox.Show("Solo se puede ingresar un solo menos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //MessageBox.Show("Solo se puede ingresar un solo menos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         break;
                     }
                     else
@@ -216,7 +213,7 @@ namespace MiCalculadora
             else
             {
                 e.Handled = true;
-                MessageBox.Show("Ingresar solo numeros o numeros decimales", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Ingresar solo numeros o numeros decimales", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -244,7 +241,7 @@ namespace MiCalculadora
                     if (item == '.')
                     {
                         e.Handled = true;
-                        MessageBox.Show("Solo se puede ingresar un solo punto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //MessageBox.Show("Solo se puede ingresar un solo punto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         break;
                     }
                     else
@@ -260,7 +257,7 @@ namespace MiCalculadora
                     if (item == '-')
                     {
                         e.Handled = true;
-                        MessageBox.Show("Solo se puede ingresar un solo menos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //MessageBox.Show("Solo se puede ingresar un solo menos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         break;
                     }
                     else
@@ -272,7 +269,7 @@ namespace MiCalculadora
             else
             {
                 e.Handled = true;
-                MessageBox.Show("Ingresar solo numeros o numeros decimales", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Ingresar solo numeros o numeros decimales", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
