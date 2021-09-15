@@ -63,7 +63,7 @@ namespace Entidades
         /// Devuelve el parametro como tipo string
         /// </summary>
         /// <param name="operador"></param>
-        /// <returns>Retornara el operador validado y convertido a String</returns>
+        /// <returns> Retornara el operador validado y convertido a String </returns>
         private static string ValidarOperador(char operador)
         {
             string validarOperador = "+";
