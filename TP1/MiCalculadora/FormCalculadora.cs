@@ -15,6 +15,9 @@ namespace MiCalculadora
     {
         #region Constructor
 
+        /// <summary>
+        /// Constructor per defecto del formulario
+        /// </summary>
         public FormCalculadora()
         {
             InitializeComponent();
@@ -24,6 +27,9 @@ namespace MiCalculadora
 
         #region Metodos
 
+        /// <summary>
+        /// Metodo que limpia todas las casillas del formulario
+        /// </summary>
         private void Limpiar()
         {
             this.txtNumero1.Text = "";
@@ -31,6 +37,14 @@ namespace MiCalculadora
             this.cmbOperador.Text = "";
             this.lblResultado.Text = "0";
         }
+
+        /// <summary>
+        /// Metodo operar que recibe los parametros necesarios para realizar la operacion
+        /// </summary>
+        /// <param name="strNumero1"></param>
+        /// <param name="strNumero2"></param>
+        /// <param name="operador"></param>
+        /// <returns> Retorna un valor double obtenido de la llamada a Calculadora.Operar </returns>
         private static double Operar(string strNumero1, string strNumero2, string operador)
         {
             Operando numero1 = new Operando(strNumero1);
@@ -43,11 +57,22 @@ namespace MiCalculadora
 
         #region Eventos
 
+        /// <summary>
+        /// Evento load del formulario que inicializa todos los valores limpios
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormCalculadora_Load(object sender, EventArgs e)
         {
             this.Limpiar();
         }
 
+        /// <summary>
+        /// Evento de cerrado del formulario
+        /// Genera un cuadro de texto preguntando si desea salir o no
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormCalculadora_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Esta seguro?",
@@ -64,6 +89,12 @@ namespace MiCalculadora
 
         #region Botones
 
+        /// <summary>
+        /// Boton que realiza la operacion
+        /// Preguntando antes si las casillas estan vacias o no
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnOperar_Click(object sender, EventArgs e)
         {
             double respuesta = 0;
@@ -77,16 +108,31 @@ namespace MiCalculadora
             }
         }
 
+        /// <summary>
+        /// Boton que limpia todos los valores
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             this.Limpiar();
         }
 
+        /// <summary>
+        /// Boton que cierra sin preguntar la calculadora
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
 
+        /// <summary>
+        /// Boton que convierte de decimal a binario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ctnConvertirABinario_Click(object sender, EventArgs e)
         {
             Operando numero1 = new Operando();
@@ -98,6 +144,11 @@ namespace MiCalculadora
             this.lstOperaciones.Items.Add("Decimal a binario " + numeroAnterior + " = " + this.lblResultado.Text);
         }
 
+        /// <summary>
+        /// Boton que convierte de binario a decimal
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConvertirADecimal_Click(object sender, EventArgs e)
         {
             Operando numero1 = new Operando();
@@ -113,6 +164,13 @@ namespace MiCalculadora
 
         #region TextBox error letras
 
+        /// <summary>
+        /// Verifica que no se ingresen letras para que el programa no de error
+        /// Tambien se verifico que solo se pueda ingresar un solo . para los numeros con decimal
+        /// Y que solo se ingrese un - en caso de querer poner un numero negativo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtNumero1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar))
@@ -162,6 +220,13 @@ namespace MiCalculadora
             }
         }
 
+        /// <summary>
+        /// Verifica que no se ingresen letras para que el programa no de error
+        /// Tambien se verifico que solo se pueda ingresar un solo . para los numeros con decimal
+        /// Y que solo se ingrese un - en caso de querer poner un numero negativo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtNumero2_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar))
