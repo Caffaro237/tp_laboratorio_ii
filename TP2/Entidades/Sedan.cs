@@ -18,6 +18,9 @@ namespace Entidades
 
         #region Enumerado 
 
+        /// <summary>
+        /// Enumerado del tipo
+        /// </summary>
         public enum ETipo
         { 
             CuatroPuertas, CincoPuertas 
@@ -28,6 +31,7 @@ namespace Entidades
         #region Constructores
 
         /// <summary>
+        /// Constructor que llama a la base para inicalizar el vehiculo
         /// Por defecto, TIPO será CuatroPuertas
         /// </summary>
         /// <param name="marca"></param>
@@ -39,6 +43,13 @@ namespace Entidades
             tipo = ETipo.CuatroPuertas;
         }
 
+        /// <summary>
+        /// Constructor que recibe el tipo de Sedan
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <param name="chasis"></param>
+        /// <param name="color"></param>
+        /// <param name="tipo"></param>
         public Sedan(EMarca marca, string chasis, ConsoleColor color, ETipo tipo) 
             : this(marca, chasis, color)
         {
@@ -50,6 +61,7 @@ namespace Entidades
         #region Propiedad
 
         /// <summary>
+        /// Override de la propiedad Tamaño
         /// Sedan son 'Mediano'
         /// </summary>
         protected override ETamanio Tamanio
@@ -64,6 +76,10 @@ namespace Entidades
 
         #region Metodo
 
+        /// <summary>
+        /// Override del metodo Mostrar
+        /// </summary>
+        /// <returns> Retornara los datos de la base y agregara el tamaño y el tipo </returns>
         public override sealed string Mostrar()
         {
             StringBuilder sb = new StringBuilder();

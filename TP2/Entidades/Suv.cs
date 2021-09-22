@@ -10,6 +10,12 @@ namespace Entidades
     {
         #region Constructor
 
+        /// <summary>
+        /// Constructor que llama a la base para inicalizar el vehiculo
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <param name="chasis"></param>
+        /// <param name="color"></param>
         public Suv(EMarca marca, string chasis, ConsoleColor color)
             : base(chasis, marca, color)
         {
@@ -20,6 +26,7 @@ namespace Entidades
         #region Propiedad
 
         /// <summary>
+        /// Override de la propiedad Tamaño
         /// SUV son 'Grande'
         /// </summary>
         protected override ETamanio Tamanio
@@ -34,6 +41,10 @@ namespace Entidades
 
         #region Metodo
 
+        /// <summary>
+        /// Override del metodo Mostrar
+        /// </summary>
+        /// <returns> Retornara los datos de la base y agregara el tamaño </returns>
         public override sealed string Mostrar()
         {
             StringBuilder sb = new StringBuilder();

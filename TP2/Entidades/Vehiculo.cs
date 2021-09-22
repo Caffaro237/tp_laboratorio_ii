@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace Entidades
 {
     /// <summary>
-    /// La clase Vehiculo no deberá permitir que se instancien elementos de este tipo.
+    /// La clase Vehiculo no deberá permitir que se instancien elementos de este tipo
+    /// Por eso la clase es abstracta
     /// </summary>
     public abstract class Vehiculo
     {
@@ -21,6 +22,12 @@ namespace Entidades
 
         #region Constructor
 
+        /// <summary>
+        /// Constructor con parametros que inicializa chasis, marca y color
+        /// </summary>
+        /// <param name="chasis"></param>
+        /// <param name="marca"></param>
+        /// <param name="color"></param>
         public Vehiculo(string chasis, EMarca marca, ConsoleColor color)
         {
             this.chasis = chasis;
@@ -32,11 +39,17 @@ namespace Entidades
 
         #region Enumerados
 
+        /// <summary>
+        /// Enumerado de las marcas
+        /// </summary>
         public enum EMarca
         {
             Chevrolet, Ford, Renault, Toyota, BMW, Honda, HarleyDavidson
         }
 
+        /// <summary>
+        /// Enumerado del tamaño
+        /// </summary>
         public enum ETamanio
         {
             Chico, Mediano, Grande
@@ -47,7 +60,8 @@ namespace Entidades
         #region Propiedad
 
         /// <summary>
-        /// ReadOnly: Retornará el tamaño
+        /// Propiedad de solo lectura
+        /// Retornará el tamaño
         /// </summary>
         protected abstract ETamanio Tamanio 
         { 
@@ -61,12 +75,16 @@ namespace Entidades
         /// <summary>
         /// Publica todos los datos del Vehiculo.
         /// </summary>
-        /// <returns></returns>
+        /// <returns> Retornara un string con todos los datos </returns>
         public virtual string Mostrar()
         {
             return (string)this;
         }
 
+        /// <summary>
+        /// Conversor explicito de Vehiculo a string
+        /// </summary>
+        /// <param name="p"></param>
         public static explicit operator string(Vehiculo p)
         {
             StringBuilder sb = new StringBuilder();
@@ -88,7 +106,7 @@ namespace Entidades
         /// </summary>
         /// <param name="v1"></param>
         /// <param name="v2"></param>
-        /// <returns></returns>
+        /// <returns> Retornara true si es igual o false si es distinto </returns>
         public static bool operator ==(Vehiculo v1, Vehiculo v2)
         {
             return (v1.chasis == v2.chasis);
@@ -98,7 +116,7 @@ namespace Entidades
         /// </summary>
         /// <param name="v1"></param>
         /// <param name="v2"></param>
-        /// <returns></returns>
+        /// <returns> Retornara el contrario del == </returns>
         public static bool operator !=(Vehiculo v1, Vehiculo v2)
         {
             return !(v1 == v2);
