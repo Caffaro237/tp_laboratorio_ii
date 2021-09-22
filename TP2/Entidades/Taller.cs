@@ -11,15 +11,23 @@ namespace Entidades
     /// </summary>
     public sealed class Taller
     {
+        #region Atributos
+
         private List<Vehiculo> vehiculos;
         private int espacioDisponible;
+
+        #endregion
+
+        #region Enumerados
 
         public enum ETipo
         {
             Ciclomotor, Sedan, SUV, Todos
         }
 
-        #region "Constructores"
+        #endregion
+
+        #region Constructores
 
         private Taller()
         {
@@ -34,7 +42,7 @@ namespace Entidades
 
         #endregion
 
-        #region "Sobrecargas"
+        #region Metodos
 
         /// <summary>
         /// Muestro el estacionamiento y TODOS los vehículos
@@ -44,10 +52,6 @@ namespace Entidades
         {
             return Taller.Listar(this, ETipo.Todos);
         }
-
-        #endregion
-
-        #region "Métodos"
 
         /// <summary>
         /// Expone los datos del elemento y su lista (incluidas sus herencias)
@@ -99,7 +103,7 @@ namespace Entidades
 
         #endregion
 
-        #region "Operadores"
+        #region Sobrecarga de operadores
         /// <summary>
         /// Agregará un elemento a la lista
         /// </summary>
@@ -145,5 +149,6 @@ namespace Entidades
         }
 
         #endregion
+
     }
 }

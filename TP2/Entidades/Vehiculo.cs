@@ -11,9 +11,15 @@ namespace Entidades
     /// </summary>
     public abstract class Vehiculo
     {
+        #region Atributos 
+
         private EMarca marca;
         private string chasis;
         private ConsoleColor color;
+
+        #endregion
+
+        #region Constructor
 
         public Vehiculo(string chasis, EMarca marca, ConsoleColor color)
         {
@@ -21,6 +27,10 @@ namespace Entidades
             this.marca = marca;
             this.color = color;
         }
+
+        #endregion
+
+        #region Enumerados
 
         public enum EMarca
         {
@@ -32,6 +42,10 @@ namespace Entidades
             Chico, Mediano, Grande
         }
 
+        #endregion
+
+        #region Propiedad
+
         /// <summary>
         /// ReadOnly: Retornará el tamaño
         /// </summary>
@@ -39,6 +53,10 @@ namespace Entidades
         { 
             get;
         }
+
+        #endregion
+
+        #region Metodos
 
         /// <summary>
         /// Publica todos los datos del Vehiculo.
@@ -61,6 +79,10 @@ namespace Entidades
             return sb.ToString();
         }
 
+        #endregion
+
+        #region Sobrecarga de operadores
+
         /// <summary>
         /// Dos vehiculos son iguales si comparten el mismo chasis
         /// </summary>
@@ -81,5 +103,8 @@ namespace Entidades
         {
             return !(v1 == v2);
         }
+
+        #endregion
+
     }
 }

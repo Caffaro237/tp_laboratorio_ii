@@ -10,12 +10,22 @@ namespace Entidades
 {
     public class Sedan : Vehiculo
     {
+        #region Atributo 
+
         private ETipo tipo;
+
+        #endregion
+
+        #region Enumerado 
 
         public enum ETipo
         { 
             CuatroPuertas, CincoPuertas 
         }
+
+        #endregion
+
+        #region Constructores
 
         /// <summary>
         /// Por defecto, TIPO será CuatroPuertas
@@ -35,6 +45,10 @@ namespace Entidades
             this.tipo = tipo;
         }
 
+        #endregion
+
+        #region Propiedad
+
         /// <summary>
         /// Sedan son 'Mediano'
         /// </summary>
@@ -45,6 +59,10 @@ namespace Entidades
                 return ETamanio.Mediano;
             }
         }
+
+        #endregion
+
+        #region Metodo
 
         public override sealed string Mostrar()
         {
@@ -60,5 +78,7 @@ namespace Entidades
 
             return sb.ToString();
         }
+
+        #endregion
     }
 }
