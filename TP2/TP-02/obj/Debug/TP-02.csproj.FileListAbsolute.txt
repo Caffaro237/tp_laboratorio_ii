@@ -21,3 +21,6 @@ D:\Federico\VB .Net\Visual C#\utn\TPs\2018\TP-02\TP-02\obj\Debug\TP-02.csprojRes
 D:\Federico\VB .Net\Visual C#\utn\TPs\2018\TP-N2\TP-02\TP-02\obj\Debug\TP-02.csprojAssemblyReference.cache
 D:\Federico\VB .Net\Visual C#\utn\TPs\2018\TP-N2\TP-02\TP-02\obj\Debug\TP-02.csproj.CoreCompileInputs.cache
 D:\Federico\VB .Net\Visual C#\utn\TPs\2018\TP-N2\TP-02\TP-02\obj\Debug\TP-02.exe
+D:\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP2\TP-02\obj\Debug\TP-02.csproj.AssemblyReference.cache
+D:\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP2\TP-02\obj\Debug\TP-02.csproj.CoreCompileInputs.cache
+D:\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP2\TP-02\obj\Debug\TP-02.exe
