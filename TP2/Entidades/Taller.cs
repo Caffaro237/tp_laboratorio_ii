@@ -108,14 +108,17 @@ namespace Entidades
         /// <returns></returns>
         public static Taller operator +(Taller taller, Vehiculo vehiculo)
         {
-            foreach (Vehiculo v in taller.vehiculos)
+            if (taller.espacioDisponible > taller.vehiculos.Count)
             {
-                if (v == vehiculo)
+                foreach (Vehiculo v in taller.vehiculos)
                 {
-                    return taller;
+                    if (v == vehiculo)
+                    {
+                        return taller;
+                    }
                 }
 
-                taller.vehiculos.Add(v);
+                taller.vehiculos.Add(vehiculo);
             }
 
             return taller;
