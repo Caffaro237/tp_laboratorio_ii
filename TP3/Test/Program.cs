@@ -50,7 +50,7 @@ namespace Test
 
             foreach (Jugador item in jugadores)
             {
-                Console.WriteLine(item.ToString());
+                Console.WriteLine(item.MostrarJugador());
             }
 
             Console.ReadKey();
