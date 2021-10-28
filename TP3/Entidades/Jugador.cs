@@ -56,12 +56,12 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
 
+            sb.AppendLine("-------------------------------------");
             sb.AppendLine($"Edad: {this.Edad}");
             sb.AppendLine($"Localidad: {this.Localidad}");
             sb.AppendLine($"Rango: {this.Rango}");
             sb.AppendLine("-------------------------------------");
             sb.AppendLine($"Agente Elegido: {this.AgenteElegido}");
-            sb.AppendLine("-------------------------------------");
 
             return sb.ToString();
         }

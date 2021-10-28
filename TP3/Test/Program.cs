@@ -48,9 +48,20 @@ namespace Test
                 jugadores.Add(j);
             }
 
+            Console.WriteLine("Lista de Jugadores\n");
             foreach (Jugador item in jugadores)
             {
-                Console.WriteLine(item.MostrarJugador());
+                Console.WriteLine(item.ToString());
+            }
+
+            Console.WriteLine("Apriete una tecla par continuar...");
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.WriteLine("Lista de Agentes\n");
+            foreach (Agente item in agentes)
+            {
+                Console.WriteLine(item.ToString());
             }
 
             Console.ReadKey();

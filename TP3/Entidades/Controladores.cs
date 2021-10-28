@@ -8,7 +8,7 @@ namespace Entidades
 {
     public class Controladores : Agente
     {
-        bool tieneHumos;
+        bool lanzaHumos;
 
         public Controladores(string nombre) : this(nombre, false, true)
         {
@@ -16,7 +16,17 @@ namespace Entidades
 
         public Controladores(string nombre, bool esRadiante, bool tieneHumos) : base(nombre, esRadiante)
         {
-            this.tieneHumos = tieneHumos;
+            this.lanzaHumos = tieneHumos;
+        }
+
+        protected override string MostrarAgente()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine(base.MostrarAgente());
+            sb.AppendFormat("Lanza humos: {0}", this.lanzaHumos ? "Si" : "No");
+
+            return sb.ToString();
         }
     }
 }

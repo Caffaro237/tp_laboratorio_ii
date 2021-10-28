@@ -23,12 +23,12 @@ namespace Entidades
             this.lanzaFuego = lanzaFuego;
         }
 
-        protected override string MostrarDatos()
+        protected override string MostrarAgente()
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine(base.MostrarDatos());
-            sb.AppendFormat("Lanza Fuego: {1}", this.lanzaFuego ? "Si" : "No");
+            sb.AppendLine(base.MostrarAgente());
+            sb.AppendFormat("Lanza Fuego: {0}", this.lanzaFuego ? "Si" : "No");
 
             return sb.ToString();
         }

@@ -35,14 +35,20 @@ namespace Entidades
             }
         }
 
-        protected virtual string MostrarDatos()
+        protected virtual string MostrarAgente()
         {
             StringBuilder sb = new StringBuilder();
 
+            sb.AppendLine("-------------------------------------");
             sb.AppendLine($"Nombre: {this.Nombre}");
-            sb.AppendFormat("Es Radiante: {1}", this.esRadiante ? "Si" : "No");
+            sb.AppendFormat("Es Radiante: {0}", this.esRadiante ? "Si" : "No");
 
             return sb.ToString();
+        }
+
+        public override string ToString()
+        {
+            return this.MostrarAgente();
         }
 
 
