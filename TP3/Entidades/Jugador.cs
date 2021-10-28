@@ -11,13 +11,14 @@ namespace Entidades
         int edad;
         string localidad;
         string rango;
-        Agente agenteUsado;
+        string agenteElegido;
 
-        public Jugador(int edad, string localidad, string rango)
+        public Jugador(int edad, string localidad, string rango, string agenteElegido)
         {
             this.edad = edad;
             this.localidad = localidad;
             this.rango = rango;
+            this.agenteElegido = agenteElegido;
         }
 
         public int Edad
@@ -43,6 +44,13 @@ namespace Entidades
                 return this.rango;
             }
         }
+        public string AgenteElegido
+        {
+            get
+            {
+                return this.agenteElegido;
+            }
+        }
 
         public string MostrarJugador()
         {
@@ -51,6 +59,9 @@ namespace Entidades
             sb.AppendLine($"Edad: {this.Edad}");
             sb.AppendLine($"Localidad: {this.Localidad}");
             sb.AppendLine($"Rango: {this.Rango}");
+            sb.AppendLine("-------------------------------------");
+            sb.AppendLine($"Agente Elegido: {this.AgenteElegido}");
+            sb.AppendLine("-------------------------------------");
 
             return sb.ToString();
         }
@@ -111,6 +122,39 @@ namespace Entidades
 
                 case 6:
                     return "Inmortal";
+
+                default:
+                    return "";
+            }
+        }
+
+        public static string SwitchAgente(int agenteInt)
+        {
+            switch (agenteInt)
+            {
+                case 1:
+                    return "Phoenix";
+
+                case 2:
+                    return "Jett";
+
+                case 3:
+                    return "Brimstone";
+
+                case 4:
+                    return "Omen";
+
+                case 5:
+                    return "Sage";
+
+                case 6:
+                    return "Killjoy";
+
+                case 7:
+                    return "Sova";
+
+                case 8:
+                    return "Kay/O";
 
                 default:
                     return "";

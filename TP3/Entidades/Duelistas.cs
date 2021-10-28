@@ -14,6 +14,10 @@ namespace Entidades
         {
         }
 
+        public Duelistas(string nombre, bool esRadiante) : this(nombre, true, false)
+        {
+        }
+
         public Duelistas(string nombre, bool esRadiante, bool lanzaFuego) : base(nombre, esRadiante)
         {
             this.lanzaFuego = lanzaFuego;

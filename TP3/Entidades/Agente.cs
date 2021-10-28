@@ -46,9 +46,9 @@ namespace Entidades
         }
 
 
-        public static bool operator ==(Agente agente1, Agente agente2)
+        public static bool operator ==(string nombreAgente1, Agente agente2)
         {
-            if (agente1.Nombre == agente2.Nombre)
+            if (nombreAgente1 == agente2.Nombre)
             {
                 return true;
             }
@@ -56,7 +56,7 @@ namespace Entidades
             return false;
         }
 
-        public static bool operator !=(Agente agente1, Agente agente2)
+        public static bool operator !=(string agente1, Agente agente2)
         {
             return !(agente1 == agente2);
         }
