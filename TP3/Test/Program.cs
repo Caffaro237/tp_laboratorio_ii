@@ -35,18 +35,28 @@ namespace Test
 
             Jugador j1 = new Jugador(21, "LATINO", "Hierro", "Killjoy");
             Jugador j2 = new Jugador(18, "USA", "Plata", "Sova");
+            Jugador j3 = new Jugador(18, "USA", "Plata", "Sova");
+            Jugador j4 = new Jugador(18, "USA", "Plata", "Sova");
+            Jugador j5 = new Jugador(18, "USA", "Plata", "Sova");
+            Jugador j6 = new Jugador(18, "USA", "Plata", "Sova");
 
             jugadores.Add(j1);
             jugadores.Add(j2);
+            jugadores.Add(j3);
+            jugadores.Add(j4);
+            jugadores.Add(j5);
+            jugadores.Add(j6);
 
+            /*
             for (int i = 0; i < 5; i++)
             {
-                Jugador j = new Jugador(Jugador.HacerRandom(15, 31),
-                                        Jugador.SwitchLocalidad(Jugador.HacerRandom(1, 5)),
-                                        Jugador.SwitchRango(Jugador.HacerRandom(1, 7)),
-                                        Jugador.SwitchAgente(Jugador.HacerRandom(1, 9)));
+                Jugador j = new Jugador(FuncionRandom.HacerRandom(15, 31),
+                                        FuncionRandom.SwitchLocalidad(FuncionRandom.HacerRandom(1, 5)),
+                                        FuncionRandom.SwitchRango(FuncionRandom.HacerRandom(1, 7)),
+                                        FuncionRandom.SwitchAgente(FuncionRandom.HacerRandom(1, 9)));
                 jugadores.Add(j);
             }
+            */
 
             Console.WriteLine("Lista de Jugadores\n");
             foreach (Jugador item in jugadores)
@@ -63,6 +73,42 @@ namespace Test
             {
                 Console.WriteLine(item.ToString());
             }
+
+            Console.WriteLine("Apriete una tecla par continuar...");
+            Console.ReadKey();
+            Console.Clear();
+
+            List<Jugador> jugadoresEnUSA = new List<Jugador>();
+            List<Jugador> jugadoresEnEMEA = new List<Jugador>();
+            List<Jugador> jugadoresASIATICOS = new List<Jugador>();
+            List<Jugador> jugadoresLATINOS = new List<Jugador>();
+
+            foreach (Jugador jugador in jugadores)
+            {
+                if (jugador.Localidad == "USA")
+                {
+                    jugadoresEnUSA.Add(jugador);
+                }
+
+                if (jugador.Localidad == "EMEA")
+                {
+                    jugadoresEnEMEA.Add(jugador);
+                }
+
+                if (jugador.Localidad == "LATINO")
+                {
+                    jugadoresASIATICOS.Add(jugador);
+                }
+
+                if (jugador.Localidad == "ASIATICOS")
+                {
+                    jugadoresLATINOS.Add(jugador);
+                }
+            }
+
+            Console.WriteLine();
+
+
 
             Console.ReadKey();
         }
