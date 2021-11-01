@@ -54,13 +54,36 @@ namespace Test
             Console.ReadKey();
             Console.Clear();
 
+            int cantidadPhoenix = 0;
+            int cantidadJett = 0;
+            int cantidadBrimstone = 0;
+            int cantidadOmen = 0;
+
             foreach (Jugador item in jugadores)
             {
-                if(item.Localidad == "USA")
+                if(item.AgenteElegido.Nombre == "Phoenix")
                 {
-
+                    cantidadPhoenix++;
+                }
+                else if (item.AgenteElegido.Nombre == "Jett")
+                {
+                    cantidadJett++;
+                }
+                else if (item.AgenteElegido.Nombre == "Brimstone")
+                {
+                    cantidadBrimstone++;
+                }
+                else if (item.AgenteElegido.Nombre == "Omen")
+                {
+                    cantidadOmen++;
                 }
             }
+
+            Console.WriteLine(cantidadPhoenix + " " + cantidadJett + " " + cantidadBrimstone + " " + cantidadOmen);
+
+            Console.WriteLine("\nApriete una tecla para continuar...");
+            Console.ReadKey();
+            Console.Clear();
         }
     }
 }
