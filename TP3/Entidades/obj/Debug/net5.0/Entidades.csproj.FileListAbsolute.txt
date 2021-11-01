@@ -21,3 +21,4 @@ C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Entidades\
 C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Entidades\obj\Debug\net5.0\Entidades.dll
 C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Entidades\obj\Debug\net5.0\ref\Entidades.dll
 C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Entidades\obj\Debug\net5.0\Entidades.pdb
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Entidades\obj\Debug\net5.0\Entidades.csproj.AssemblyReference.cache

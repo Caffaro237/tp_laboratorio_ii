@@ -8,7 +8,7 @@ namespace Entidades
 {
     public class Duelistas : Agente
     {
-        public bool lanzaFuego;
+        private bool lanzaFuego;
 
         public Duelistas(string nombre) : this(nombre, true, true)
         {

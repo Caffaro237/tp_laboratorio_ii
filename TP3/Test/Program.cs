@@ -21,7 +21,7 @@ namespace Test
             agentes.Add(con1);
             agentes.Add(con2);
 
-            Console.WriteLine("Lista de Agentes\n");
+            Console.WriteLine($"Lista de Agentes, cantidad {agentes.Count}\n");
             foreach (Agente item in agentes)
             {
                 Console.WriteLine(item.ToString());
@@ -33,18 +33,21 @@ namespace Test
 
             List<Jugador> jugadores = new List<Jugador>();
 
-            Console.WriteLine("Lista de Jugadores\n");
-
-            Jugador j1 = new Jugador(30, Localidades.EUROPA.ToString(), Rangos.Diamante.ToString(), due1);
-            Jugador j2 = new Jugador(16, Localidades.LATAM.ToString(), Rangos.Plata.ToString(), due1);
-            Jugador j3 = new Jugador(15, Localidades.USA.ToString(), Rangos.Diamante.ToString(), con2);
-            Jugador j4 = new Jugador(20, Localidades.USA.ToString(), Rangos.Diamante.ToString(), due2);
+            Jugador j1 = new Jugador(30, Localidades.EUROPA.ToString(), Rangos.Diamante.ToString(), due2);
+            Jugador j2 = new Jugador(16, Localidades.LATAM.ToString(), Rangos.Diamante.ToString(), due2);
+            Jugador j3 = new Jugador(15, Localidades.USA.ToString(), Rangos.Diamante.ToString(), due2);
+            Jugador j4 = new Jugador(20, Localidades.USA.ToString(), Rangos.Diamante.ToString(), due1);
+            Jugador j5 = new Jugador(20, Localidades.USA.ToString(), Rangos.Diamante.ToString(), due1);
+            Jugador j6 = new Jugador(20, Localidades.USA.ToString(), Rangos.Diamante.ToString(), due1);
 
             jugadores.Add(j1);
             jugadores.Add(j2);
             jugadores.Add(j3);
             jugadores.Add(j4);
+            jugadores.Add(j5);
+            jugadores.Add(j6);
 
+            Console.WriteLine($"Lista de Jugadores, cantidad {jugadores.Count}\n");
             foreach (Jugador item in jugadores)
             {
                 Console.WriteLine(item.ToString());
@@ -54,32 +57,46 @@ namespace Test
             Console.ReadKey();
             Console.Clear();
 
-            int cantidadPhoenix = 0;
-            int cantidadJett = 0;
-            int cantidadBrimstone = 0;
-            int cantidadOmen = 0;
-
             foreach (Jugador item in jugadores)
             {
-                if(item.AgenteElegido.Nombre == "Phoenix")
+                item.AgenteElegido.CE++;
+                item.AgenteElegido.SumaEdades += item.Edad;
+
+                if(item.Localidad == Localidades.USA.ToString())
                 {
-                    cantidadPhoenix++;
+                    item.AgenteElegido.CEU++;
                 }
-                else if (item.AgenteElegido.Nombre == "Jett")
+                else if (item.Localidad == Localidades.EUROPA.ToString())
                 {
-                    cantidadJett++;
+                    item.AgenteElegido.CEE++;
                 }
-                else if (item.AgenteElegido.Nombre == "Brimstone")
+                else if (item.Localidad == Localidades.LATAM.ToString())
                 {
-                    cantidadBrimstone++;
+                    item.AgenteElegido.CEL++;
                 }
-                else if (item.AgenteElegido.Nombre == "Omen")
+
+                if(item.Rango == Rangos.Plata.ToString())
                 {
-                    cantidadOmen++;
+                    item.AgenteElegido.CP++;
+                }
+                else if (item.Rango == Rangos.Oro.ToString())
+                {
+                    item.AgenteElegido.CO++;
+                }
+                else if (item.Rango == Rangos.Diamante.ToString())
+                {
+                    item.AgenteElegido.CD++;
                 }
             }
 
-            Console.WriteLine(cantidadPhoenix + " " + cantidadJett + " " + cantidadBrimstone + " " + cantidadOmen);
+            foreach (Agente item in agentes)
+            {
+                Console.WriteLine($"El agente {item.Nombre} fue elegido {item.CE} veces");
+                Console.WriteLine($"{item.SacarPorcentaje(item.CEU, item.CE)}% en USA, {item.SacarPorcentaje(item.CEE, item.CE)}% en EUROPA y {item.SacarPorcentaje(item.CEL, item.CE)}% en LATAM");
+                Console.WriteLine($"{item.SacarPorcentaje(item.CP, item.CE)}% son rango Plata, {item.SacarPorcentaje(item.CO, item.CE)}% son rango Oro y {item.SacarPorcentaje(item.CD, item.CE)}% son rango Diamante");
+                Console.WriteLine($"{item.SacarPromedio(item.SumaEdades, item.CE)} es el promedio de edad");
+                Console.WriteLine("---------------------------------------------------------------");
+            }
 
             Console.WriteLine("\nApriete una tecla para continuar...");
             Console.ReadKey();
