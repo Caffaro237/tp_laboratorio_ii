@@ -13,8 +13,8 @@ namespace Test
             Agente due1 = new Duelistas("Phoenix");
             Agente due2 = new Duelistas("Jett", true, false);
 
-            Agente con2 = new Controladores("Omen");
             Agente con1 = new Controladores("Brimstone", false, true);
+            Agente con2 = new Controladores("Omen");
 
             agentes.Add(due1);
             agentes.Add(due2);
@@ -33,7 +33,28 @@ namespace Test
 
             List<Jugador> jugadores = new List<Jugador>();
 
-            Jugador j1 = new Jugador(30, Localidades.EUROPA.ToString(), Rangos.Diamante.ToString(), due2);
+
+            
+            for (int i = 0; i < 20; i++)
+            {
+                string nombreRandom = FuncionesRandom.SwitchAgente(FuncionesRandom.HacerRandom(1, 5));
+
+                foreach (var item in agentes)
+                {
+                    if (item.Nombre == nombreRandom)
+                    {
+                        Jugador j = new Jugador(FuncionesRandom.HacerRandom(15, 31),
+                                                FuncionesRandom.SwitchLocalidad(FuncionesRandom.HacerRandom(1, 4)),
+                                                FuncionesRandom.SwitchRango(FuncionesRandom.HacerRandom(1, 4)), 
+                                                item);
+                        jugadores.Add(j);
+                    }
+                }
+            }
+
+
+
+            /*Jugador j1 = new Jugador(30, Localidades.EUROPA.ToString(), Rangos.Diamante.ToString(), due2);
             Jugador j2 = new Jugador(16, Localidades.LATAM.ToString(), Rangos.Diamante.ToString(), due2);
             Jugador j3 = new Jugador(15, Localidades.USA.ToString(), Rangos.Diamante.ToString(), due2);
             Jugador j4 = new Jugador(20, Localidades.USA.ToString(), Rangos.Diamante.ToString(), due1);
@@ -45,7 +66,7 @@ namespace Test
             jugadores.Add(j3);
             jugadores.Add(j4);
             jugadores.Add(j5);
-            jugadores.Add(j6);
+            jugadores.Add(j6);*/
 
             Console.WriteLine($"Lista de Jugadores, cantidad {jugadores.Count}\n");
             foreach (Jugador item in jugadores)
