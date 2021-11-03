@@ -1,30 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net5.0-windows7.0": {
-      "Entidades/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "compile": {
-          "bin/placeholder/Entidades.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Entidades.dll": {}
-        }
-      }
-    }
+    "net5.0-windows7.0": {}
   },
-  "libraries": {
-    "Entidades/1.0.0": {
-      "type": "project",
-      "path": "../Entidades/Entidades.csproj",
-      "msbuildProject": "../Entidades/Entidades.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    "net5.0-windows7.0": [
-      "Entidades >= 1.0.0"
-    ]
+    "net5.0-windows7.0": []
   },
   "packageFolders": {
     "C:\\Users\\Facu\\.nuget\\packages\\": {}
@@ -32,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Datos M.2\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Formulario\\Formulario.csproj",
+      "projectUniqueName": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Formulario\\Formulario.csproj",
       "projectName": "Formulario",
-      "projectPath": "D:\\Datos M.2\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Formulario\\Formulario.csproj",
+      "projectPath": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Formulario\\Formulario.csproj",
       "packagesPath": "C:\\Users\\Facu\\.nuget\\packages\\",
-      "outputPath": "D:\\Datos M.2\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Formulario\\obj\\",
+      "outputPath": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Formulario\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Facu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,11 +33,7 @@
       "frameworks": {
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
-          "projectReferences": {
-            "D:\\Datos M.2\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Entidades\\Entidades.csproj": {
-              "projectPath": "D:\\Datos M.2\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Entidades\\Entidades.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

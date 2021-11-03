@@ -1,71 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Datos M.2\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Formulario\\Formulario.csproj": {}
+    "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Formulario\\Formulario.csproj": {}
   },
   "projects": {
-    "D:\\Datos M.2\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Formulario\\Formulario.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Datos M.2\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Entidades\\Entidades.csproj",
-        "projectName": "Entidades",
-        "projectPath": "D:\\Datos M.2\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Entidades\\Entidades.csproj",
-        "packagesPath": "C:\\Users\\Facu\\.nuget\\packages\\",
-        "outputPath": "D:\\Datos M.2\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Entidades\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\Facu\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net5.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "D:\\Datos M.2\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Formulario\\Formulario.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\Datos M.2\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Formulario\\Formulario.csproj",
+        "projectUniqueName": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Formulario\\Formulario.csproj",
         "projectName": "Formulario",
-        "projectPath": "D:\\Datos M.2\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Formulario\\Formulario.csproj",
+        "projectPath": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Formulario\\Formulario.csproj",
         "packagesPath": "C:\\Users\\Facu\\.nuget\\packages\\",
-        "outputPath": "D:\\Datos M.2\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Formulario\\obj\\",
+        "outputPath": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Formulario\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Facu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -81,11 +27,7 @@
         "frameworks": {
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
-            "projectReferences": {
-              "D:\\Datos M.2\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Entidades\\Entidades.csproj": {
-                "projectPath": "D:\\Datos M.2\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Entidades\\Entidades.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {

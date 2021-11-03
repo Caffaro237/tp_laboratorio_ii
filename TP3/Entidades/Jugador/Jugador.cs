@@ -13,6 +13,10 @@ namespace Entidades
         private string rango;
         private Agente agenteElegido;
 
+        public Jugador()
+        {
+        }
+
         public Jugador(int edad, string localidad, string rango, Agente agenteElegido)
         {
             this.edad = edad;
@@ -27,6 +31,10 @@ namespace Entidades
             {
                 return this.edad;
             }
+            set
+            {
+                this.edad = value;
+            }
         }
 
         public string Localidad
@@ -34,6 +42,10 @@ namespace Entidades
             get
             {
                 return this.localidad;
+            }
+            set
+            {
+                this.localidad = value;
             }
         }
 
@@ -43,6 +55,10 @@ namespace Entidades
             {
                 return this.rango;
             }
+            set
+            {
+                this.rango = value;
+            }
         }
 
         public Agente AgenteElegido
@@ -50,6 +66,10 @@ namespace Entidades
             get
             {
                 return this.agenteElegido;
+            }
+            set
+            {
+                this.agenteElegido = value;
             }
         }
 
@@ -69,6 +89,18 @@ namespace Entidades
         public override string ToString()
         {
             return this.MostrarJugador();
+        }
+
+        public string CargarDatos()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine($"{this.Edad}");
+            sb.AppendLine($"{this.Localidad}");
+            sb.AppendLine($"{this.Rango}");
+            sb.AppendLine($"{this.AgenteElegido.Nombre}");
+
+            return sb.ToString();
         }
 
     }

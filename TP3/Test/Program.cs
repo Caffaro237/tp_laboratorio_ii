@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using Entidades;
 
 namespace Test
@@ -28,7 +29,7 @@ namespace Test
             }
 
             Console.WriteLine("\nApriete una tecla para continuar...");
-            Console.ReadKey();
+            //Console.ReadKey();
             Console.Clear();
 
             List<Jugador> jugadores = new List<Jugador>();
@@ -54,7 +55,9 @@ namespace Test
 
 
 
-            /*Jugador j1 = new Jugador(30, Localidades.EUROPA.ToString(), Rangos.Diamante.ToString(), due2);
+            Jugador j1 = new Jugador(30, Localidades.EUROPA.ToString(), Rangos.Diamante.ToString(), due2);
+            /*
+            Jugador j1 = new Jugador(30, Localidades.EUROPA.ToString(), Rangos.Diamante.ToString(), due2);
             Jugador j2 = new Jugador(16, Localidades.LATAM.ToString(), Rangos.Diamante.ToString(), due2);
             Jugador j3 = new Jugador(15, Localidades.USA.ToString(), Rangos.Diamante.ToString(), due2);
             Jugador j4 = new Jugador(20, Localidades.USA.ToString(), Rangos.Diamante.ToString(), due1);
@@ -66,7 +69,9 @@ namespace Test
             jugadores.Add(j3);
             jugadores.Add(j4);
             jugadores.Add(j5);
-            jugadores.Add(j6);*/
+            jugadores.Add(j6);
+            
+             */
 
             Console.WriteLine($"Lista de Jugadores, cantidad {jugadores.Count}\n");
             foreach (Jugador item in jugadores)
@@ -75,7 +80,7 @@ namespace Test
             }
 
             Console.WriteLine("\nApriete una tecla para continuar...");
-            Console.ReadKey();
+            //Console.ReadKey();
             Console.Clear();
 
             foreach (Jugador item in jugadores)
@@ -120,8 +125,51 @@ namespace Test
             }
 
             Console.WriteLine("\nApriete una tecla para continuar...");
+            //Console.ReadKey();
+            Console.Clear();
+
+            ArchivoTexto at = new ArchivoTexto();
+            StringBuilder sb = new StringBuilder();
+
+            foreach (Jugador item in jugadores)
+            {
+                sb.AppendLine(item.CargarDatos());
+            }
+
+            at.Guardar("Lista de Jugadores.txt", sb.ToString());
+
+            Console.WriteLine(at.Leer("Lista de Jugadores.txt"));
+
+            Console.WriteLine("\nApriete una tecla para continuar...");
+            //Console.ReadKey();
+            Console.Clear();
+
+
+            Serializador<Jugador> serializadorXML = new Serializador<Jugador>(IArchivo<Jugador>.ETipoArchivo.XML);
+            Serializador<Jugador> serializadorJSON = new Serializador<Jugador>(IArchivo<Jugador>.ETipoArchivo.JSON);
+
+            try
+            {
+                serializadorXML.Guardar("Jugador.xml", j1);
+                //serializadorJSON.Guardar("Jugador.json", j1);
+
+                Jugador j2 = serializadorXML.Leer("Jugador.xml");
+
+                Console.WriteLine(j2.ToString()); ;
+
+
+
+                Console.WriteLine("Listo");
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            Console.WriteLine("\nApriete una tecla para continuar...");
             Console.ReadKey();
             Console.Clear();
+
         }
     }
 }

@@ -32,6 +32,10 @@ namespace Entidades
             {
                 return this.nombre;
             }
+            set
+            {
+                this.nombre = value;
+            }
         }
 
         public bool EsRadiante
@@ -39,6 +43,10 @@ namespace Entidades
             get
             {
                 return this.esRadiante;
+            }
+            set
+            {
+                this.esRadiante = value;
             }
         }
 
