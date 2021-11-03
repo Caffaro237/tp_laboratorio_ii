@@ -22,6 +22,9 @@ namespace Entidades
             }
         }
 
+        public Duelistas()
+        {
+        }
 
         public Duelistas(string nombre) : this(nombre, true, true)
         {

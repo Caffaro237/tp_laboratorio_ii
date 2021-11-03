@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace Entidades
 {
+    [XmlInclude(typeof(Duelistas))]
+    [XmlInclude(typeof(Controladores))]
     public abstract class Agente
     {
         private string nombre;
@@ -15,6 +19,10 @@ namespace Entidades
         private int cantidadOro;
         private int cantidadDiamante;
         private int sumaEdades;
+
+        public Agente()
+        {
+        }
 
         public Agente(string nombre) : this(nombre, false)
         {

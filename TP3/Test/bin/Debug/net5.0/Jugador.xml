@@ -3,4 +3,17 @@
   <Edad>30</Edad>
   <Localidad>EUROPA</Localidad>
   <Rango>Diamante</Rango>
+  <AgenteElegido xsi:type="Controladores">
+    <Nombre>Brimstone</Nombre>
+    <EsRadiante>false</EsRadiante>
+    <CE>4</CE>
+    <CEU>2</CEU>
+    <CEL>1</CEL>
+    <CEE>1</CEE>
+    <CP>1</CP>
+    <CO>1</CO>
+    <CD>2</CD>
+    <SumaEdades>106</SumaEdades>
+    <LanzaHumo>true</LanzaHumo>
+  </AgenteElegido>
 </Jugador>

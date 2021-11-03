@@ -53,9 +53,6 @@ namespace Test
                 }
             }
 
-
-
-            Jugador j1 = new Jugador(30, Localidades.EUROPA.ToString(), Rangos.Diamante.ToString(), due2);
             /*
             Jugador j1 = new Jugador(30, Localidades.EUROPA.ToString(), Rangos.Diamante.ToString(), due2);
             Jugador j2 = new Jugador(16, Localidades.LATAM.ToString(), Rangos.Diamante.ToString(), due2);
@@ -145,6 +142,8 @@ namespace Test
             Console.Clear();
 
 
+            Jugador j1 = new Jugador(30, Localidades.EUROPA.ToString(), Rangos.Diamante.ToString(), con1);
+
             Serializador<Jugador> serializadorXML = new Serializador<Jugador>(IArchivo<Jugador>.ETipoArchivo.XML);
             Serializador<Jugador> serializadorJSON = new Serializador<Jugador>(IArchivo<Jugador>.ETipoArchivo.JSON);
 
@@ -155,20 +154,25 @@ namespace Test
 
                 Jugador j2 = serializadorXML.Leer("Jugador.xml");
 
-                Console.WriteLine(j2.ToString()); ;
+                Console.WriteLine(j2.ToString());
 
+                //Jugador j2 = serializadorJSON.Leer("Jugador.json");
 
+                //Console.WriteLine(j2.ToString());
 
                 Console.WriteLine("Listo");
             }
             catch(Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.InnerException.Message);
             }
 
             Console.WriteLine("\nApriete una tecla para continuar...");
             Console.ReadKey();
             Console.Clear();
+
+
+
 
         }
     }

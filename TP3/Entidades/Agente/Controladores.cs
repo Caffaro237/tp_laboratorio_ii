@@ -22,6 +22,10 @@ namespace Entidades
             }
         }
 
+        public Controladores()
+        {
+        }
+
         public Controladores(string nombre) : this(nombre, true, true)
         {
         }
