@@ -149,16 +149,16 @@ namespace Test
 
             try
             {
-                serializadorXML.Guardar("Jugador.xml", j1);
-                //serializadorJSON.Guardar("Jugador.json", j1);
+                //serializadorXML.Guardar("Jugador.xml", j1);
+                serializadorJSON.Guardar("Jugador.json", j1);
 
-                Jugador j2 = serializadorXML.Leer("Jugador.xml");
-
-                Console.WriteLine(j2.ToString());
-
-                //Jugador j2 = serializadorJSON.Leer("Jugador.json");
+                //Jugador j2 = serializadorXML.Leer("Jugador.xml");
 
                 //Console.WriteLine(j2.ToString());
+
+                Jugador j2 = serializadorJSON.Leer("Jugador.json");
+
+                Console.WriteLine(j2.ToString());
 
                 Console.WriteLine("Listo");
             }
