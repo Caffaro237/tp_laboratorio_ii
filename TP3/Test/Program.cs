@@ -35,7 +35,7 @@ namespace Test
 
             List<Jugador> jugadores = new List<Jugador>();
 
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 5; i++)
             {
                 string nombreRandom = FuncionesRandom.SwitchAgente(FuncionesRandom.HacerRandom(1, 5));
 
@@ -76,7 +76,7 @@ namespace Test
             }
 
             Console.WriteLine("\nApriete una tecla para continuar...");
-            //Console.ReadKey();
+            Console.ReadKey();
             Console.Clear();
 
             foreach (Jugador item in jugadores)
@@ -167,11 +167,21 @@ namespace Test
                 }
 
                 int i = 1;
-                foreach (var item in jugadores)
+                foreach (Jugador item in jugadores)
                 {
                     serializadorXML.Guardar($"{path}\\Jugador{i}.xml", item);
                     i++;
                 }
+
+                List<Jugador> jugadoresLeidosXML = new List<Jugador>();
+
+                jugadoresLeidosXML = Jugador.LeerArchivos(path, serializadorXML);
+
+                foreach (Jugador item in jugadoresLeidosXML)
+                {
+                    Console.WriteLine(item.ToString());
+                }
+
 
                 //Serializacion y Deserializacion en JSON (NO DESERIALIZA CORRECTAMENTE)
 

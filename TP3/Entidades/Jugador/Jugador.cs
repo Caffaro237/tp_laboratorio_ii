@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace Entidades
 {
@@ -103,6 +106,28 @@ namespace Entidades
             sb.AppendLine($"{this.AgenteElegido.Nombre}");
 
             return sb.ToString();
+        }
+
+        public static List<Jugador> LeerArchivos(string path, Serializador<Jugador> serializadorXML)
+        {
+            DirectoryInfo directorioElegido = new DirectoryInfo(path);
+            FileInfo[] files = directorioElegido.GetFiles();
+            List<Jugador> jugadores = new List<Jugador>();
+
+            foreach (FileInfo archivoItem in files)
+            {
+                try
+                {
+                    Jugador j = serializadorXML.Leer(archivoItem.FullName);
+                    jugadores.Add(j);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+
+            return jugadores;
         }
 
     }
