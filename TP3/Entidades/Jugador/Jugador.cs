@@ -13,11 +13,12 @@ namespace Entidades
         private string localidad;
         private string rango;
         private Agente agenteElegido;
-        
+
         public Jugador()
         {
         }
 
+        
         public Jugador(int edad, string localidad, string rango, Agente agenteElegido)
         {
             this.edad = edad;

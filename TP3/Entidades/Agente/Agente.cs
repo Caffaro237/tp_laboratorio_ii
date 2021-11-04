@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Xml.Serialization;
 
 namespace Entidades
@@ -24,6 +25,7 @@ namespace Entidades
         {
         }
 
+        
         public Agente(string nombre) : this(nombre, false)
         {
         }

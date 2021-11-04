@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using Entidades;
 
@@ -34,8 +35,6 @@ namespace Test
 
             List<Jugador> jugadores = new List<Jugador>();
 
-
-            
             for (int i = 0; i < 20; i++)
             {
                 string nombreRandom = FuncionesRandom.SwitchAgente(FuncionesRandom.HacerRandom(1, 5));
@@ -145,20 +144,40 @@ namespace Test
             Jugador j1 = new Jugador(30, Localidades.EUROPA.ToString(), Rangos.Diamante.ToString(), con1);
 
             Serializador<Jugador> serializadorXML = new Serializador<Jugador>(IArchivo<Jugador>.ETipoArchivo.XML);
-            Serializador<Jugador> serializadorJSON = new Serializador<Jugador>(IArchivo<Jugador>.ETipoArchivo.JSON);
+            //Serializador<Jugador> serializadorJSON = new Serializador<Jugador>(IArchivo<Jugador>.ETipoArchivo.JSON);
 
             try
             {
-                //serializadorXML.Guardar("Jugador.xml", j1);
-                serializadorJSON.Guardar("Jugador.json", j1);
+                //Prueba de Serializacion y Deserializacion en XML con un Jugador
+                /*
+                serializadorXML.Guardar("Jugador.xml", j1);
 
-                //Jugador j2 = serializadorXML.Leer("Jugador.xml");
-
-                //Console.WriteLine(j2.ToString());
-
-                Jugador j2 = serializadorJSON.Leer("Jugador.json");
+                Jugador j2 = serializadorXML.Leer("Jugador.xml");
 
                 Console.WriteLine(j2.ToString());
+                */
+
+                //Prueba de Serializacion y Deserializacion en XML con una lista de jugadores
+
+                /*string path = @"..\..\..\..\Jugadores";
+
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+
+                int i = 1;
+                foreach (var item in jugadores)
+                {
+                    serializadorXML.Guardar($"{path}\\Jugador{i}.xml", item);
+                    i++;
+                }*/
+
+                //Serializacion y Deserializacion en JSON (NO DESERIALIZA CORRECTAMENTE)
+
+                //serializadorJSON.Guardar("Jugador.json", j1);
+                //Jugador j2 = serializadorJSON.Leer("Jugador.json");
+                //Console.WriteLine(j2.ToString());
 
                 Console.WriteLine("Listo");
             }
