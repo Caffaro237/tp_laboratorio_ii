@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Jugador xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Edad>24</Edad>
+  <Localidad>USA</Localidad>
+  <Rango>Oro</Rango>
+  <AgenteElegido xsi:type="Duelistas">
+    <Nombre>Phoenix</Nombre>
+    <EsRadiante>true</EsRadiante>
+    <CE>1</CE>
+    <CEU>1</CEU>
+    <CEL>0</CEL>
+    <CEE>0</CEE>
+    <CP>0</CP>
+    <CO>1</CO>
+    <CD>0</CD>
+    <SumaEdades>24</SumaEdades>
+    <LanzaFuego>true</LanzaFuego>
+  </AgenteElegido>
+</Jugador>

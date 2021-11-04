@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Jugador xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Edad>21</Edad>
+  <Localidad>EUROPA</Localidad>
+  <Rango>Plata</Rango>
+  <AgenteElegido xsi:type="Controladores">
+    <Nombre>Brimstone</Nombre>
+    <EsRadiante>false</EsRadiante>
+    <CE>6</CE>
+    <CEU>3</CEU>
+    <CEL>0</CEL>
+    <CEE>3</CEE>
+    <CP>1</CP>
+    <CO>1</CO>
+    <CD>4</CD>
+    <SumaEdades>113</SumaEdades>
+    <LanzaHumo>true</LanzaHumo>
+  </AgenteElegido>
+</Jugador>

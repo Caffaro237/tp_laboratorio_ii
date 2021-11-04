@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Jugador xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Edad>23</Edad>
+  <Localidad>EUROPA</Localidad>
+  <Rango>Oro</Rango>
+  <AgenteElegido xsi:type="Controladores">
+    <Nombre>Omen</Nombre>
+    <EsRadiante>true</EsRadiante>
+    <CE>5</CE>
+    <CEU>1</CEU>
+    <CEL>2</CEL>
+    <CEE>2</CEE>
+    <CP>1</CP>
+    <CO>3</CO>
+    <CD>1</CD>
+    <SumaEdades>138</SumaEdades>
+    <LanzaHumo>true</LanzaHumo>
+  </AgenteElegido>
+</Jugador>

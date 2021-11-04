@@ -159,7 +159,7 @@ namespace Test
 
                 //Prueba de Serializacion y Deserializacion en XML con una lista de jugadores
 
-                /*string path = @"..\..\..\..\Jugadores";
+                string path = @"..\..\..\..\Jugadores";
 
                 if (!Directory.Exists(path))
                 {
@@ -171,7 +171,7 @@ namespace Test
                 {
                     serializadorXML.Guardar($"{path}\\Jugador{i}.xml", item);
                     i++;
-                }*/
+                }
 
                 //Serializacion y Deserializacion en JSON (NO DESERIALIZA CORRECTAMENTE)
 
