@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Facu\\Desktop\\tp_laboratorio_ii\\TP3\\Formulario\\Formulario.csproj",
+      "projectUniqueName": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Formulario\\Formulario.csproj",
       "projectName": "Formulario",
-      "projectPath": "C:\\Users\\Facu\\Desktop\\tp_laboratorio_ii\\TP3\\Formulario\\Formulario.csproj",
+      "projectPath": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Formulario\\Formulario.csproj",
       "packagesPath": "C:\\Users\\Facu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Facu\\Desktop\\tp_laboratorio_ii\\TP3\\Formulario\\obj\\",
+      "outputPath": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Formulario\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Facu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,8 +53,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\Facu\\Desktop\\tp_laboratorio_ii\\TP3\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\Facu\\Desktop\\tp_laboratorio_ii\\TP3\\Entidades\\Entidades.csproj"
+            "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Entidades\\Entidades.csproj"
             }
           }
         }
@@ -86,7 +86,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

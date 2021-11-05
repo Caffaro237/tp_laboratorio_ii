@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Facu\\Desktop\\tp_laboratorio_ii\\TP3\\Test\\Test.csproj",
+      "projectUniqueName": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Test\\Test.csproj",
       "projectName": "Test",
-      "projectPath": "C:\\Users\\Facu\\Desktop\\tp_laboratorio_ii\\TP3\\Test\\Test.csproj",
+      "projectPath": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Test\\Test.csproj",
       "packagesPath": "C:\\Users\\Facu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Facu\\Desktop\\tp_laboratorio_ii\\TP3\\Test\\obj\\",
+      "outputPath": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Facu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,8 +53,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Facu\\Desktop\\tp_laboratorio_ii\\TP3\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\Facu\\Desktop\\tp_laboratorio_ii\\TP3\\Entidades\\Entidades.csproj"
+            "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP3\\Entidades\\Entidades.csproj"
             }
           }
         }
@@ -83,7 +83,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
