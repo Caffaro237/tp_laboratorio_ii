@@ -4,16 +4,16 @@
   <Localidad>EUROPA</Localidad>
   <Rango>Plata</Rango>
   <AgenteElegido xsi:type="Controladores">
-    <Nombre>Omen</Nombre>
-    <EsRadiante>true</EsRadiante>
+    <Nombre>Brimstone</Nombre>
+    <EsRadiante>false</EsRadiante>
     <CE>7</CE>
     <CEU>2</CEU>
-    <CEL>2</CEL>
-    <CEE>3</CEE>
-    <CP>3</CP>
+    <CEL>1</CEL>
+    <CEE>4</CEE>
+    <CP>4</CP>
     <CO>3</CO>
-    <CD>1</CD>
-    <SumaEdades>166</SumaEdades>
+    <CD>0</CD>
+    <SumaEdades>148</SumaEdades>
     <LanzaHumo>true</LanzaHumo>
   </AgenteElegido>
 </Jugador>

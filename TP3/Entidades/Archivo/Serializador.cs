@@ -55,7 +55,7 @@ namespace Entidades
                     }
                 }
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 throw;
             }

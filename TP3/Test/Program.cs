@@ -35,7 +35,7 @@ namespace Test
 
             List<Jugador> jugadores = new List<Jugador>();
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 30; i++)
             {
                 string nombreRandom = FuncionesRandom.SwitchAgente(FuncionesRandom.HacerRandom(1, 5));
 
@@ -121,7 +121,7 @@ namespace Test
             }
 
             Console.WriteLine("\nApriete una tecla para continuar...");
-            //Console.ReadKey();
+            Console.ReadKey();
             Console.Clear();
 
             ArchivoTexto at = new ArchivoTexto();
@@ -165,6 +165,11 @@ namespace Test
                 {
                     Directory.CreateDirectory(path);
                 }
+                else
+                {
+                    Directory.Delete(path, true);
+                    Directory.CreateDirectory(path);
+                }
 
                 int i = 1;
                 foreach (Jugador item in jugadores)
@@ -199,9 +204,6 @@ namespace Test
             Console.WriteLine("\nApriete una tecla para continuar...");
             Console.ReadKey();
             Console.Clear();
-
-
-
 
         }
     }

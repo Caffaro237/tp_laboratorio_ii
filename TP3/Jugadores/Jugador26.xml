@@ -2,7 +2,7 @@
 <Jugador xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Edad>29</Edad>
   <Localidad>EUROPA</Localidad>
-  <Rango>Plata</Rango>
+  <Rango>Oro</Rango>
   <AgenteElegido xsi:type="Controladores">
     <Nombre>Omen</Nombre>
     <EsRadiante>true</EsRadiante>
