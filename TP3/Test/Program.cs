@@ -12,6 +12,8 @@ namespace Test
         {
             List<Agente> agentes = new List<Agente>();
 
+            //Agregado desde la PC Escritorio
+
             //Simplificacion con un metodo estatico en la clase agente que me devuelve la lista con los agentes
             //Puedo reutilizar codigo de esa manera
 
