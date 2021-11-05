@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Jugador xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Edad>17</Edad>
+  <Edad>29</Edad>
   <Localidad>USA</Localidad>
   <Rango>Plata</Rango>
-  <AgenteElegido xsi:type="Duelistas">
-    <Nombre>Jett</Nombre>
-    <EsRadiante>true</EsRadiante>
-    <CE>5</CE>
-    <CEU>3</CEU>
-    <CEL>2</CEL>
+  <AgenteElegido xsi:type="Controladores">
+    <Nombre>Brimstone</Nombre>
+    <EsRadiante>false</EsRadiante>
+    <CE>1</CE>
+    <CEU>1</CEU>
+    <CEL>0</CEL>
     <CEE>0</CEE>
     <CP>1</CP>
-    <CO>2</CO>
-    <CD>2</CD>
-    <SumaEdades>111</SumaEdades>
-    <LanzaFuego>false</LanzaFuego>
+    <CO>0</CO>
+    <CD>0</CD>
+    <SumaEdades>29</SumaEdades>
+    <LanzaHumo>true</LanzaHumo>
   </AgenteElegido>
 </Jugador>

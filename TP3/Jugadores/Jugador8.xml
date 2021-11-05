@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Jugador xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Edad>29</Edad>
+  <Edad>16</Edad>
   <Localidad>USA</Localidad>
-  <Rango>Diamante</Rango>
+  <Rango>Oro</Rango>
   <AgenteElegido xsi:type="Duelistas">
     <Nombre>Jett</Nombre>
     <EsRadiante>true</EsRadiante>
-    <CE>5</CE>
-    <CEU>3</CEU>
-    <CEL>2</CEL>
-    <CEE>0</CEE>
-    <CP>1</CP>
-    <CO>2</CO>
-    <CD>2</CD>
-    <SumaEdades>111</SumaEdades>
+    <CE>2</CE>
+    <CEU>1</CEU>
+    <CEL>0</CEL>
+    <CEE>1</CEE>
+    <CP>0</CP>
+    <CO>1</CO>
+    <CD>1</CD>
+    <SumaEdades>32</SumaEdades>
     <LanzaFuego>false</LanzaFuego>
   </AgenteElegido>
 </Jugador>

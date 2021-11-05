@@ -3,17 +3,17 @@
   <Edad>23</Edad>
   <Localidad>LATAM</Localidad>
   <Rango>Diamante</Rango>
-  <AgenteElegido xsi:type="Duelistas">
-    <Nombre>Phoenix</Nombre>
+  <AgenteElegido xsi:type="Controladores">
+    <Nombre>Omen</Nombre>
     <EsRadiante>true</EsRadiante>
-    <CE>3</CE>
+    <CE>5</CE>
     <CEU>1</CEU>
     <CEL>2</CEL>
-    <CEE>0</CEE>
-    <CP>0</CP>
-    <CO>2</CO>
-    <CD>1</CD>
-    <SumaEdades>67</SumaEdades>
-    <LanzaFuego>true</LanzaFuego>
+    <CEE>2</CEE>
+    <CP>2</CP>
+    <CO>0</CO>
+    <CD>3</CD>
+    <SumaEdades>101</SumaEdades>
+    <LanzaHumo>true</LanzaHumo>
   </AgenteElegido>
 </Jugador>

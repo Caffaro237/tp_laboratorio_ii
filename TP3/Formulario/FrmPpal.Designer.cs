@@ -29,13 +29,290 @@ namespace Formulario
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btnAgregarJugador = new System.Windows.Forms.Button();
+            this.rtbJugadores = new System.Windows.Forms.RichTextBox();
+            this.lblAgente = new System.Windows.Forms.Label();
+            this.lblRango = new System.Windows.Forms.Label();
+            this.lblLocalidad = new System.Windows.Forms.Label();
+            this.lblEdad = new System.Windows.Forms.Label();
+            this.cmbAgente = new System.Windows.Forms.ComboBox();
+            this.cmbRango = new System.Windows.Forms.ComboBox();
+            this.cmbLocalidad = new System.Windows.Forms.ComboBox();
+            this.numUpDownEdad = new System.Windows.Forms.NumericUpDown();
+            this.lblCantidadRandon = new System.Windows.Forms.Label();
+            this.numUpDownCantidadJugadores = new System.Windows.Forms.NumericUpDown();
+            this.btnAgregarJugadoresRandom = new System.Windows.Forms.Button();
+            this.lblCantidadJugadores = new System.Windows.Forms.Label();
+            this.lblCount = new System.Windows.Forms.Label();
+            this.rtbAgentes = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.rtbAnalisis = new System.Windows.Forms.RichTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownEdad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownCantidadJugadores)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // btnAgregarJugador
+            // 
+            this.btnAgregarJugador.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAgregarJugador.Location = new System.Drawing.Point(12, 328);
+            this.btnAgregarJugador.Name = "btnAgregarJugador";
+            this.btnAgregarJugador.Size = new System.Drawing.Size(262, 71);
+            this.btnAgregarJugador.TabIndex = 0;
+            this.btnAgregarJugador.Text = "Agregar Jugador";
+            this.btnAgregarJugador.UseVisualStyleBackColor = true;
+            this.btnAgregarJugador.Click += new System.EventHandler(this.btnAgregarJugador_Click);
+            // 
+            // rtbJugadores
+            // 
+            this.rtbJugadores.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.rtbJugadores.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtbJugadores.Location = new System.Drawing.Point(305, 40);
+            this.rtbJugadores.Name = "rtbJugadores";
+            this.rtbJugadores.ReadOnly = true;
+            this.rtbJugadores.Size = new System.Drawing.Size(355, 833);
+            this.rtbJugadores.TabIndex = 1;
+            this.rtbJugadores.Text = "";
+            // 
+            // lblAgente
+            // 
+            this.lblAgente.AutoSize = true;
+            this.lblAgente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblAgente.Location = new System.Drawing.Point(12, 245);
+            this.lblAgente.Name = "lblAgente";
+            this.lblAgente.Size = new System.Drawing.Size(75, 28);
+            this.lblAgente.TabIndex = 18;
+            this.lblAgente.Text = "Agente";
+            // 
+            // lblRango
+            // 
+            this.lblRango.AutoSize = true;
+            this.lblRango.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblRango.Location = new System.Drawing.Point(12, 165);
+            this.lblRango.Name = "lblRango";
+            this.lblRango.Size = new System.Drawing.Size(69, 28);
+            this.lblRango.TabIndex = 17;
+            this.lblRango.Text = "Rango";
+            // 
+            // lblLocalidad
+            // 
+            this.lblLocalidad.AutoSize = true;
+            this.lblLocalidad.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblLocalidad.Location = new System.Drawing.Point(12, 86);
+            this.lblLocalidad.Name = "lblLocalidad";
+            this.lblLocalidad.Size = new System.Drawing.Size(96, 28);
+            this.lblLocalidad.TabIndex = 16;
+            this.lblLocalidad.Text = "Localidad";
+            // 
+            // lblEdad
+            // 
+            this.lblEdad.AutoSize = true;
+            this.lblEdad.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblEdad.Location = new System.Drawing.Point(12, 9);
+            this.lblEdad.Name = "lblEdad";
+            this.lblEdad.Size = new System.Drawing.Size(56, 28);
+            this.lblEdad.TabIndex = 15;
+            this.lblEdad.Text = "Edad";
+            // 
+            // cmbAgente
+            // 
+            this.cmbAgente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAgente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbAgente.FormattingEnabled = true;
+            this.cmbAgente.Location = new System.Drawing.Point(12, 276);
+            this.cmbAgente.Name = "cmbAgente";
+            this.cmbAgente.Size = new System.Drawing.Size(262, 36);
+            this.cmbAgente.TabIndex = 14;
+            // 
+            // cmbRango
+            // 
+            this.cmbRango.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRango.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbRango.FormattingEnabled = true;
+            this.cmbRango.Location = new System.Drawing.Point(12, 196);
+            this.cmbRango.Name = "cmbRango";
+            this.cmbRango.Size = new System.Drawing.Size(262, 36);
+            this.cmbRango.TabIndex = 13;
+            // 
+            // cmbLocalidad
+            // 
+            this.cmbLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLocalidad.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbLocalidad.FormattingEnabled = true;
+            this.cmbLocalidad.Location = new System.Drawing.Point(12, 117);
+            this.cmbLocalidad.Name = "cmbLocalidad";
+            this.cmbLocalidad.Size = new System.Drawing.Size(262, 36);
+            this.cmbLocalidad.TabIndex = 12;
+            // 
+            // numUpDownEdad
+            // 
+            this.numUpDownEdad.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numUpDownEdad.Location = new System.Drawing.Point(12, 40);
+            this.numUpDownEdad.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.numUpDownEdad.Minimum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.numUpDownEdad.Name = "numUpDownEdad";
+            this.numUpDownEdad.ReadOnly = true;
+            this.numUpDownEdad.Size = new System.Drawing.Size(262, 34);
+            this.numUpDownEdad.TabIndex = 11;
+            this.numUpDownEdad.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            // 
+            // lblCantidadRandon
+            // 
+            this.lblCantidadRandon.AutoSize = true;
+            this.lblCantidadRandon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCantidadRandon.Location = new System.Drawing.Point(12, 436);
+            this.lblCantidadRandon.Name = "lblCantidadRandon";
+            this.lblCantidadRandon.Size = new System.Drawing.Size(170, 28);
+            this.lblCantidadRandon.TabIndex = 21;
+            this.lblCantidadRandon.Text = "Cantidad Random";
+            // 
+            // numUpDownCantidadJugadores
+            // 
+            this.numUpDownCantidadJugadores.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numUpDownCantidadJugadores.Location = new System.Drawing.Point(12, 467);
+            this.numUpDownCantidadJugadores.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numUpDownCantidadJugadores.Name = "numUpDownCantidadJugadores";
+            this.numUpDownCantidadJugadores.ReadOnly = true;
+            this.numUpDownCantidadJugadores.Size = new System.Drawing.Size(262, 34);
+            this.numUpDownCantidadJugadores.TabIndex = 20;
+            this.numUpDownCantidadJugadores.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // btnAgregarJugadoresRandom
+            // 
+            this.btnAgregarJugadoresRandom.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAgregarJugadoresRandom.Location = new System.Drawing.Point(12, 516);
+            this.btnAgregarJugadoresRandom.Name = "btnAgregarJugadoresRandom";
+            this.btnAgregarJugadoresRandom.Size = new System.Drawing.Size(262, 71);
+            this.btnAgregarJugadoresRandom.TabIndex = 19;
+            this.btnAgregarJugadoresRandom.Text = "Agregar Jugadores Random";
+            this.btnAgregarJugadoresRandom.UseVisualStyleBackColor = true;
+            this.btnAgregarJugadoresRandom.Click += new System.EventHandler(this.btnAgregarJugadoresRandom_Click);
+            // 
+            // lblCantidadJugadores
+            // 
+            this.lblCantidadJugadores.AutoSize = true;
+            this.lblCantidadJugadores.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCantidadJugadores.Location = new System.Drawing.Point(305, 9);
+            this.lblCantidadJugadores.Name = "lblCantidadJugadores";
+            this.lblCantidadJugadores.Size = new System.Drawing.Size(221, 28);
+            this.lblCantidadJugadores.TabIndex = 22;
+            this.lblCantidadJugadores.Text = "Cantidad de Jugadores: ";
+            // 
+            // lblCount
+            // 
+            this.lblCount.AutoSize = true;
+            this.lblCount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCount.Location = new System.Drawing.Point(532, 9);
+            this.lblCount.Name = "lblCount";
+            this.lblCount.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblCount.Size = new System.Drawing.Size(23, 28);
+            this.lblCount.TabIndex = 23;
+            this.lblCount.Text = "0";
+            // 
+            // rtbAgentes
+            // 
+            this.rtbAgentes.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.rtbAgentes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtbAgentes.Location = new System.Drawing.Point(666, 40);
+            this.rtbAgentes.Name = "rtbAgentes";
+            this.rtbAgentes.ReadOnly = true;
+            this.rtbAgentes.Size = new System.Drawing.Size(591, 345);
+            this.rtbAgentes.TabIndex = 24;
+            this.rtbAgentes.Text = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(666, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 28);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Agentes";
+            // 
+            // rtbAnalisis
+            // 
+            this.rtbAnalisis.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.rtbAnalisis.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtbAnalisis.Location = new System.Drawing.Point(666, 391);
+            this.rtbAnalisis.Name = "rtbAnalisis";
+            this.rtbAnalisis.ReadOnly = true;
+            this.rtbAnalisis.Size = new System.Drawing.Size(591, 482);
+            this.rtbAnalisis.TabIndex = 26;
+            this.rtbAnalisis.Text = "";
+            // 
+            // FrmPpal
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(1269, 885);
+            this.Controls.Add(this.rtbAnalisis);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.rtbAgentes);
+            this.Controls.Add(this.lblCount);
+            this.Controls.Add(this.lblCantidadJugadores);
+            this.Controls.Add(this.lblCantidadRandon);
+            this.Controls.Add(this.numUpDownCantidadJugadores);
+            this.Controls.Add(this.btnAgregarJugadoresRandom);
+            this.Controls.Add(this.lblAgente);
+            this.Controls.Add(this.lblRango);
+            this.Controls.Add(this.lblLocalidad);
+            this.Controls.Add(this.lblEdad);
+            this.Controls.Add(this.cmbAgente);
+            this.Controls.Add(this.cmbRango);
+            this.Controls.Add(this.cmbLocalidad);
+            this.Controls.Add(this.numUpDownEdad);
+            this.Controls.Add(this.rtbJugadores);
+            this.Controls.Add(this.btnAgregarJugador);
+            this.Name = "FrmPpal";
+            this.Text = "Analisis de Agentes de Valorant";
+            this.Load += new System.EventHandler(this.FrmPpal_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownEdad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownCantidadJugadores)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnAgregarJugador;
+        private System.Windows.Forms.RichTextBox rtbJugadores;
+        private System.Windows.Forms.Label lblAgente;
+        private System.Windows.Forms.Label lblRango;
+        private System.Windows.Forms.Label lblLocalidad;
+        private System.Windows.Forms.Label lblEdad;
+        private System.Windows.Forms.ComboBox cmbAgente;
+        private System.Windows.Forms.ComboBox cmbRango;
+        private System.Windows.Forms.ComboBox cmbLocalidad;
+        private System.Windows.Forms.NumericUpDown numUpDownEdad;
+        private System.Windows.Forms.Label lblCantidadRandon;
+        private System.Windows.Forms.NumericUpDown numUpDownCantidadJugadores;
+        private System.Windows.Forms.Button btnAgregarJugadoresRandom;
+        private System.Windows.Forms.Label lblCantidadJugadores;
+        private System.Windows.Forms.Label lblCount;
+        private System.Windows.Forms.RichTextBox rtbAgentes;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox rtbAnalisis;
     }
 }
 

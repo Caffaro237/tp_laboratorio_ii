@@ -12,6 +12,10 @@ namespace Test
         {
             List<Agente> agentes = new List<Agente>();
 
+            //Simplificacion con un metodo estatico en la clase agente que me devuelve la lista con los agentes
+            //Puedo reutilizar codigo de esa manera
+
+            /*
             Agente due1 = new Duelistas("Phoenix");
             Agente due2 = new Duelistas("Jett", true, false);
 
@@ -22,6 +26,9 @@ namespace Test
             agentes.Add(due2);
             agentes.Add(con1);
             agentes.Add(con2);
+            */
+
+            agentes = Agente.CrearListaAgentes();
 
             Console.WriteLine($"Lista de Agentes, cantidad {agentes.Count}\n");
             foreach (Agente item in agentes)
@@ -45,29 +52,12 @@ namespace Test
                     {
                         Jugador j = new Jugador(FuncionesRandom.HacerRandom(15, 31),
                                                 FuncionesRandom.SwitchLocalidad(FuncionesRandom.HacerRandom(1, 4)),
-                                                FuncionesRandom.SwitchRango(FuncionesRandom.HacerRandom(1, 4)), 
+                                                FuncionesRandom.SwitchRango(FuncionesRandom.HacerRandom(1, 4)),
                                                 item);
                         jugadores.Add(j);
                     }
                 }
             }
-
-            /*
-            Jugador j1 = new Jugador(30, Localidades.EUROPA.ToString(), Rangos.Diamante.ToString(), due2);
-            Jugador j2 = new Jugador(16, Localidades.LATAM.ToString(), Rangos.Diamante.ToString(), due2);
-            Jugador j3 = new Jugador(15, Localidades.USA.ToString(), Rangos.Diamante.ToString(), due2);
-            Jugador j4 = new Jugador(20, Localidades.USA.ToString(), Rangos.Diamante.ToString(), due1);
-            Jugador j5 = new Jugador(20, Localidades.USA.ToString(), Rangos.Diamante.ToString(), due1);
-            Jugador j6 = new Jugador(20, Localidades.USA.ToString(), Rangos.Diamante.ToString(), due1);
-
-            jugadores.Add(j1);
-            jugadores.Add(j2);
-            jugadores.Add(j3);
-            jugadores.Add(j4);
-            jugadores.Add(j5);
-            jugadores.Add(j6);
-            
-             */
 
             Console.WriteLine($"Lista de Jugadores, cantidad {jugadores.Count}\n");
             foreach (Jugador item in jugadores)
@@ -140,7 +130,8 @@ namespace Test
             Console.ReadKey();
             Console.Clear();
 
-
+            //Creacion de un agente y un jugador para probar la serializacion y deserializacion
+            Agente con1 = new Controladores("Brimstone", false, true);
             Jugador j1 = new Jugador(30, Localidades.EUROPA.ToString(), Rangos.Diamante.ToString(), con1);
 
             Serializador<Jugador> serializadorXML = new Serializador<Jugador>(IArchivo<Jugador>.ETipoArchivo.XML);

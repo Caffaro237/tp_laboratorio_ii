@@ -191,5 +191,23 @@ namespace Entidades
 
             return cantidad / cantidadTotal;
         }
+
+        public static List<Agente> CrearListaAgentes()
+        {
+            List<Agente> agentes = new List<Agente>();
+
+            Agente due1 = new Duelistas("Phoenix");
+            Agente due2 = new Duelistas("Jett", true, false);
+
+            Agente con1 = new Controladores("Brimstone", false, true);
+            Agente con2 = new Controladores("Omen");
+
+            agentes.Add(due1);
+            agentes.Add(due2);
+            agentes.Add(con1);
+            agentes.Add(con2);
+
+            return agentes;
+        }
     }
 }

@@ -42,7 +42,7 @@ namespace Entidades
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine(base.MostrarAgente());
-            sb.AppendFormat("{0} lanza humo", this.lanzaHumo ? "Si" : "No");
+            sb.AppendFormat("{0} lanza humo\n", this.lanzaHumo ? "Si" : "No");
 
             return sb.ToString();
         }
