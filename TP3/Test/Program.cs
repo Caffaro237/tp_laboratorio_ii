@@ -30,12 +30,12 @@ namespace Test
             }
 
             Console.WriteLine("\nApriete una tecla para continuar...");
-            //Console.ReadKey();
+            Console.ReadKey();
             Console.Clear();
 
             List<Jugador> jugadores = new List<Jugador>();
 
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < 10; i++)
             {
                 string nombreRandom = FuncionesRandom.SwitchAgente(FuncionesRandom.HacerRandom(1, 5));
 
@@ -137,7 +137,7 @@ namespace Test
             Console.WriteLine(at.Leer("Lista de Jugadores.txt"));
 
             Console.WriteLine("\nApriete una tecla para continuar...");
-            //Console.ReadKey();
+            Console.ReadKey();
             Console.Clear();
 
 

@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Jugador xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Edad>18</Edad>
-  <Localidad>USA</Localidad>
-  <Rango>Plata</Rango>
+  <Edad>23</Edad>
+  <Localidad>LATAM</Localidad>
+  <Rango>Diamante</Rango>
   <AgenteElegido xsi:type="Duelistas">
     <Nombre>Phoenix</Nombre>
     <EsRadiante>true</EsRadiante>
-    <CE>9</CE>
-    <CEU>2</CEU>
-    <CEL>5</CEL>
-    <CEE>2</CEE>
-    <CP>4</CP>
-    <CO>3</CO>
-    <CD>2</CD>
-    <SumaEdades>178</SumaEdades>
+    <CE>3</CE>
+    <CEU>1</CEU>
+    <CEL>2</CEL>
+    <CEE>0</CEE>
+    <CP>0</CP>
+    <CO>2</CO>
+    <CD>1</CD>
+    <SumaEdades>67</SumaEdades>
     <LanzaFuego>true</LanzaFuego>
   </AgenteElegido>
 </Jugador>
