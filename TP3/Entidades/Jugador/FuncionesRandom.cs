@@ -8,7 +8,6 @@ namespace Entidades
 {
     public static class FuncionesRandom
     {
-
         public static int HacerRandom(int num1, int num2)
         {
             Random r = new Random();

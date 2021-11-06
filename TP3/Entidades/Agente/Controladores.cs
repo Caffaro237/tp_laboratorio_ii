@@ -9,7 +9,13 @@ namespace Entidades
 {
     public class Controladores : Agente
     {
+        #region Atributo
+
         private bool lanzaHumo;
+
+        #endregion
+
+        #region Constructores
 
         public Controladores()
         {
@@ -25,6 +31,10 @@ namespace Entidades
             this.lanzaHumo = lanzaHumos;
         }
 
+        #endregion
+
+        #region Metodo
+
         public override string MostrarAgente()
         {
             StringBuilder sb = new StringBuilder();
@@ -34,5 +44,7 @@ namespace Entidades
 
             return sb.ToString();
         }
+
+        #endregion
     }
 }

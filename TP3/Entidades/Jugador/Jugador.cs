@@ -12,10 +12,16 @@ namespace Entidades
 {
     public class Jugador
     {
+        #region Atributos
+
         private int edad;
         private string localidad;
         private string rango;
         private Agente agenteElegido;
+
+        #endregion
+
+        #region Constructores
 
         public Jugador()
         {
@@ -29,6 +35,10 @@ namespace Entidades
             this.rango = rango;
             this.agenteElegido = agenteElegido;
         }
+
+        #endregion
+
+        #region Propiedades
 
         public int Edad
         {
@@ -77,6 +87,10 @@ namespace Entidades
                 this.agenteElegido = value;
             }
         }
+
+        #endregion
+
+        #region Metodos
 
         public virtual string MostrarJugador()
         {
@@ -131,6 +145,7 @@ namespace Entidades
             return jugadores;
         }
 
-    }
+        #endregion
 
+    }
 }

@@ -12,12 +12,22 @@ namespace Entidades
 {
     public class Serializador<T> : IArchivo<T> where T : class
     {
+        #region Atributo 
+
         private IArchivo<T>.ETipoArchivo tipo;
+
+        #endregion
+
+        #region Constructor
 
         public Serializador(IArchivo<T>.ETipoArchivo tipo)
         {
             this.tipo = tipo;
         }
+
+        #endregion
+
+        #region Metodos
 
         public void Guardar(string path, T dato)
         {
@@ -99,5 +109,8 @@ namespace Entidades
                 throw;
             }
         }
+
+        #endregion
+
     }
 }

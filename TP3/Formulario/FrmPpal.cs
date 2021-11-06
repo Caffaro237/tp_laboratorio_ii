@@ -14,11 +14,17 @@ namespace Formulario
 {
     public partial class FrmPpal : Form
     {
+        #region Atributos 
+
         private Serializador<Jugador> serializadorXML;
         private List<Agente> agentes;
         private List<Jugador> jugadores;
         private List<Jugador> jugadoresLeidosXML;
         private string pathArchivosForm;
+
+        #endregion
+
+        #region Propiedades
 
         public List<Agente> Agentes
         {
@@ -36,6 +42,10 @@ namespace Formulario
             }
         }
 
+        #endregion
+
+        #region Constructor
+
         public FrmPpal()
         {
             InitializeComponent();
@@ -46,8 +56,11 @@ namespace Formulario
             this.pathArchivosForm = @"..\..\..\..\JugadoresForm";
 
             this.agentes = Agente.CrearListaAgentes();
-
         }
+
+        #endregion
+
+        #region Eventos
 
         private void FrmPpal_Load(object sender, EventArgs e)
         {
@@ -103,6 +116,85 @@ namespace Formulario
 
             this.RefrescarLista();
         }
+
+        private void btnGuardarArchivo_Click(object sender, EventArgs e)
+        {
+            if (!Directory.Exists(pathArchivosForm))
+            {
+                Directory.CreateDirectory(pathArchivosForm);
+            }
+            else
+            {
+                Directory.Delete(pathArchivosForm, true);
+                Directory.CreateDirectory(pathArchivosForm);
+            }
+
+            try
+            {
+                int i = 1;
+                foreach (Jugador item in jugadores)
+                {
+                    string archivo = $"{pathArchivosForm}\\Jugador{i}.xml";
+
+                    serializadorXML.Guardar(archivo, item);
+                    i++;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnMostrarArchivo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!Directory.Exists(pathArchivosForm))
+                {
+                    throw new ArchivosExcepcion("La ruta de la carpeta no se encontro o no existe");
+                }
+                FrmMostrarArchivosGuardados frmSecundario = new FrmMostrarArchivosGuardados(Jugador.LeerArchivos(pathArchivosForm, serializadorXML));
+
+                frmSecundario.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void btnCargarArchivos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string path = @"..\..\..\CargarJugadores";
+
+                if (!Directory.Exists(path))
+                {
+                    throw new ArchivosExcepcion("No se encontro la ruta del archivo");
+                }
+
+                this.jugadoresLeidosXML = Jugador.LeerArchivos(path, serializadorXML);
+
+                foreach (Jugador item in this.jugadoresLeidosXML)
+                {
+                    this.CargarJugadoresLista(item);
+                }
+
+                this.RefrescarLista();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        #endregion
+
+        #region Metodos
 
         public void RefrescarLista()
         {
@@ -188,79 +280,7 @@ namespace Formulario
             return this.jugadores;
         }
 
-        private void btnGuardarArchivo_Click(object sender, EventArgs e)
-        {
-            if (!Directory.Exists(pathArchivosForm))
-            {
-                Directory.CreateDirectory(pathArchivosForm);
-            }
-            else
-            {
-                Directory.Delete(pathArchivosForm, true);
-                Directory.CreateDirectory(pathArchivosForm);
-            }
+        #endregion
 
-            try
-            {
-                int i = 1;
-                foreach (Jugador item in jugadores)
-                {
-                    string archivo = $"{pathArchivosForm}\\Jugador{i}.xml";
-
-                    serializadorXML.Guardar(archivo, item);
-                    i++;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void btnMostrarArchivo_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!Directory.Exists(pathArchivosForm))
-                {
-                    throw new ArchivosExcepcion("La ruta de la carpeta no se encontro o no existe");
-                }
-                FrmMostrarArchivosGuardados frmSecundario = new FrmMostrarArchivosGuardados(Jugador.LeerArchivos(pathArchivosForm, serializadorXML));
-
-                frmSecundario.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void btnCargarArchivos_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string path = @"..\..\..\CargarJugadores";
-                
-                if (!Directory.Exists(path))
-                {
-                    throw new ArchivosExcepcion("No se encontro la ruta del archivo");
-                }
-
-                this.jugadoresLeidosXML = Jugador.LeerArchivos(path, serializadorXML);
-
-                foreach (Jugador item in this.jugadoresLeidosXML)
-                {
-                    this.CargarJugadoresLista(item);
-                }
-
-                this.RefrescarLista();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-        }
     }
 }

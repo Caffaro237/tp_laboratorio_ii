@@ -10,6 +10,8 @@ namespace Entidades
     [XmlInclude(typeof(Controladores))]
     public abstract class Agente
     {
+        #region Atributos 
+
         private string nombre;
         private bool esRadiante;
         private int cantidadElegido;
@@ -20,6 +22,10 @@ namespace Entidades
         private int cantidadOro;
         private int cantidadDiamante;
         private int sumaEdades;
+
+        #endregion
+
+        #region Constructores
 
         public Agente()
         {
@@ -35,6 +41,10 @@ namespace Entidades
             this.nombre = nombre;
             this.esRadiante = esRadiante;
         }
+
+        #endregion
+
+        #region Propiedades
 
         public string Nombre
         {
@@ -164,6 +174,10 @@ namespace Entidades
             }
         }
 
+        #endregion
+
+        #region Metodos
+
         public virtual string MostrarAgente()
         {
             StringBuilder sb = new StringBuilder();
@@ -217,5 +231,7 @@ namespace Entidades
 
             return agentes;
         }
+
+        #endregion
     }
 }

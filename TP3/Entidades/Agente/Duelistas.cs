@@ -9,7 +9,13 @@ namespace Entidades
 {
     public class Duelistas : Agente
     {
+        #region Atributo
+
         private bool lanzaFuego;
+
+        #endregion
+
+        #region Constructores 
 
         public Duelistas()
         {
@@ -25,6 +31,10 @@ namespace Entidades
             this.lanzaFuego = lanzaFuego;
         }
 
+        #endregion
+
+        #region Metodo
+
         public override string MostrarAgente()
         {
             StringBuilder sb = new StringBuilder();
@@ -34,5 +44,7 @@ namespace Entidades
 
             return sb.ToString();
         }
+
+        #endregion
     }
 }
