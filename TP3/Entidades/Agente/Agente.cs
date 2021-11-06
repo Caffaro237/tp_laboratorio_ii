@@ -6,6 +6,7 @@ using System.Xml.Serialization;
 
 namespace Entidades
 {
+    //Include utilizado para poder serializar las clases derivadas
     [XmlInclude(typeof(Duelistas))]
     [XmlInclude(typeof(Controladores))]
     public abstract class Agente
@@ -27,15 +28,27 @@ namespace Entidades
 
         #region Constructores
 
+        /// <summary>
+        /// Constructor sin parametros necesitado por la serializacion
+        /// </summary>
         public Agente()
         {
         }
 
-        
+        /// <summary>
+        /// Constructor que recibe nombre y llama al contructor que recibe nombre y si es radiante
+        /// Por defecto no es radiante
+        /// </summary>
+        /// <param name="nombre"></param>
         public Agente(string nombre) : this(nombre, false)
         {
         }
 
+        /// <summary>
+        /// Cosntructor que recibe el nombre y si es radiante, seteando los datos
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="esRadiante"></param>
         public Agente(string nombre, bool esRadiante)
         {
             this.nombre = nombre;
@@ -46,6 +59,10 @@ namespace Entidades
 
         #region Propiedades
 
+        /// <summary>
+        /// Propiedad de lectura del nombre
+        /// La escritura fue agregada para la serializacion del Agente
+        /// </summary>
         public string Nombre
         {
             get
@@ -58,6 +75,10 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Propiedad de lectura de si es radiante o no
+        /// La escritura fue agregada para la serializacion del Agente
+        /// </summary>
         public bool EsRadiante
         {
             get
@@ -70,6 +91,10 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Propiedad de lectura y escritura de la cantidad de veces elegido el agente
+        /// Usando [XmlIgnore] para que no sea serializada
+        /// </summary>
         [XmlIgnore]
         public int CE
         {
@@ -83,6 +108,10 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Propiedad de lectura y escritura de la cantidad de veces elegido desde USA
+        /// Usando [XmlIgnore] para que no sea serializada
+        /// </summary>
         [XmlIgnore]
         public int CEU
         {
@@ -96,6 +125,10 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Propiedad de lectura y escritura de la cantidad de veces elegido desde LATAM
+        /// Usando [XmlIgnore] para que no sea serializada
+        /// </summary>
         [XmlIgnore]
         public int CEL
         {
@@ -109,6 +142,10 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Propiedad de lectura y escritura de la cantidad de veces elegido desde EUROPA
+        /// Usando [XmlIgnore] para que no sea serializada
+        /// </summary>
         [XmlIgnore]
         public int CEE
         {
@@ -122,6 +159,10 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Propiedad de lectura y escritura de la cantidad de veces elegido siendo rango PLATA
+        /// Usando [XmlIgnore] para que no sea serializada
+        /// </summary>
         [XmlIgnore]
         public int CP
         {
@@ -135,6 +176,10 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Propiedad de lectura y escritura de la cantidad de veces elegido siendo rango ORO
+        /// Usando [XmlIgnore] para que no sea serializada
+        /// </summary>
         [XmlIgnore]
         public int CO
         {
@@ -148,6 +193,10 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Propiedad de lectura y escritura de la cantidad de veces elegido siendo rango DIAMANTE
+        /// Usando [XmlIgnore] para que no sea serializada
+        /// </summary>
         [XmlIgnore]
         public int CD
         {
@@ -161,6 +210,11 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Propiedad de lectura y escritura de la suma de todas las edades
+        /// Usada despues para sacar un promedio
+        /// Usando [XmlIgnore] para que no sea serializada
+        /// </summary>
         [XmlIgnore]
         public int SumaEdades
         {
@@ -178,6 +232,11 @@ namespace Entidades
 
         #region Metodos
 
+        /// <summary>
+        /// Metodo que muestra el agente
+        /// Permitiendo sobreescribir y agregar datos
+        /// </summary>
+        /// <returns> Retorna un string con los datos del agente </returns>
         public virtual string MostrarAgente()
         {
             StringBuilder sb = new StringBuilder();
@@ -189,11 +248,23 @@ namespace Entidades
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Override del metodo ToString()
+        /// </summary>
+        /// <returns> Expone los datos del metodo MostrarAgente() </returns>
         public override string ToString()
         {
             return this.MostrarAgente();
         }
 
+        /// <summary>
+        /// Este metodo recibe una cantidad X de jugadores
+        /// Y la cantidad total de jugadores
+        /// Asi realiza el porcentaje de los mismos
+        /// </summary>
+        /// <param name="cantidad"></param>
+        /// <param name="cantidadTotal"></param>
+        /// <returns> Retornara el porcentaje de la cantidad X de jugadores </returns>
         public int SacarPorcentaje(int cantidad, int cantidadTotal)
         {
             if(cantidadTotal == 0)
@@ -204,6 +275,15 @@ namespace Entidades
             return (cantidad * 100) / cantidadTotal;
         }
 
+        /// <summary>
+        /// Este metodo sacara el promedio de las edades de los jugadores
+        /// Recibe una cantidad X de jugadores
+        /// Y la cantidad total de jugadores
+        /// Asi realizara el promedio de los mismos
+        /// </summary>
+        /// <param name="cantidad"></param>
+        /// <param name="cantidadTotal"></param>
+        /// <returns> Retornara el promedio de las edades </returns>
         public int SacarPromedio(int cantidad, int cantidadTotal)
         {
             if(cantidadTotal == 0)
@@ -214,6 +294,10 @@ namespace Entidades
             return cantidad / cantidadTotal;
         }
 
+        /// <summary>
+        /// Metodo que agrega los Agentes a una lista
+        /// </summary>
+        /// <returns> Retorna la lista de agentes </returns>
         public static List<Agente> CrearListaAgentes()
         {
             List<Agente> agentes = new List<Agente>();

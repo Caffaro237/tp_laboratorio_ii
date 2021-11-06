@@ -8,6 +8,10 @@ namespace Entidades
 {
     class ExtensionInvalidaExcepcion : Exception
     {
+        /// <summary>
+        /// Recibe un mensaje como parametro y llama a la base
+        /// </summary>
+        /// <param name="message"></param>
         public ExtensionInvalidaExcepcion(string message)
             : base(message)
         {

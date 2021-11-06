@@ -14,7 +14,6 @@ namespace Entidades
         /// </summary>
         /// <param name="path"></param>
         /// <param name="datos"></param>
-        /// <returns> Retorna true si se pudo guardar o false si no se pudo </returns>
         public void Guardar(string path, string datos)
         {
             Encoding codificacion = Encoding.UTF8;
@@ -33,11 +32,11 @@ namespace Entidades
         }
 
         /// <summary>
-        /// Lee un archivo de texto en una ruta determinada y lo devuelve como un string
+        /// Implementacion de la interfaz para leer un archivo de texto
+        /// Lee un archivo de texto en una ruta determinada y lo retorna como un string
         /// </summary>
         /// <param name="path"></param>
-        /// <param name="datos"></param>
-        /// <returns> Retorna true si se pudo guardar o false si no se pudo </returns>
+        /// <returns> Retornara un string con los datos obtenidos </returns>
         public string Leer(string path)
         {
             Encoding codificacion = Encoding.UTF8;

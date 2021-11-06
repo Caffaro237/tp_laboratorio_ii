@@ -26,6 +26,9 @@ namespace Formulario
 
         #region Propiedades
 
+        /// <summary>
+        /// Propiedad de solo lectura de la lista de agentes
+        /// </summary>
         public List<Agente> Agentes
         {
             get
@@ -34,6 +37,9 @@ namespace Formulario
             }
         }
 
+        /// <summary>
+        /// Propiedad de solo lectura de la lista de jugadores
+        /// </summary>
         public List<Jugador> Jugadores
         {
             get
@@ -46,6 +52,10 @@ namespace Formulario
 
         #region Constructor
 
+        /// <summary>
+        /// Constructor sin parametros que seteara las listas
+        /// y la ruta para guardar los archivos
+        /// </summary>
         public FrmPpal()
         {
             InitializeComponent();
@@ -62,6 +72,13 @@ namespace Formulario
 
         #region Eventos
 
+        /// <summary>
+        /// Evento load del formulario que seteara los datos de los ComboBox
+        /// Mostrara los datos de loa agentes en un rich text box
+        /// Tambien mostrara el analisis
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmPpal_Load(object sender, EventArgs e)
         {
             cmbLocalidad.DataSource = Enum.GetValues(typeof(Localidades));
@@ -78,6 +95,14 @@ namespace Formulario
             this.MostrarAnalisis();
         }
 
+        /// <summary>
+        /// Evento del boton Agregar Jugador
+        /// Este tomara los datos de los ComboBox y numericUpDown
+        /// Llamara al metodo que agregara un jugador a la lista
+        /// Al finalizar llamara al metodo que refrescara la lista de jugadores
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregarJugador_Click(object sender, EventArgs e)
         {
             foreach (Agente item in this.Agentes)
@@ -95,6 +120,16 @@ namespace Formulario
             this.RefrescarLista();
         }
 
+        /// <summary>
+        /// Evento del boton Agregar Jugadores Random
+        /// Este tomara el numero que se le pase por el numericUpDown para saber cuantos jugadores agregar
+        /// Este llamara a las Funciones Random obtendiendo los datos
+        /// Luego llama al metodo que agregara un jugador a la lista
+        /// 
+        /// Al finalizar llamara al metodo que refrescara la lista de jugadores
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregarJugadoresRandom_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < (int)this.numUpDownCantidadJugadores.Value; i++)
@@ -117,6 +152,12 @@ namespace Formulario
             this.RefrescarLista();
         }
 
+        /// <summary>
+        /// Evento del boton Guardar Archivo
+        /// Verificara si existe el directorio, si no existe lo crea y si existe lo borara y creara uno nuevo por si tiene datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGuardarArchivo_Click(object sender, EventArgs e)
         {
             if (!Directory.Exists(pathArchivosForm))
@@ -146,6 +187,14 @@ namespace Formulario
             }
         }
 
+        /// <summary>
+        /// Evento del boton Mostrar Archivo
+        /// Este creara una nueva instancia el cual creara otro formulario
+        /// este mostrara los archivos guardados previamente, 
+        /// si no se guardo nada se mostrara un mensaje que no hay archivos en la ruta
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnMostrarArchivo_Click(object sender, EventArgs e)
         {
             try
@@ -165,6 +214,14 @@ namespace Formulario
 
         }
 
+        /// <summary>
+        /// Evento del boton Cargar desde Archivo
+        /// 
+        /// Este leera una ruta especifica la cual contiene jugadores guardados en archivos XML
+        /// Este metodo leera los archivos y los agregara a la lista de jugadores
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCargarArchivos_Click(object sender, EventArgs e)
         {
             try
@@ -196,6 +253,14 @@ namespace Formulario
 
         #region Metodos
 
+        /// <summary>
+        /// Metodo que refrescara la lista de jugadores
+        /// 
+        /// Por ahora no es recomendable porque si hay 3000 jugadores
+        /// el formulario no responde hasta que termine el proceso
+        /// 
+        /// Solucionable con hilos
+        /// </summary>
         public void RefrescarLista()
         {
             this.rtbJugadores.Clear();
@@ -209,6 +274,10 @@ namespace Formulario
             this.MostrarAnalisis();
         }
 
+        /// <summary>
+        /// Este metodo recorera la lista de agentes y obtendra los datos de cada uno
+        /// Llamara a SacarPorcentaje y SacarPromedio
+        /// </summary>
         public void MostrarAnalisis()
         {
             StringBuilder sb = new StringBuilder();
@@ -225,6 +294,12 @@ namespace Formulario
             this.rtbAnalisis.Text = sb.ToString();
         }
 
+        /// <summary>
+        /// Este metodo recibe un jugador como parametro
+        /// Y segun que agente eligio de que localidad y que rango es
+        /// se sumara en su respectivo lugar uno mas
+        /// </summary>
+        /// <param name="j"></param>
         public void CargarDatosAnalisis(Jugador j)
         {
             /*
@@ -271,6 +346,15 @@ namespace Formulario
             }
         }
 
+        /// <summary>
+        /// Este metodo sirve para reutilizar codigo, 
+        /// agregar los jugadores y cargar los datos para analizar 
+        /// 
+        /// Sino se tiene que estar poniendo cada ves que se agregue un jugador
+        /// de esta forma se llamara a este metodo y hace las dos cosas en una sola vez
+        /// </summary>
+        /// <param name="jugador"></param>
+        /// <returns></returns>
         public List<Jugador> CargarJugadoresLista(Jugador jugador)
         {
             this.jugadores.Add(jugador);

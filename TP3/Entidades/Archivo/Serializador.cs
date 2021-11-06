@@ -20,6 +20,11 @@ namespace Entidades
 
         #region Constructor
 
+        /// <summary>
+        /// Constructor que recibe el tipo de archivo que se va a leer
+        /// Siendo XML o JSON
+        /// </summary>
+        /// <param name="tipo"></param>
         public Serializador(IArchivo<T>.ETipoArchivo tipo)
         {
             this.tipo = tipo;
@@ -29,6 +34,13 @@ namespace Entidades
 
         #region Metodos
 
+        /// <summary>
+        /// Implementacion de la interfaz para guardar un archivo XML o JSON
+        /// Recibira una ruta y un dato
+        /// Vrificando si la extension del archivo es la correcta serializa o no el dato
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="dato"></param>
         public void Guardar(string path, T dato)
         {
             try
@@ -71,6 +83,13 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Implementacion de la interfaz para leer un archivo XML o JSON
+        /// Se le pasa por parametro la ruta del archivo
+        /// Vrificando si la extension del archivo es la correcta deserializa o no el archivo
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns> Retornara los datos obtenidos por la deserializacion </returns>
         public T Leer(string path)
         {
             try

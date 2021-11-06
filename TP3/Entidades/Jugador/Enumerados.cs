@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    /// <summary>
+    /// Enumerado de las Localidades posibles
+    /// </summary>
     public enum Localidades
     {
         USA = 1,
@@ -13,6 +16,9 @@ namespace Entidades
         LATAM
     }
 
+    /// <summary>
+    ///  Enumerado de los Rangos posibles
+    /// </summary>
     public enum Rangos
     {
         Plata = 1,
