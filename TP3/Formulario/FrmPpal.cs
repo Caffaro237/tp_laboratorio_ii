@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,8 +14,11 @@ namespace Formulario
 {
     public partial class FrmPpal : Form
     {
+        private Serializador<Jugador> serializadorXML;
         private List<Agente> agentes;
         private List<Jugador> jugadores;
+        private List<Jugador> jugadoresLeidosXML;
+        private string pathArchivosForm;
 
         public List<Agente> Agentes
         {
@@ -37,6 +41,9 @@ namespace Formulario
             InitializeComponent();
             this.agentes = new List<Agente>();
             this.jugadores = new List<Jugador>();
+            this.jugadoresLeidosXML = new List<Jugador>();
+            this.serializadorXML = new Serializador<Jugador>(IArchivo<Jugador>.ETipoArchivo.XML); 
+            this.pathArchivosForm = @"..\..\..\..\JugadoresForm";
 
             this.agentes = Agente.CrearListaAgentes();
 
@@ -54,6 +61,8 @@ namespace Formulario
             }
 
             this.cmbAgente.SelectedIndex = 0;
+
+            this.MostrarAnalisis();
         }
 
         private void btnAgregarJugador_Click(object sender, EventArgs e)
@@ -63,7 +72,9 @@ namespace Formulario
                 if (this.cmbAgente.SelectedItem.ToString() == item.Nombre)
                 {
                     Jugador jugador = new Jugador((int)this.numUpDownEdad.Value, this.cmbLocalidad.SelectedItem.ToString(), this.cmbRango.SelectedItem.ToString(), item);
-                    this.jugadores.Add(jugador);
+
+                    this.CargarJugadoresLista(jugador);
+
                     break;
                 }
             }
@@ -77,7 +88,7 @@ namespace Formulario
             {
                 string nombreRandom = FuncionesRandom.SwitchAgente(FuncionesRandom.HacerRandom(1, 5));
 
-                foreach (var item in agentes)
+                foreach (Agente item in agentes)
                 {
                     if (item.Nombre == nombreRandom)
                     {
@@ -85,7 +96,7 @@ namespace Formulario
                                                 FuncionesRandom.SwitchLocalidad(FuncionesRandom.HacerRandom(1, 4)),
                                                 FuncionesRandom.SwitchRango(FuncionesRandom.HacerRandom(1, 4)),
                                                 item);
-                        jugadores.Add(j);
+                        this.CargarJugadoresLista(j);
                     }
                 }
             }
@@ -101,9 +112,9 @@ namespace Formulario
             foreach (Jugador item in jugadores)
             {
                 this.rtbJugadores.Text += item.ToString();
-                this.CargarDatosAnalisis(item);
-                this.MostrarAnalisis();
             }
+
+            this.MostrarAnalisis();
         }
 
         public void MostrarAnalisis()
@@ -124,17 +135,6 @@ namespace Formulario
 
         public void CargarDatosAnalisis(Jugador j)
         {
-            /*
-            j.AgenteElegido.CE = 0;
-            j.AgenteElegido.SumaEdades = 0;
-            j.AgenteElegido.CEU = 0;
-            j.AgenteElegido.CEE = 0;
-            j.AgenteElegido.CEL = 0;
-            j.AgenteElegido.CP = 0;
-            j.AgenteElegido.CO = 0;
-            j.AgenteElegido.CD = 0;
-            */
-
             j.AgenteElegido.CE++;
             j.AgenteElegido.SumaEdades += j.Edad;
 
@@ -163,6 +163,71 @@ namespace Formulario
             {
                 j.AgenteElegido.CD++;
             }
+        }
+
+        public List<Jugador> CargarJugadoresLista(Jugador jugador)
+        {
+            this.jugadores.Add(jugador);
+
+            this.CargarDatosAnalisis(jugador);
+
+            return this.jugadores;
+        }
+
+        private void btnGuardarArchivo_Click(object sender, EventArgs e)
+        {
+            if (!Directory.Exists(pathArchivosForm))
+            {
+                Directory.CreateDirectory(pathArchivosForm);
+            }
+            else
+            {
+                Directory.Delete(pathArchivosForm, true);
+                Directory.CreateDirectory(pathArchivosForm);
+            }
+
+            try
+            {
+                int i = 1;
+                foreach (Jugador item in jugadores)
+                {
+                    serializadorXML.Guardar($"{pathArchivosForm}\\Jugador{i}.xml", item);
+                    i++;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void btnMostrarArchivo_Click(object sender, EventArgs e)
+        {
+            FrmMostrarArchivosGuardados frmSecundario = new FrmMostrarArchivosGuardados(Jugador.LeerArchivos(pathArchivosForm, serializadorXML));
+
+            frmSecundario.ShowDialog();
+        }
+
+        private void btnCargarArchivos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string path = @"..\..\..\CargarJugadores";
+
+                this.jugadoresLeidosXML = Jugador.LeerArchivos(path, serializadorXML);
+
+                foreach (Jugador item in this.jugadoresLeidosXML)
+                {
+                    this.CargarJugadoresLista(item);
+                }
+
+                this.RefrescarLista();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            
         }
     }
 }

@@ -1,19 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Jugador xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Edad>20</Edad>
-  <Localidad>EUROPA</Localidad>
-  <Rango>Plata</Rango>
+  <Edad>18</Edad>
+  <Localidad>USA</Localidad>
+  <Rango>Diamante</Rango>
   <AgenteElegido xsi:type="Controladores">
     <Nombre>Omen</Nombre>
     <EsRadiante>true</EsRadiante>
-    <CE>5</CE>
-    <CEU>1</CEU>
-    <CEL>2</CEL>
-    <CEE>2</CEE>
-    <CP>2</CP>
-    <CO>0</CO>
-    <CD>3</CD>
-    <SumaEdades>101</SumaEdades>
-    <LanzaHumo>true</LanzaHumo>
   </AgenteElegido>
 </Jugador>

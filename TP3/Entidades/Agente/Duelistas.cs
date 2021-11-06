@@ -11,18 +11,6 @@ namespace Entidades
     {
         private bool lanzaFuego;
 
-        public bool LanzaFuego
-        {
-            get 
-            { 
-                return this.lanzaFuego; 
-            }
-            set 
-            {
-                this.lanzaFuego = value; 
-            }
-        }
-
         public Duelistas()
         {
         }

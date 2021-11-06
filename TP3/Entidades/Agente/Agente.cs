@@ -60,6 +60,7 @@ namespace Entidades
             }
         }
 
+        [XmlIgnore]
         public int CE
         {
             get
@@ -72,6 +73,7 @@ namespace Entidades
             }
         }
 
+        [XmlIgnore]
         public int CEU
         {
             get
@@ -84,6 +86,7 @@ namespace Entidades
             }
         }
 
+        [XmlIgnore]
         public int CEL
         {
             get
@@ -96,6 +99,7 @@ namespace Entidades
             }
         }
 
+        [XmlIgnore]
         public int CEE
         {
             get
@@ -108,6 +112,7 @@ namespace Entidades
             }
         }
 
+        [XmlIgnore]
         public int CP
         {
             get
@@ -120,6 +125,7 @@ namespace Entidades
             }
         }
 
+        [XmlIgnore]
         public int CO
         {
             get
@@ -132,6 +138,7 @@ namespace Entidades
             }
         }
 
+        [XmlIgnore]
         public int CD
         {
             get
@@ -144,6 +151,7 @@ namespace Entidades
             }
         }
 
+        [XmlIgnore]
         public int SumaEdades
         {
             get

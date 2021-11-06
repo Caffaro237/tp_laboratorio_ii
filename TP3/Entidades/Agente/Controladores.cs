@@ -11,18 +11,6 @@ namespace Entidades
     {
         private bool lanzaHumo;
 
-        public bool LanzaHumo
-        {
-            get
-            {
-                return this.lanzaHumo;
-            }
-            set
-            {
-                this.lanzaHumo = value;
-            }
-        }
-
         public Controladores()
         {
         }
