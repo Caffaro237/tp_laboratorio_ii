@@ -28,6 +28,7 @@ namespace Test
             agentes.Add(con2);
             */
 
+            //Agregado de los agentes y muestro la lista
             agentes = Agente.CrearListaAgentes();
 
             Console.WriteLine($"Lista de Agentes, cantidad {agentes.Count}\n");
@@ -39,6 +40,8 @@ namespace Test
             Console.WriteLine("\nApriete una tecla para continuar...");
             Console.ReadKey();
             Console.Clear();
+
+            //Agregado de loa jugadores eligiendo valores random y muestro la lista
 
             List<Jugador> jugadores = new List<Jugador>();
 
@@ -69,6 +72,14 @@ namespace Test
             Console.ReadKey();
             Console.Clear();
 
+            /*
+             * Se hace la carga de los datos a analizar
+             * 
+             * Cantidad de veces elegido
+             * Sumatoria de todas las edades
+             * Cantidad de cada localidad elegida
+             * Cantidad de Cada rango que sea
+            */
             foreach (Jugador item in jugadores)
             {
                 item.AgenteElegido.CE++;
@@ -101,6 +112,9 @@ namespace Test
                 }
             }
 
+            //Muestro los agentes con sus respectivos datos
+            //Haciendo un porcentaje y un promedio de edades
+
             foreach (Agente item in agentes)
             {
                 Console.WriteLine($"El agente {item.Nombre} fue elegido {item.CE} veces");
@@ -114,6 +128,8 @@ namespace Test
             Console.ReadKey();
             Console.Clear();
 
+            //Instancia de creacion y lectura de archivos
+
             ArchivoTexto at = new ArchivoTexto();
             StringBuilder sb = new StringBuilder();
 
@@ -122,8 +138,10 @@ namespace Test
                 sb.AppendLine(item.CargarDatos());
             }
 
+            //Creo un archivo de texto con la lista completa de los jugadores al momento
             at.Guardar("Lista de Jugadores.txt", sb.ToString());
 
+            //Leo la lista creada y la muestro
             Console.WriteLine(at.Leer("Lista de Jugadores.txt"));
 
             Console.WriteLine("\nApriete una tecla para continuar...");
@@ -140,13 +158,17 @@ namespace Test
             try
             {
                 //Prueba de Serializacion y Deserializacion en XML con un Jugador
-                /*
+                
                 serializadorXML.Guardar("Jugador.xml", j1);
 
                 Jugador j2 = serializadorXML.Leer("Jugador.xml");
 
                 Console.WriteLine(j2.ToString());
-                */
+
+                Console.WriteLine("\nApriete una tecla para continuar...");
+                Console.ReadKey();
+                Console.Clear();
+
 
                 //Prueba de Serializacion y Deserializacion en XML con una lista de jugadores
 
@@ -185,11 +207,11 @@ namespace Test
                 //Jugador j2 = serializadorJSON.Leer("Jugador.json");
                 //Console.WriteLine(j2.ToString());
 
-                Console.WriteLine("Listo");
+                //Console.WriteLine("Listo");
             }
             catch(Exception ex)
             {
-                Console.WriteLine(ex.InnerException.Message);
+                Console.WriteLine(ex.Message);
             }
 
             Console.WriteLine("\nApriete una tecla para continuar...");

@@ -40,3 +40,4 @@ C:\Users\Facu\Desktop\tp_laboratorio_ii\TP3\Formulario\obj\Debug\net5.0-windows\
 C:\Users\Facu\Desktop\tp_laboratorio_ii\TP3\Formulario\obj\Debug\net5.0-windows\Formulario.pdb
 C:\Users\Facu\Desktop\tp_laboratorio_ii\TP3\Formulario\obj\Debug\net5.0-windows\Formulario.genruntimeconfig.cache
 C:\Users\Facu\Desktop\tp_laboratorio_ii\TP3\Formulario\obj\Debug\net5.0-windows\Formulario.FrmMostrarArchivosGuardados.resources
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Formulario\obj\Debug\net5.0-windows\Formulario.FrmMostrarArchivosGuardados.resources

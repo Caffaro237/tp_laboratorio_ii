@@ -135,8 +135,22 @@ namespace Formulario
 
         public void CargarDatosAnalisis(Jugador j)
         {
+            /*
+            j.AgenteElegido.CE = 0;
+            j.AgenteElegido.SumaEdades = 0;
+
+            j.AgenteElegido.CEU = 0;
+            j.AgenteElegido.CEE = 0;
+            j.AgenteElegido.CEL = 0;
+
+            j.AgenteElegido.CP = 0;
+            j.AgenteElegido.CO = 0;
+            j.AgenteElegido.CD = 0;
+            */
+
             j.AgenteElegido.CE++;
             j.AgenteElegido.SumaEdades += j.Edad;
+            
 
             if (j.Localidad == Localidades.USA.ToString())
             {
@@ -191,21 +205,35 @@ namespace Formulario
                 int i = 1;
                 foreach (Jugador item in jugadores)
                 {
-                    serializadorXML.Guardar($"{pathArchivosForm}\\Jugador{i}.xml", item);
+                    string archivo = $"{pathArchivosForm}\\Jugador{i}.xml";
+
+                    serializadorXML.Guardar(archivo, item);
                     i++;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void btnMostrarArchivo_Click(object sender, EventArgs e)
         {
-            FrmMostrarArchivosGuardados frmSecundario = new FrmMostrarArchivosGuardados(Jugador.LeerArchivos(pathArchivosForm, serializadorXML));
+            try
+            {
+                if (!Directory.Exists(pathArchivosForm))
+                {
+                    throw new ArchivosExcepcion("La ruta de la carpeta no se encontro o no existe");
+                }
+                FrmMostrarArchivosGuardados frmSecundario = new FrmMostrarArchivosGuardados(Jugador.LeerArchivos(pathArchivosForm, serializadorXML));
 
-            frmSecundario.ShowDialog();
+                frmSecundario.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void btnCargarArchivos_Click(object sender, EventArgs e)
@@ -213,6 +241,11 @@ namespace Formulario
             try
             {
                 string path = @"..\..\..\CargarJugadores";
+                
+                if (!Directory.Exists(path))
+                {
+                    throw new ArchivosExcepcion("No se encontro la ruta del archivo");
+                }
 
                 this.jugadoresLeidosXML = Jugador.LeerArchivos(path, serializadorXML);
 
@@ -223,11 +256,11 @@ namespace Formulario
 
                 this.RefrescarLista();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                MessageBox.Show(ex.Message);
             }
-            
+
         }
     }
 }

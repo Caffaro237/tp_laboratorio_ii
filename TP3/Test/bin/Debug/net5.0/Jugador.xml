@@ -6,14 +6,5 @@
   <AgenteElegido xsi:type="Controladores">
     <Nombre>Brimstone</Nombre>
     <EsRadiante>false</EsRadiante>
-    <CE>3</CE>
-    <CEU>1</CEU>
-    <CEL>1</CEL>
-    <CEE>1</CEE>
-    <CP>0</CP>
-    <CO>1</CO>
-    <CD>2</CD>
-    <SumaEdades>60</SumaEdades>
-    <LanzaHumo>true</LanzaHumo>
   </AgenteElegido>
 </Jugador>
