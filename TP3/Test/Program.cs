@@ -80,7 +80,7 @@ namespace Test
              * Cantidad de cada localidad elegida
              * Cantidad de Cada rango que sea
             */
-            foreach (Jugador item in jugadores)
+            /*foreach (Jugador item in jugadores)
             {
                 item.AgenteElegido.CE++;
                 item.AgenteElegido.SumaEdades += item.Edad;
@@ -122,7 +122,7 @@ namespace Test
                 Console.WriteLine($"{item.SacarPorcentaje(item.CP, item.CE)}% son rango Plata, {item.SacarPorcentaje(item.CO, item.CE)}% son rango Oro y {item.SacarPorcentaje(item.CD, item.CE)}% son rango Diamante");
                 Console.WriteLine($"{item.SacarPromedio(item.SumaEdades, item.CE)} es el promedio de edad");
                 Console.WriteLine("---------------------------------------------------------------");
-            }
+            }*/
 
             Console.WriteLine("\nApriete una tecla para continuar...");
             Console.ReadKey();
