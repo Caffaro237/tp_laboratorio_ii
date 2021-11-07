@@ -15,14 +15,15 @@ namespace Entidades
 
         private string nombre;
         private bool esRadiante;
-        private int cantidadElegido;
+        
+        /*private int cantidadElegido;
         private int cantidadEnUSA;
         private int cantidadEnLATAM;
         private int cantidadEnEUROPA;
         private int cantidadPlata;
         private int cantidadOro;
         private int cantidadDiamante;
-        private int sumaEdades;
+        private int sumaEdades;*/
 
         #endregion
 
@@ -91,6 +92,7 @@ namespace Entidades
             }
         }
 
+        /*
         /// <summary>
         /// Propiedad de lectura y escritura de la cantidad de veces elegido el agente
         /// Usando [XmlIgnore] para que no sea serializada
@@ -226,7 +228,7 @@ namespace Entidades
             {
                 this.sumaEdades = value;
             }
-        }
+        }*/
 
         #endregion
 
@@ -317,5 +319,6 @@ namespace Entidades
         }
 
         #endregion
+
     }
 }
