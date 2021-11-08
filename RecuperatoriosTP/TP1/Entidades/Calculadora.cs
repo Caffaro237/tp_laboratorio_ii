@@ -2,16 +2,42 @@
 
 namespace Entidades
 {
-    public class Calculadora
+    public static class Calculadora
     {
-        public double Operar(Operando n1, Operando n2, char operador)
+        public static double Operar(Operando n1, Operando n2, char operador)
         {
-            return 0;
+            char operadorValidado = Calculadora.ValidarOperador(operador);
+
+            switch (operador)
+            {
+                case '+':
+                    return n1 + n2;
+
+                case '-':
+                    return n1 - n2;
+
+                case '/':
+                    return n1 / n2;
+
+                case '*':
+                    return n1 * n2;
+
+                default:
+                    return 0;
+            }
         }
 
-        public char ValidarOperador(char operador)
+        public static char ValidarOperador(char operador)
         {
-            return '+';
+            char validarOperador = '+';
+
+            if (operador == '*' || operador == '/' || operador == '-')
+            {
+
+                validarOperador = operador;
+            }
+
+            return validarOperador;
         }
     }
 }
