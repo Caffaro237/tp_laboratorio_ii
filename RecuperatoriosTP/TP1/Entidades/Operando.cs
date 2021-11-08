@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Operando
+    public class Operando
     {
         #region Atributos
 
@@ -47,7 +47,30 @@ namespace Entidades
 
         #region Metodos
 
+        public double ValidarOperando(string strNumero)
+        {
+            return 0;
+        }
 
+        public string BinarioDecimal(string binario)
+        {
+            return "";
+        }
+
+        public string DecimalBinario(double numero)
+        {
+            return "";
+        }
+
+        public string DecimalBinario(string strNumero)
+        {
+            return "";
+        }
+
+        private bool EsBinario(string binario)
+        {
+            return true;
+        }
 
         #endregion
 
