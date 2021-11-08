@@ -13,7 +13,18 @@ namespace Formulario
 {
     public partial class FrmMostrarArchivosGuardados : Form
     {
+        #region Atributo
+
         private List<Jugador> jugadores;
+
+        #endregion
+
+        #region Constructor 
+
+        /// <summary>
+        /// Constructor que recibe la lista de jugadores para setearla y luego mostrarla
+        /// </summary>
+        /// <param name="jugadores"></param>
         public FrmMostrarArchivosGuardados(List<Jugador> jugadores)
         {
             InitializeComponent();
@@ -23,12 +34,36 @@ namespace Formulario
             this.jugadores = jugadores;
         }
 
+        #endregion
+
+        #region Eventos
+
+        /// <summary>
+        /// Evento load del formulario que mostrara los archivos guardados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmMostrarArchivosGuardados_Load(object sender, EventArgs e)
         {
             foreach (Jugador item in this.jugadores)
             {
+                this.lblCount.Text = this.jugadores.Count.ToString();
                 this.rtcArchivosGuardados.Text += item.ToString();
             }
         }
+
+        /// <summary>
+        /// Evento del boton Cerrar
+        /// Cerrara el formulario para volver al anterior y seguir con el programa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        #endregion
+
     }
 }

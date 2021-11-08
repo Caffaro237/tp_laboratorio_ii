@@ -8,6 +8,8 @@ namespace Entidades
 {
     public interface IArchivo<T> where T : class
     {
+        #region Enumerado
+
         /// <summary>
         /// Enumerado del tipo de archivo
         /// </summary>
@@ -17,6 +19,10 @@ namespace Entidades
             JSON
         }
 
+        #endregion
+
+        #region Firma Guardar
+
         /// <summary>
         /// Firma de interfaz generica para guardar un archivo
         /// </summary>
@@ -24,6 +30,9 @@ namespace Entidades
         /// <param name="dato"></param>
         void Guardar(string path, T dato);
 
+        #endregion
+
+        #region Firma Leer
 
         /// <summary>
         /// Firma de interfaz generica para leer un archivo
@@ -31,5 +40,8 @@ namespace Entidades
         /// <param name="path"></param>
         /// <returns> Retornara un tipo generico </returns>
         T Leer(string path);
+
+        #endregion
+
     }
 }

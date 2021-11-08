@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Jugador xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Edad>25</Edad>
-  <Localidad>EUROPA</Localidad>
-  <Rango>Oro</Rango>
+  <Edad>24</Edad>
+  <Localidad>LATAM</Localidad>
+  <Rango>Diamante</Rango>
   <AgenteElegido xsi:type="Controladores">
     <Nombre>Omen</Nombre>
     <EsRadiante>true</EsRadiante>

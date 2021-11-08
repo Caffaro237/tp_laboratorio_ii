@@ -96,6 +96,24 @@ namespace Formulario
         }
 
         /// <summary>
+        /// Evento del cerrado del formulario
+        /// Preguntara que se quiere hacer si cerrar o no 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmPpal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Esta seguro?",
+               "Cerrando",
+               MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question,
+               MessageBoxDefaultButton.Button2) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        /// <summary>
         /// Evento del boton Agregar Jugador
         /// Este tomara los datos de los ComboBox y numericUpDown
         /// Llamara al metodo que agregara un jugador a la lista
@@ -250,6 +268,19 @@ namespace Formulario
             btnCargarArchivos.Enabled = false;
         }
 
+        /// <summary>
+        /// Evento del boton Cerrar
+        /// Este boton cerrara el programa sin previo aviso
+        /// Guardando los archivos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            btnGuardarArchivo_Click(sender, e);
+            this.Dispose();
+        }
+
         #endregion
 
         #region Metodos
@@ -285,17 +316,17 @@ namespace Formulario
 
             foreach (Agente item in agentes)
             {
-                int cantidadElegidos = ObtenerCantidadElegido(this.jugadores, item.Nombre);
+                int cantidadElegidos = Jugador.ObtenerCantidadElegido(this.jugadores, item.Nombre);
 
-                int cantidadElegidosUSA = ObtenerCantidadElegidoPorLocalidad(this.jugadores, item.Nombre, Localidades.USA.ToString());
-                int cantidadElegidosEUROPA = ObtenerCantidadElegidoPorLocalidad(this.jugadores, item.Nombre, Localidades.EUROPA.ToString());
-                int cantidadElegidosLATAM = ObtenerCantidadElegidoPorLocalidad(this.jugadores, item.Nombre, Localidades.LATAM.ToString());
+                int cantidadElegidosUSA = Jugador.ObtenerCantidadElegidoPorLocalidad(this.jugadores, item.Nombre, Localidades.USA.ToString());
+                int cantidadElegidosEUROPA = Jugador.ObtenerCantidadElegidoPorLocalidad(this.jugadores, item.Nombre, Localidades.EUROPA.ToString());
+                int cantidadElegidosLATAM = Jugador.ObtenerCantidadElegidoPorLocalidad(this.jugadores, item.Nombre, Localidades.LATAM.ToString());
 
-                int cantidadElegidosPLATA = ObtenerCantidadElegidoPorRango(this.jugadores, item.Nombre, Rangos.Plata.ToString());
-                int cantidadElegidosORO = ObtenerCantidadElegidoPorRango(this.jugadores, item.Nombre, Rangos.Oro.ToString());
-                int cantidadElegidosDIAMANTE = ObtenerCantidadElegidoPorRango(this.jugadores, item.Nombre, Rangos.Diamante.ToString());
+                int cantidadElegidosPLATA = Jugador.ObtenerCantidadElegidoPorRango(this.jugadores, item.Nombre, Rangos.Plata.ToString());
+                int cantidadElegidosORO = Jugador.ObtenerCantidadElegidoPorRango(this.jugadores, item.Nombre, Rangos.Oro.ToString());
+                int cantidadElegidosDIAMANTE = Jugador.ObtenerCantidadElegidoPorRango(this.jugadores, item.Nombre, Rangos.Diamante.ToString());
 
-                int sumaDeEdades = ObtenerSumaDeEdades(this.jugadores, item.Nombre);
+                int sumaDeEdades = Jugador.ObtenerSumaDeEdades(this.jugadores, item.Nombre);
 
                 sb.AppendLine($"El agente {item.Nombre} fue elegido {cantidadElegidos} veces");
                 sb.AppendLine($"{item.SacarPorcentaje(cantidadElegidosUSA, cantidadElegidos)}% en USA, {item.SacarPorcentaje(cantidadElegidosEUROPA, cantidadElegidos)}% en EUROPA y {item.SacarPorcentaje(cantidadElegidosLATAM, cantidadElegidos)}% en LATAM");
@@ -307,95 +338,7 @@ namespace Formulario
             this.rtbAnalisis.Text = sb.ToString();
         }
 
-        /// <summary>
-        /// Funcion para obtener la cantidad de jugadores que eligieron a determinado agente
-        /// Pasandole por parametro la lista de jugadores y el agente elegido
-        /// </summary>
-        /// <param name="jugadores"></param>
-        /// <param name="nombreAgente"></param>
-        /// <returns> Retornara el valor de la cantidad de jugadores que eligieron a determinado agente </returns>
-        public static int ObtenerCantidadElegido(List<Jugador> jugadores, string nombreAgente)
-        {
-            int contador = 0;
-
-            foreach (Jugador item in jugadores)
-            {
-                if (item.AgenteElegido.Nombre == nombreAgente)
-                {
-                    contador++;
-                }
-            }
-
-            return contador;
-        }
-
-        /// <summary>
-        /// Funcion para obtener la cantidad de jugadores por agente y por localidad
-        /// Pasandole por parametro la lista de jugadores, el agente elegido y la localidad
-        /// </summary>
-        /// <param name="jugadores"></param>
-        /// <param name="nombreAgente"></param>
-        /// <param name="localidad"></param>
-        /// <returns> Retornara el valor de la cantidad de jugadores que eligieron a determinado agente y sean de determinada Localidad </returns>
-        public static int ObtenerCantidadElegidoPorLocalidad(List<Jugador> jugadores, string nombreAgente, string localidad)
-        {
-            int contador = 0;
-
-            foreach (Jugador item in jugadores)
-            {
-                if (item.AgenteElegido.Nombre == nombreAgente && item.Localidad == localidad)
-                {
-                    contador++;
-                }
-            }
-
-            return contador;
-        }
-
-        /// <summary>
-        /// Funcion para obtener la cantidad de jugadores por agente y por rango
-        /// Pasandole por parametro la lista de jugadores, el agente elegido y la rango
-        /// </summary>
-        /// <param name="jugadores"></param>
-        /// <param name="nombreAgente"></param>
-        /// <param name="rango"></param>
-        /// <returns> Retornara el valor de la cantidad de jugadores que eligieron a determinado agente y sean de determinada Rango </returns>
-        public static int ObtenerCantidadElegidoPorRango(List<Jugador> jugadores, string nombreAgente, string rango)
-        {
-            int contador = 0;
-
-            foreach (Jugador item in jugadores)
-            {
-                if (item.AgenteElegido.Nombre == nombreAgente && item.Rango == rango)
-                {
-                    contador++;
-                }
-            }
-
-            return contador;
-        }
-
-        /// <summary>
-        /// Funcion para obtener la sumatoria de edades de los jugadores por agente
-        /// Pasandole por parametro la lista de jugadores, el agente elegido
-        /// </summary>
-        /// <param name="jugadores"></param>
-        /// <param name="nombreAgente"></param>
-        /// <returns> Retornara el valor de la sumatoria de edades de los jugadores que eligieron a determinado agente </returns>
-        public static int ObtenerSumaDeEdades(List<Jugador> jugadores, string nombreAgente)
-        {
-            int contador = 0;
-
-            foreach (Jugador item in jugadores)
-            {
-                if (item.AgenteElegido.Nombre == nombreAgente)
-                {
-                    contador += item.Edad;
-                }
-            }
-
-            return contador;
-        }
+        
 
         /// <summary>
         /// Este metodo sirve para reutilizar codigo, 

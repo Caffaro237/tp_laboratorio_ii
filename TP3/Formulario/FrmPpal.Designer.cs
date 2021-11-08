@@ -51,6 +51,7 @@ namespace Formulario
             this.btnGuardarArchivo = new System.Windows.Forms.Button();
             this.btnMostrarArchivo = new System.Windows.Forms.Button();
             this.btnCargarArchivos = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownEdad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownCantidadJugadores)).BeginInit();
             this.SuspendLayout();
@@ -58,9 +59,9 @@ namespace Formulario
             // btnAgregarJugador
             // 
             this.btnAgregarJugador.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregarJugador.Location = new System.Drawing.Point(11, 328);
+            this.btnAgregarJugador.Location = new System.Drawing.Point(11, 318);
             this.btnAgregarJugador.Name = "btnAgregarJugador";
-            this.btnAgregarJugador.Size = new System.Drawing.Size(263, 71);
+            this.btnAgregarJugador.Size = new System.Drawing.Size(262, 71);
             this.btnAgregarJugador.TabIndex = 8;
             this.btnAgregarJugador.Text = "Agregar Jugador";
             this.btnAgregarJugador.UseVisualStyleBackColor = true;
@@ -163,7 +164,7 @@ namespace Formulario
             0});
             this.numUpDownEdad.Name = "numUpDownEdad";
             this.numUpDownEdad.ReadOnly = true;
-            this.numUpDownEdad.Size = new System.Drawing.Size(263, 34);
+            this.numUpDownEdad.Size = new System.Drawing.Size(262, 34);
             this.numUpDownEdad.TabIndex = 1;
             this.numUpDownEdad.Value = new decimal(new int[] {
             15,
@@ -175,7 +176,7 @@ namespace Formulario
             // 
             this.lblCantidadRandon.AutoSize = true;
             this.lblCantidadRandon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCantidadRandon.Location = new System.Drawing.Point(11, 436);
+            this.lblCantidadRandon.Location = new System.Drawing.Point(12, 405);
             this.lblCantidadRandon.Name = "lblCantidadRandon";
             this.lblCantidadRandon.Size = new System.Drawing.Size(170, 28);
             this.lblCantidadRandon.TabIndex = 9;
@@ -184,7 +185,7 @@ namespace Formulario
             // numUpDownCantidadJugadores
             // 
             this.numUpDownCantidadJugadores.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numUpDownCantidadJugadores.Location = new System.Drawing.Point(11, 467);
+            this.numUpDownCantidadJugadores.Location = new System.Drawing.Point(12, 436);
             this.numUpDownCantidadJugadores.Minimum = new decimal(new int[] {
             1,
             0,
@@ -192,7 +193,7 @@ namespace Formulario
             0});
             this.numUpDownCantidadJugadores.Name = "numUpDownCantidadJugadores";
             this.numUpDownCantidadJugadores.ReadOnly = true;
-            this.numUpDownCantidadJugadores.Size = new System.Drawing.Size(263, 34);
+            this.numUpDownCantidadJugadores.Size = new System.Drawing.Size(262, 34);
             this.numUpDownCantidadJugadores.TabIndex = 10;
             this.numUpDownCantidadJugadores.Value = new decimal(new int[] {
             1,
@@ -203,9 +204,9 @@ namespace Formulario
             // btnAgregarJugadoresRandom
             // 
             this.btnAgregarJugadoresRandom.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregarJugadoresRandom.Location = new System.Drawing.Point(11, 516);
+            this.btnAgregarJugadoresRandom.Location = new System.Drawing.Point(12, 476);
             this.btnAgregarJugadoresRandom.Name = "btnAgregarJugadoresRandom";
-            this.btnAgregarJugadoresRandom.Size = new System.Drawing.Size(263, 71);
+            this.btnAgregarJugadoresRandom.Size = new System.Drawing.Size(262, 71);
             this.btnAgregarJugadoresRandom.TabIndex = 11;
             this.btnAgregarJugadoresRandom.Text = "Agregar Jugadores Random";
             this.btnAgregarJugadoresRandom.UseVisualStyleBackColor = true;
@@ -277,9 +278,9 @@ namespace Formulario
             // btnGuardarArchivo
             // 
             this.btnGuardarArchivo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnGuardarArchivo.Location = new System.Drawing.Point(11, 724);
+            this.btnGuardarArchivo.Location = new System.Drawing.Point(12, 630);
             this.btnGuardarArchivo.Name = "btnGuardarArchivo";
-            this.btnGuardarArchivo.Size = new System.Drawing.Size(263, 71);
+            this.btnGuardarArchivo.Size = new System.Drawing.Size(262, 71);
             this.btnGuardarArchivo.TabIndex = 13;
             this.btnGuardarArchivo.Text = "Guardar Archivos";
             this.btnGuardarArchivo.UseVisualStyleBackColor = true;
@@ -288,9 +289,9 @@ namespace Formulario
             // btnMostrarArchivo
             // 
             this.btnMostrarArchivo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMostrarArchivo.Location = new System.Drawing.Point(11, 800);
+            this.btnMostrarArchivo.Location = new System.Drawing.Point(12, 707);
             this.btnMostrarArchivo.Name = "btnMostrarArchivo";
-            this.btnMostrarArchivo.Size = new System.Drawing.Size(263, 71);
+            this.btnMostrarArchivo.Size = new System.Drawing.Size(262, 71);
             this.btnMostrarArchivo.TabIndex = 14;
             this.btnMostrarArchivo.Text = "Mostrar Archivos Guardados";
             this.btnMostrarArchivo.UseVisualStyleBackColor = true;
@@ -299,19 +300,31 @@ namespace Formulario
             // btnCargarArchivos
             // 
             this.btnCargarArchivos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCargarArchivos.Location = new System.Drawing.Point(11, 608);
+            this.btnCargarArchivos.Location = new System.Drawing.Point(12, 553);
             this.btnCargarArchivos.Name = "btnCargarArchivos";
-            this.btnCargarArchivos.Size = new System.Drawing.Size(263, 71);
+            this.btnCargarArchivos.Size = new System.Drawing.Size(262, 71);
             this.btnCargarArchivos.TabIndex = 12;
             this.btnCargarArchivos.Text = "Cargar desde Archivos";
             this.btnCargarArchivos.UseVisualStyleBackColor = true;
             this.btnCargarArchivos.Click += new System.EventHandler(this.btnCargarArchivos_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCerrar.Location = new System.Drawing.Point(12, 801);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(262, 71);
+            this.btnCerrar.TabIndex = 22;
+            this.btnCerrar.Text = "Cerrar ";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // FrmPpal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1269, 885);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnCargarArchivos);
             this.Controls.Add(this.btnMostrarArchivo);
             this.Controls.Add(this.btnGuardarArchivo);
@@ -334,8 +347,13 @@ namespace Formulario
             this.Controls.Add(this.numUpDownEdad);
             this.Controls.Add(this.rtbJugadores);
             this.Controls.Add(this.btnAgregarJugador);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmPpal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Analisis de Agentes de Valorant";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPpal_FormClosing);
             this.Load += new System.EventHandler(this.FrmPpal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownEdad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownCantidadJugadores)).EndInit();
@@ -368,6 +386,7 @@ namespace Formulario
         private System.Windows.Forms.Button btnGuardarArchivo;
         private System.Windows.Forms.Button btnMostrarArchivo;
         private System.Windows.Forms.Button btnCargarArchivos;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }
 

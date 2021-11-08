@@ -1,50 +1,50 @@
-﻿24
+﻿26
+LATAM
+Diamante
+Jett
+
+29
 EUROPA
 Diamante
-Brimstone
+Phoenix
 
-17
-USA
-Diamante
-Brimstone
-
-18
+28
 EUROPA
-Diamante
+Plata
 Omen
 
-19
+29
 LATAM
 Oro
 Jett
 
-21
+24
+EUROPA
+Diamante
+Phoenix
+
+18
 USA
 Oro
 Omen
 
 20
 LATAM
-Oro
-Omen
-
-18
-EUROPA
-Plata
-Omen
-
-21
-USA
 Plata
 Phoenix
 
-16
-EUROPA
+23
+LATAM
 Oro
-Omen
+Phoenix
 
-25
-EUROPA
+24
+USA
+Diamante
+Phoenix
+
+23
+USA
 Plata
 Jett
 

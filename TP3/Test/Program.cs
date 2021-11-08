@@ -12,22 +12,6 @@ namespace Test
         {
             List<Agente> agentes = new List<Agente>();
 
-            //Simplificacion con un metodo estatico en la clase agente que me devuelve la lista con los agentes
-            //Puedo reutilizar codigo de esa manera
-
-            /*
-            Agente due1 = new Duelistas("Phoenix");
-            Agente due2 = new Duelistas("Jett", true, false);
-
-            Agente con1 = new Controladores("Brimstone", false, true);
-            Agente con2 = new Controladores("Omen");
-
-            agentes.Add(due1);
-            agentes.Add(due2);
-            agentes.Add(con1);
-            agentes.Add(con2);
-            */
-
             //Agregado de los agentes y muestro la lista
             agentes = Agente.CrearListaAgentes();
 
@@ -41,7 +25,7 @@ namespace Test
             Console.ReadKey();
             Console.Clear();
 
-            //Agregado de loa jugadores eligiendo valores random y muestro la lista
+            //Agregado de los jugadores eligiendo valores random y muestro la lista
 
             List<Jugador> jugadores = new List<Jugador>();
 
@@ -73,56 +57,37 @@ namespace Test
             Console.Clear();
 
             /*
-             * Se hace la carga de los datos a analizar
+             * Se hace la carga y muestra de los datos a analizar
              * 
              * Cantidad de veces elegido
              * Sumatoria de todas las edades
              * Cantidad de cada localidad elegida
              * Cantidad de Cada rango que sea
             */
-            /*foreach (Jugador item in jugadores)
-            {
-                item.AgenteElegido.CE++;
-                item.AgenteElegido.SumaEdades += item.Edad;
-
-                if(item.Localidad == Localidades.USA.ToString())
-                {
-                    item.AgenteElegido.CEU++;
-                }
-                else if (item.Localidad == Localidades.EUROPA.ToString())
-                {
-                    item.AgenteElegido.CEE++;
-                }
-                else if (item.Localidad == Localidades.LATAM.ToString())
-                {
-                    item.AgenteElegido.CEL++;
-                }
-
-                if(item.Rango == Rangos.Plata.ToString())
-                {
-                    item.AgenteElegido.CP++;
-                }
-                else if (item.Rango == Rangos.Oro.ToString())
-                {
-                    item.AgenteElegido.CO++;
-                }
-                else if (item.Rango == Rangos.Diamante.ToString())
-                {
-                    item.AgenteElegido.CD++;
-                }
-            }
-
-            //Muestro los agentes con sus respectivos datos
-            //Haciendo un porcentaje y un promedio de edades
+            StringBuilder sbAnalisis = new StringBuilder();
 
             foreach (Agente item in agentes)
             {
-                Console.WriteLine($"El agente {item.Nombre} fue elegido {item.CE} veces");
-                Console.WriteLine($"{item.SacarPorcentaje(item.CEU, item.CE)}% en USA, {item.SacarPorcentaje(item.CEE, item.CE)}% en EUROPA y {item.SacarPorcentaje(item.CEL, item.CE)}% en LATAM");
-                Console.WriteLine($"{item.SacarPorcentaje(item.CP, item.CE)}% son rango Plata, {item.SacarPorcentaje(item.CO, item.CE)}% son rango Oro y {item.SacarPorcentaje(item.CD, item.CE)}% son rango Diamante");
-                Console.WriteLine($"{item.SacarPromedio(item.SumaEdades, item.CE)} es el promedio de edad");
-                Console.WriteLine("---------------------------------------------------------------");
-            }*/
+                int cantidadElegidos = Jugador.ObtenerCantidadElegido(jugadores, item.Nombre);
+
+                int cantidadElegidosUSA = Jugador.ObtenerCantidadElegidoPorLocalidad(jugadores, item.Nombre, Localidades.USA.ToString());
+                int cantidadElegidosEUROPA = Jugador.ObtenerCantidadElegidoPorLocalidad(jugadores, item.Nombre, Localidades.EUROPA.ToString());
+                int cantidadElegidosLATAM = Jugador.ObtenerCantidadElegidoPorLocalidad(jugadores, item.Nombre, Localidades.LATAM.ToString());
+
+                int cantidadElegidosPLATA = Jugador.ObtenerCantidadElegidoPorRango(jugadores, item.Nombre, Rangos.Plata.ToString());
+                int cantidadElegidosORO = Jugador.ObtenerCantidadElegidoPorRango(jugadores, item.Nombre, Rangos.Oro.ToString());
+                int cantidadElegidosDIAMANTE = Jugador.ObtenerCantidadElegidoPorRango(jugadores, item.Nombre, Rangos.Diamante.ToString());
+
+                int sumaDeEdades = Jugador.ObtenerSumaDeEdades(jugadores, item.Nombre);
+
+                sbAnalisis.AppendLine($"El agente {item.Nombre} fue elegido {cantidadElegidos} veces");
+                sbAnalisis.AppendLine($"{item.SacarPorcentaje(cantidadElegidosUSA, cantidadElegidos)}% en USA, {item.SacarPorcentaje(cantidadElegidosEUROPA, cantidadElegidos)}% en EUROPA y {item.SacarPorcentaje(cantidadElegidosLATAM, cantidadElegidos)}% en LATAM");
+                sbAnalisis.AppendLine($"{item.SacarPorcentaje(cantidadElegidosPLATA, cantidadElegidos)}% son rango Plata, {item.SacarPorcentaje(cantidadElegidosORO, cantidadElegidos)}% son rango Oro y {item.SacarPorcentaje(cantidadElegidosDIAMANTE, cantidadElegidos)}% son rango Diamante");
+                sbAnalisis.AppendLine($"{item.SacarPromedio(sumaDeEdades, cantidadElegidos)} es el promedio de edad");
+                sbAnalisis.AppendLine("---------------------------------------------------------------");
+            }
+
+            Console.WriteLine(sbAnalisis.ToString());
 
             Console.WriteLine("\nApriete una tecla para continuar...");
             Console.ReadKey();
@@ -131,15 +96,15 @@ namespace Test
             //Instancia de creacion y lectura de archivos
 
             ArchivoTexto at = new ArchivoTexto();
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sbArchivoTexto = new StringBuilder();
 
             foreach (Jugador item in jugadores)
             {
-                sb.AppendLine(item.CargarDatos());
+                sbArchivoTexto.AppendLine(item.CargarDatos());
             }
 
             //Creo un archivo de texto con la lista completa de los jugadores al momento
-            at.Guardar("Lista de Jugadores.txt", sb.ToString());
+            at.Guardar("Lista de Jugadores.txt", sbArchivoTexto.ToString());
 
             //Leo la lista creada y la muestro
             Console.WriteLine(at.Leer("Lista de Jugadores.txt"));

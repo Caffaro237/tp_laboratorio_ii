@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Entidades;
 using System;
+using System.Collections.Generic;
 
 namespace Test_Unitarios
 {
@@ -17,7 +18,6 @@ namespace Test_Unitarios
             //Act
 
             //Assert
-
             Assert.IsNotNull(j1);
         }
 
@@ -30,5 +30,21 @@ namespace Test_Unitarios
 
             at.Leer("Archivo Inexistente.txt");
         }
-    }
+
+
+        [TestMethod]
+        public void LeerArchivosXML()
+        {
+            List<Jugador> jugadoresLeidosXML = new List<Jugador>(); 
+            Serializador<Jugador> serializadorXML = new Serializador<Jugador>(IArchivo<Jugador>.ETipoArchivo.XML);
+            string path = @"..\..\..\..\JugadoresTestConsola";
+
+            jugadoresLeidosXML = Jugador.LeerArchivos(path, serializadorXML);
+
+            foreach (Jugador item in jugadoresLeidosXML)
+            {
+                Assert.IsNotNull(item);
+            }
+        }
+}
 }

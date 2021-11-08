@@ -8,6 +8,8 @@ namespace Entidades
 {
     public static class FuncionesRandom
     {
+        #region Funcion Hacer Random
+
         /// <summary>
         /// Metodo que recibe los valores para hacer un random
         /// Entre los valores asignados
@@ -24,6 +26,10 @@ namespace Entidades
 
             return numeroRandom;
         }
+
+        #endregion
+
+        #region Switchs Random
 
         /// <summary>
         /// Se utilizara elegir la Localidad para el jugador, 
@@ -105,5 +111,8 @@ namespace Entidades
                     return "Phoenix";
             }
         }
+
+        #endregion
+
     }
 }

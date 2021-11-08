@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    #region Enumerado Localidades
+
     /// <summary>
     /// Enumerado de las Localidades posibles
     /// </summary>
@@ -16,6 +18,10 @@ namespace Entidades
         LATAM
     }
 
+    #endregion
+
+    #region Enumerado Rangos
+
     /// <summary>
     ///  Enumerado de los Rangos posibles
     /// </summary>
@@ -25,4 +31,7 @@ namespace Entidades
         Oro,
         Diamante
     }
+
+    #endregion
+
 }

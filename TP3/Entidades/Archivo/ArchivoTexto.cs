@@ -9,6 +9,8 @@ namespace Entidades
 {
     public class ArchivoTexto : IArchivo<string>
     {
+        #region Metodo Guardar
+
         /// <summary>
         /// Implementacion de la interfaz para guardar un archivo de texto
         /// </summary>
@@ -31,6 +33,10 @@ namespace Entidades
             }
         }
 
+        #endregion
+
+        #region Metodo Leer
+
         /// <summary>
         /// Implementacion de la interfaz para leer un archivo de texto
         /// Lee un archivo de texto en una ruta determinada y lo retorna como un string
@@ -46,7 +52,7 @@ namespace Entidades
             {
                 using (StreamReader streamReader = new StreamReader(path, codificacion))
                 {
-                    while(!streamReader.EndOfStream)
+                    while (!streamReader.EndOfStream)
                     {
                         returnAux += $"{streamReader.ReadLine()}\n";
                     }
@@ -59,5 +65,8 @@ namespace Entidades
 
             return returnAux;
         }
+
+        #endregion
+
     }
 }

@@ -200,6 +200,96 @@ namespace Entidades
             return jugadores;
         }
 
+        /// <summary>
+        /// Funcion para obtener la cantidad de jugadores que eligieron a determinado agente
+        /// Pasandole por parametro la lista de jugadores y el agente elegido
+        /// </summary>
+        /// <param name="jugadores"></param>
+        /// <param name="nombreAgente"></param>
+        /// <returns> Retornara el valor de la cantidad de jugadores que eligieron a determinado agente </returns>
+        public static int ObtenerCantidadElegido(List<Jugador> jugadores, string nombreAgente)
+        {
+            int contador = 0;
+
+            foreach (Jugador item in jugadores)
+            {
+                if (item.AgenteElegido.Nombre == nombreAgente)
+                {
+                    contador++;
+                }
+            }
+
+            return contador;
+        }
+
+        /// <summary>
+        /// Funcion para obtener la cantidad de jugadores por agente y por localidad
+        /// Pasandole por parametro la lista de jugadores, el agente elegido y la localidad
+        /// </summary>
+        /// <param name="jugadores"></param>
+        /// <param name="nombreAgente"></param>
+        /// <param name="localidad"></param>
+        /// <returns> Retornara el valor de la cantidad de jugadores que eligieron a determinado agente y sean de determinada Localidad </returns>
+        public static int ObtenerCantidadElegidoPorLocalidad(List<Jugador> jugadores, string nombreAgente, string localidad)
+        {
+            int contador = 0;
+
+            foreach (Jugador item in jugadores)
+            {
+                if (item.AgenteElegido.Nombre == nombreAgente && item.Localidad == localidad)
+                {
+                    contador++;
+                }
+            }
+
+            return contador;
+        }
+
+        /// <summary>
+        /// Funcion para obtener la cantidad de jugadores por agente y por rango
+        /// Pasandole por parametro la lista de jugadores, el agente elegido y la rango
+        /// </summary>
+        /// <param name="jugadores"></param>
+        /// <param name="nombreAgente"></param>
+        /// <param name="rango"></param>
+        /// <returns> Retornara el valor de la cantidad de jugadores que eligieron a determinado agente y sean de determinada Rango </returns>
+        public static int ObtenerCantidadElegidoPorRango(List<Jugador> jugadores, string nombreAgente, string rango)
+        {
+            int contador = 0;
+
+            foreach (Jugador item in jugadores)
+            {
+                if (item.AgenteElegido.Nombre == nombreAgente && item.Rango == rango)
+                {
+                    contador++;
+                }
+            }
+
+            return contador;
+        }
+
+        /// <summary>
+        /// Funcion para obtener la sumatoria de edades de los jugadores por agente
+        /// Pasandole por parametro la lista de jugadores, el agente elegido
+        /// </summary>
+        /// <param name="jugadores"></param>
+        /// <param name="nombreAgente"></param>
+        /// <returns> Retornara el valor de la sumatoria de edades de los jugadores que eligieron a determinado agente </returns>
+        public static int ObtenerSumaDeEdades(List<Jugador> jugadores, string nombreAgente)
+        {
+            int contador = 0;
+
+            foreach (Jugador item in jugadores)
+            {
+                if (item.AgenteElegido.Nombre == nombreAgente)
+                {
+                    contador += item.Edad;
+                }
+            }
+
+            return contador;
+        }
+
         #endregion
 
     }
