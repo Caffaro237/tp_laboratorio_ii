@@ -13,10 +13,10 @@ al Funcionamiento TP2.exe
 
 --------------------------------------------------------------------------------------------------------------------
 Trabajo Practico Numero 3:
-El trabajo numero 3 esta enfocado en el analisis de datos. En este caso se analizaran los a los jugadores de Valorant
+Esta enfocado en el analisis de datos. En este caso se analizaran los a los jugadores de Valorant
 y sus elecciones de agente
 
-Estos se clasificaran segun de donde sean (USA, EUROPA O LATAM), tambien por sus rangos (PLATA, ORO o DIAMANTE), 
+los cuales se clasificaran segun de donde sean (USA, EUROPA O LATAM), tambien por sus rangos (PLATA, ORO o DIAMANTE), 
 la edad que tengan entre 15 y 30 años y el agente que eligan (Phoenix, Jett, Brimstone u Omen).
 
 El programa analizara los datos y mostrara un porcentaje por cada Agente, de donde son los jugadores que lo eligen, 
