@@ -11,3 +11,16 @@ D:\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\MiCalculado
 D:\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\MiCalculadora\obj\Debug\MiCalculadora.csproj.CopyComplete
 D:\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\MiCalculadora\obj\Debug\MiCalculadora.exe
 D:\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\MiCalculadora\obj\Debug\MiCalculadora.pdb
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\MiCalculadora\bin\Debug\MiCalculadora.exe.config
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\MiCalculadora\bin\Debug\MiCalculadora.exe
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\MiCalculadora\bin\Debug\MiCalculadora.pdb
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\MiCalculadora\bin\Debug\Entidades.dll
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\MiCalculadora\bin\Debug\Entidades.pdb
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\MiCalculadora\obj\Debug\MiCalculadora.csproj.AssemblyReference.cache
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\MiCalculadora\obj\Debug\MiCalculadora.FormCalculadora.resources
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\MiCalculadora\obj\Debug\MiCalculadora.Properties.Resources.resources
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\MiCalculadora\obj\Debug\MiCalculadora.csproj.GenerateResource.cache
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\MiCalculadora\obj\Debug\MiCalculadora.csproj.CoreCompileInputs.cache
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\MiCalculadora\obj\Debug\MiCalculadora.csproj.CopyComplete
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\MiCalculadora\obj\Debug\MiCalculadora.exe
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\MiCalculadora\obj\Debug\MiCalculadora.pdb

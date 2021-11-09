@@ -4,3 +4,9 @@ D:\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\Entidades\o
 D:\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 D:\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\Entidades\obj\Debug\Entidades.dll
 D:\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\Entidades\bin\Debug\Entidades.dll
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\Entidades\obj\Debug\Entidades.dll
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP1\Entidades\obj\Debug\Entidades.pdb
