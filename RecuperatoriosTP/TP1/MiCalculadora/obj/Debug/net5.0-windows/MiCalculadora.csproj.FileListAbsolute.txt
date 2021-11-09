@@ -18,3 +18,4 @@ C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\Recuperatorios
 C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\MiCalculadora\obj\Debug\net5.0-windows\MiCalculadora.genruntimeconfig.cache
 C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\MiCalculadora\bin\Debug\net5.0-windows\Entidades.dll
 C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\MiCalculadora\bin\Debug\net5.0-windows\Entidades.pdb
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\MiCalculadora\obj\Debug\net5.0-windows\MiCalculadora.csproj.CopyComplete
