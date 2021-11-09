@@ -1,0 +1,36 @@
+\\FACU-PC\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\bin\Debug\net5.0\Test.exe
+\\FACU-PC\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\bin\Debug\net5.0\Test.deps.json
+\\FACU-PC\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\bin\Debug\net5.0\Test.runtimeconfig.json
+\\FACU-PC\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\bin\Debug\net5.0\Test.runtimeconfig.dev.json
+\\FACU-PC\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\bin\Debug\net5.0\Test.dll
+\\FACU-PC\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\bin\Debug\net5.0\ref\Test.dll
+\\FACU-PC\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\bin\Debug\net5.0\Test.pdb
+\\FACU-PC\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\bin\Debug\net5.0\Entidades.dll
+\\FACU-PC\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\bin\Debug\net5.0\Entidades.pdb
+\\FACU-PC\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\obj\Debug\net5.0\Test.csproj.AssemblyReference.cache
+\\FACU-PC\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\obj\Debug\net5.0\Test.GeneratedMSBuildEditorConfig.editorconfig
+\\FACU-PC\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\obj\Debug\net5.0\Test.AssemblyInfoInputs.cache
+\\FACU-PC\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\obj\Debug\net5.0\Test.AssemblyInfo.cs
+\\FACU-PC\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\obj\Debug\net5.0\Test.csproj.CoreCompileInputs.cache
+\\FACU-PC\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\obj\Debug\net5.0\Test.dll
+\\FACU-PC\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\obj\Debug\net5.0\ref\Test.dll
+\\FACU-PC\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\obj\Debug\net5.0\Test.pdb
+\\FACU-PC\Datos M.2\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\obj\Debug\net5.0\Test.genruntimeconfig.cache
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\bin\Debug\net5.0\Test.exe
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\bin\Debug\net5.0\Test.deps.json
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\bin\Debug\net5.0\Test.runtimeconfig.json
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\bin\Debug\net5.0\Test.runtimeconfig.dev.json
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\bin\Debug\net5.0\Test.dll
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\bin\Debug\net5.0\ref\Test.dll
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\bin\Debug\net5.0\Test.pdb
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\bin\Debug\net5.0\Entidades.dll
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\bin\Debug\net5.0\Entidades.pdb
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\obj\Debug\net5.0\Test.csproj.AssemblyReference.cache
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\obj\Debug\net5.0\Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\obj\Debug\net5.0\Test.AssemblyInfoInputs.cache
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\obj\Debug\net5.0\Test.AssemblyInfo.cs
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\obj\Debug\net5.0\Test.csproj.CoreCompileInputs.cache
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\obj\Debug\net5.0\Test.dll
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\obj\Debug\net5.0\ref\Test.dll
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\obj\Debug\net5.0\Test.pdb
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP3\Test\obj\Debug\net5.0\Test.genruntimeconfig.cache
