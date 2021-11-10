@@ -306,6 +306,11 @@ namespace Entidades
             return contador;
         }
 
+        /// <summary>
+        /// Metodo GetListaSQL
+        /// Este metodo de clase se conectara con la base de datos y traera los jugadores que contenga
+        /// </summary>
+        /// <returns> Retornara una lista de jugadores con lo que lea en la Base de Datos </returns>
         public static List<Jugador> GetListaSQL()
         {
             List<Jugador> jugadores = new List<Jugador>();
@@ -314,6 +319,11 @@ namespace Entidades
 
             try
             {
+                if(Jugador.conexionSql.State == ConnectionState.Open)
+                {
+                    throw new ConexionAbiertaBDExcepcion("La conexion esta abierta. Intentelo nuevamente");
+                }
+
                 Jugador.conexionSql.Open();
 
                 SqlDataReader reader = Jugador.comandoSql.ExecuteReader();
@@ -349,6 +359,34 @@ namespace Entidades
             }
 
             return jugadores;
+        }
+
+
+        public static void InsertJugador(int edad, string localidad, string rango, string agenteElegido)
+        {
+            try
+            {
+                Jugador.comandoSql.Parameters.Clear();
+                Jugador.conexionSql.Open();
+                Jugador.comandoSql.CommandText = "INSERT INTO jugadores (edad, localidad, rango, agenteElegido) VALUES (@edad, @localidad, @rango, @agenteElegido)";
+
+                Jugador.comandoSql.Parameters.AddWithValue("@edad", edad);
+                Jugador.comandoSql.Parameters.AddWithValue("@localidad", localidad);
+                Jugador.comandoSql.Parameters.AddWithValue("@rango", rango);
+                Jugador.comandoSql.Parameters.AddWithValue("@agenteElegido", agenteElegido);
+
+                Jugador.comandoSql.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                Jugador.conexionSql.Close();
+            }
+            
+
         }
 
         #endregion

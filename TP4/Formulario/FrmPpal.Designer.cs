@@ -327,7 +327,7 @@ namespace Formulario
             this.btnBaseDeDatos.Name = "btnBaseDeDatos";
             this.btnBaseDeDatos.Size = new System.Drawing.Size(262, 71);
             this.btnBaseDeDatos.TabIndex = 23;
-            this.btnBaseDeDatos.Text = "Base de datos";
+            this.btnBaseDeDatos.Text = "Cargar desde Base de Datos";
             this.btnBaseDeDatos.UseVisualStyleBackColor = true;
             this.btnBaseDeDatos.Click += new System.EventHandler(this.btnBaseDeDatos_Click);
             // 

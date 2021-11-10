@@ -140,7 +140,7 @@ namespace Formulario
                 {
                     Jugador jugador = new Jugador((int)this.numUpDownEdad.Value, this.cmbLocalidad.SelectedItem.ToString(), this.cmbRango.SelectedItem.ToString(), item);
 
-                    this.jugadores.Add(jugador);
+                    this.AgregarJugador(jugador);
 
                     break;
                 }
@@ -173,7 +173,7 @@ namespace Formulario
                                                 FuncionesRandom.SwitchLocalidad(FuncionesRandom.HacerRandom(1, 4)),
                                                 FuncionesRandom.SwitchRango(FuncionesRandom.HacerRandom(1, 4)),
                                                 item);
-                        this.jugadores.Add(j);
+                        this.AgregarJugador(j);
                     }
                 }
             }
@@ -266,7 +266,7 @@ namespace Formulario
 
                 foreach (Jugador item in this.jugadoresLeidosXML)
                 {
-                    this.jugadores.Add(item);
+                    this.AgregarJugador(item);
                 }
 
                 this.RefrescarLista();
@@ -292,15 +292,27 @@ namespace Formulario
             this.Dispose();
         }
 
-
+        /// <summary>
+        /// Evento del boton Base De Datos
+        /// En este evento se conectara con la base de datos y traera los jugadores que contenga
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBaseDeDatos_Click(object sender, EventArgs e)
         {
-            foreach (Jugador item in Jugador.GetListaSQL())
+            try
             {
-                this.jugadores.Add(item);
-            }
+                foreach (Jugador item in Jugador.GetListaSQL())
+                {
+                    this.jugadores.Add(item);
+                }
 
-            this.RefrescarLista();
+                this.RefrescarLista();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         #endregion
@@ -360,6 +372,12 @@ namespace Formulario
             this.rtbAnalisis.Text = sb.ToString();
         }
 
+        public void AgregarJugador(Jugador jugador)
+        {
+            this.jugadores.Add(jugador);
+
+            Jugador.InsertJugador(jugador.Edad, jugador.Localidad, jugador.Rango, jugador.AgenteElegido.Nombre);
+        }
 
         #endregion
 
