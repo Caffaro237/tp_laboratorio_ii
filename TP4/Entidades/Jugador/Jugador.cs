@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Entidades
 {
@@ -20,9 +21,23 @@ namespace Entidades
         private string rango;
         private Agente agenteElegido;
 
+        private static string conexionString;
+        private static SqlConnection conexionSql;
+        private static SqlCommand comandoSql;
+
         #endregion
 
         #region Constructores
+
+        static Jugador()
+        {
+            Jugador.conexionString = "Data Source = localhost; Initial Catalog = ListaJugadores; Integrated Security = true";
+            Jugador.conexionSql = new SqlConnection(conexionString);
+
+            Jugador.comandoSql = new SqlCommand();
+            Jugador.comandoSql.CommandType = CommandType.Text;
+            Jugador.comandoSql.Connection = Jugador.conexionSql;
+        }
 
         /// <summary>
         /// Constructor sin parametros requerido por la serializacion
@@ -289,6 +304,51 @@ namespace Entidades
             }
 
             return contador;
+        }
+
+        public static List<Jugador> GetListaSQL()
+        {
+            List<Jugador> jugadores = new List<Jugador>();
+
+            Jugador.comandoSql.CommandText = "SELECT edad, localidad, rango, agenteElegido FROM jugadores";
+
+            try
+            {
+                Jugador.conexionSql.Open();
+
+                SqlDataReader reader = Jugador.comandoSql.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Jugador j = new Jugador();
+
+                    j.Edad = int.Parse(reader["edad"].ToString());
+                    j.Localidad = reader["localidad"].ToString();
+                    j.Rango = reader["rango"].ToString();
+
+                    foreach (Agente item in Agente.CrearListaAgentes())
+                    {
+                        if (item.Nombre == reader["agenteElegido"].ToString())
+                        {
+                            j.AgenteElegido = item;
+                            break;
+                        }
+                    }
+
+                    jugadores.Add(j);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                Jugador.conexionSql.Close();
+            }
+
+            return jugadores;
         }
 
         #endregion

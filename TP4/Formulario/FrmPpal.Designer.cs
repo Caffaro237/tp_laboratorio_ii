@@ -52,6 +52,7 @@ namespace Formulario
             this.btnMostrarArchivo = new System.Windows.Forms.Button();
             this.btnCargarArchivos = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnBaseDeDatos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownEdad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownCantidadJugadores)).BeginInit();
             this.SuspendLayout();
@@ -319,11 +320,23 @@ namespace Formulario
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // btnBaseDeDatos
+            // 
+            this.btnBaseDeDatos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnBaseDeDatos.Location = new System.Drawing.Point(12, 886);
+            this.btnBaseDeDatos.Name = "btnBaseDeDatos";
+            this.btnBaseDeDatos.Size = new System.Drawing.Size(262, 71);
+            this.btnBaseDeDatos.TabIndex = 23;
+            this.btnBaseDeDatos.Text = "Base de datos";
+            this.btnBaseDeDatos.UseVisualStyleBackColor = true;
+            this.btnBaseDeDatos.Click += new System.EventHandler(this.btnBaseDeDatos_Click);
+            // 
             // FrmPpal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1269, 885);
+            this.ClientSize = new System.Drawing.Size(1269, 969);
+            this.Controls.Add(this.btnBaseDeDatos);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnCargarArchivos);
             this.Controls.Add(this.btnMostrarArchivo);
@@ -387,6 +400,7 @@ namespace Formulario
         private System.Windows.Forms.Button btnMostrarArchivo;
         private System.Windows.Forms.Button btnCargarArchivos;
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Button btnBaseDeDatos;
     }
 }
 

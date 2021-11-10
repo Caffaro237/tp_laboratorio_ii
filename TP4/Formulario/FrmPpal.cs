@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -21,6 +22,9 @@ namespace Formulario
         private List<Jugador> jugadores;
         private List<Jugador> jugadoresLeidosXML;
         private string pathArchivosForm;
+        /*private string conexionString;
+        private SqlConnection conexionSql;
+        private SqlCommand comandoSql;*/
 
         #endregion
 
@@ -66,6 +70,13 @@ namespace Formulario
             this.pathArchivosForm = @"..\..\..\..\JugadoresForm";
 
             this.agentes = Agente.CrearListaAgentes();
+
+            /*this.conexionString = "DataSource = localhost; Initial Catalog = ListaJugadores; Integrated Security = true";
+            this.conexionSql = new SqlConnection(conexionString);
+
+            this.comandoSql = new SqlCommand();
+            this.comandoSql.CommandType = CommandType.Text;
+            this.comandoSql.Connection = this.conexionSql;*/
         }
 
         #endregion
@@ -129,7 +140,7 @@ namespace Formulario
                 {
                     Jugador jugador = new Jugador((int)this.numUpDownEdad.Value, this.cmbLocalidad.SelectedItem.ToString(), this.cmbRango.SelectedItem.ToString(), item);
 
-                    this.CargarJugadoresLista(jugador);
+                    this.jugadores.Add(jugador);
 
                     break;
                 }
@@ -162,7 +173,7 @@ namespace Formulario
                                                 FuncionesRandom.SwitchLocalidad(FuncionesRandom.HacerRandom(1, 4)),
                                                 FuncionesRandom.SwitchRango(FuncionesRandom.HacerRandom(1, 4)),
                                                 item);
-                        this.CargarJugadoresLista(j);
+                        this.jugadores.Add(j);
                     }
                 }
             }
@@ -255,7 +266,7 @@ namespace Formulario
 
                 foreach (Jugador item in this.jugadoresLeidosXML)
                 {
-                    this.CargarJugadoresLista(item);
+                    this.jugadores.Add(item);
                 }
 
                 this.RefrescarLista();
@@ -279,6 +290,17 @@ namespace Formulario
         {
             btnGuardarArchivo_Click(sender, e);
             this.Dispose();
+        }
+
+
+        private void btnBaseDeDatos_Click(object sender, EventArgs e)
+        {
+            foreach (Jugador item in Jugador.GetListaSQL())
+            {
+                this.jugadores.Add(item);
+            }
+
+            this.RefrescarLista();
         }
 
         #endregion
@@ -338,23 +360,6 @@ namespace Formulario
             this.rtbAnalisis.Text = sb.ToString();
         }
 
-        
-
-        /// <summary>
-        /// Este metodo sirve para reutilizar codigo, 
-        /// agregar los jugadores y cargar los datos para analizar 
-        /// 
-        /// Sino se tiene que estar poniendo cada ves que se agregue un jugador
-        /// de esta forma se llamara a este metodo y hace las dos cosas en una sola vez
-        /// </summary>
-        /// <param name="jugador"></param>
-        /// <returns></returns>
-        public List<Jugador> CargarJugadoresLista(Jugador jugador)
-        {
-            this.jugadores.Add(jugador);
-
-            return this.jugadores;
-        }
 
         #endregion
 
