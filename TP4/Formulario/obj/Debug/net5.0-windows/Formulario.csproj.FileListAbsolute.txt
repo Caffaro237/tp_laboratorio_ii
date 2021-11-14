@@ -64,7 +64,6 @@ C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP4\Formulario
 C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP4\Formulario\obj\Debug\net5.0-windows\Formulario.AssemblyInfoInputs.cache
 C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP4\Formulario\obj\Debug\net5.0-windows\Formulario.AssemblyInfo.cs
 C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP4\Formulario\obj\Debug\net5.0-windows\Formulario.csproj.CoreCompileInputs.cache
-C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP4\Formulario\obj\Debug\net5.0-windows\Formulario.csproj.CopyComplete
 C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP4\Formulario\obj\Debug\net5.0-windows\Formulario.dll
 C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP4\Formulario\obj\Debug\net5.0-windows\ref\Formulario.dll
 C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP4\Formulario\obj\Debug\net5.0-windows\Formulario.pdb

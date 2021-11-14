@@ -53,14 +53,19 @@ namespace Formulario
             this.btnCargarArchivos = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnBaseDeDatos = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mostrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jugadoresYAnalisisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownEdad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownCantidadJugadores)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAgregarJugador
             // 
             this.btnAgregarJugador.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregarJugador.Location = new System.Drawing.Point(11, 318);
+            this.btnAgregarJugador.Location = new System.Drawing.Point(12, 362);
             this.btnAgregarJugador.Name = "btnAgregarJugador";
             this.btnAgregarJugador.Size = new System.Drawing.Size(262, 71);
             this.btnAgregarJugador.TabIndex = 8;
@@ -83,7 +88,7 @@ namespace Formulario
             // 
             this.lblAgente.AutoSize = true;
             this.lblAgente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAgente.Location = new System.Drawing.Point(11, 245);
+            this.lblAgente.Location = new System.Drawing.Point(12, 289);
             this.lblAgente.Name = "lblAgente";
             this.lblAgente.Size = new System.Drawing.Size(75, 28);
             this.lblAgente.TabIndex = 6;
@@ -93,7 +98,7 @@ namespace Formulario
             // 
             this.lblRango.AutoSize = true;
             this.lblRango.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblRango.Location = new System.Drawing.Point(11, 165);
+            this.lblRango.Location = new System.Drawing.Point(12, 209);
             this.lblRango.Name = "lblRango";
             this.lblRango.Size = new System.Drawing.Size(69, 28);
             this.lblRango.TabIndex = 4;
@@ -103,7 +108,7 @@ namespace Formulario
             // 
             this.lblLocalidad.AutoSize = true;
             this.lblLocalidad.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblLocalidad.Location = new System.Drawing.Point(11, 85);
+            this.lblLocalidad.Location = new System.Drawing.Point(12, 129);
             this.lblLocalidad.Name = "lblLocalidad";
             this.lblLocalidad.Size = new System.Drawing.Size(96, 28);
             this.lblLocalidad.TabIndex = 2;
@@ -113,7 +118,7 @@ namespace Formulario
             // 
             this.lblEdad.AutoSize = true;
             this.lblEdad.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblEdad.Location = new System.Drawing.Point(11, 9);
+            this.lblEdad.Location = new System.Drawing.Point(12, 53);
             this.lblEdad.Name = "lblEdad";
             this.lblEdad.Size = new System.Drawing.Size(56, 28);
             this.lblEdad.TabIndex = 0;
@@ -124,7 +129,7 @@ namespace Formulario
             this.cmbAgente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAgente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbAgente.FormattingEnabled = true;
-            this.cmbAgente.Location = new System.Drawing.Point(11, 276);
+            this.cmbAgente.Location = new System.Drawing.Point(12, 320);
             this.cmbAgente.Name = "cmbAgente";
             this.cmbAgente.Size = new System.Drawing.Size(262, 36);
             this.cmbAgente.TabIndex = 7;
@@ -134,7 +139,7 @@ namespace Formulario
             this.cmbRango.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRango.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbRango.FormattingEnabled = true;
-            this.cmbRango.Location = new System.Drawing.Point(11, 196);
+            this.cmbRango.Location = new System.Drawing.Point(12, 240);
             this.cmbRango.Name = "cmbRango";
             this.cmbRango.Size = new System.Drawing.Size(262, 36);
             this.cmbRango.TabIndex = 5;
@@ -144,7 +149,7 @@ namespace Formulario
             this.cmbLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLocalidad.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbLocalidad.FormattingEnabled = true;
-            this.cmbLocalidad.Location = new System.Drawing.Point(11, 117);
+            this.cmbLocalidad.Location = new System.Drawing.Point(12, 161);
             this.cmbLocalidad.Name = "cmbLocalidad";
             this.cmbLocalidad.Size = new System.Drawing.Size(262, 36);
             this.cmbLocalidad.TabIndex = 3;
@@ -152,7 +157,7 @@ namespace Formulario
             // numUpDownEdad
             // 
             this.numUpDownEdad.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numUpDownEdad.Location = new System.Drawing.Point(11, 40);
+            this.numUpDownEdad.Location = new System.Drawing.Point(12, 84);
             this.numUpDownEdad.Maximum = new decimal(new int[] {
             30,
             0,
@@ -177,7 +182,7 @@ namespace Formulario
             // 
             this.lblCantidadRandon.AutoSize = true;
             this.lblCantidadRandon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCantidadRandon.Location = new System.Drawing.Point(12, 405);
+            this.lblCantidadRandon.Location = new System.Drawing.Point(13, 449);
             this.lblCantidadRandon.Name = "lblCantidadRandon";
             this.lblCantidadRandon.Size = new System.Drawing.Size(170, 28);
             this.lblCantidadRandon.TabIndex = 9;
@@ -186,7 +191,7 @@ namespace Formulario
             // numUpDownCantidadJugadores
             // 
             this.numUpDownCantidadJugadores.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numUpDownCantidadJugadores.Location = new System.Drawing.Point(12, 436);
+            this.numUpDownCantidadJugadores.Location = new System.Drawing.Point(13, 480);
             this.numUpDownCantidadJugadores.Minimum = new decimal(new int[] {
             1,
             0,
@@ -205,7 +210,7 @@ namespace Formulario
             // btnAgregarJugadoresRandom
             // 
             this.btnAgregarJugadoresRandom.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregarJugadoresRandom.Location = new System.Drawing.Point(12, 476);
+            this.btnAgregarJugadoresRandom.Location = new System.Drawing.Point(13, 520);
             this.btnAgregarJugadoresRandom.Name = "btnAgregarJugadoresRandom";
             this.btnAgregarJugadoresRandom.Size = new System.Drawing.Size(262, 71);
             this.btnAgregarJugadoresRandom.TabIndex = 11;
@@ -279,7 +284,7 @@ namespace Formulario
             // btnGuardarArchivo
             // 
             this.btnGuardarArchivo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnGuardarArchivo.Location = new System.Drawing.Point(12, 630);
+            this.btnGuardarArchivo.Location = new System.Drawing.Point(13, 674);
             this.btnGuardarArchivo.Name = "btnGuardarArchivo";
             this.btnGuardarArchivo.Size = new System.Drawing.Size(262, 71);
             this.btnGuardarArchivo.TabIndex = 13;
@@ -290,7 +295,7 @@ namespace Formulario
             // btnMostrarArchivo
             // 
             this.btnMostrarArchivo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMostrarArchivo.Location = new System.Drawing.Point(12, 707);
+            this.btnMostrarArchivo.Location = new System.Drawing.Point(13, 751);
             this.btnMostrarArchivo.Name = "btnMostrarArchivo";
             this.btnMostrarArchivo.Size = new System.Drawing.Size(262, 71);
             this.btnMostrarArchivo.TabIndex = 14;
@@ -301,7 +306,7 @@ namespace Formulario
             // btnCargarArchivos
             // 
             this.btnCargarArchivos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCargarArchivos.Location = new System.Drawing.Point(12, 553);
+            this.btnCargarArchivos.Location = new System.Drawing.Point(13, 597);
             this.btnCargarArchivos.Name = "btnCargarArchivos";
             this.btnCargarArchivos.Size = new System.Drawing.Size(262, 71);
             this.btnCargarArchivos.TabIndex = 12;
@@ -312,7 +317,7 @@ namespace Formulario
             // btnCerrar
             // 
             this.btnCerrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCerrar.Location = new System.Drawing.Point(12, 801);
+            this.btnCerrar.Location = new System.Drawing.Point(13, 845);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(262, 71);
             this.btnCerrar.TabIndex = 22;
@@ -323,7 +328,7 @@ namespace Formulario
             // btnBaseDeDatos
             // 
             this.btnBaseDeDatos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBaseDeDatos.Location = new System.Drawing.Point(12, 886);
+            this.btnBaseDeDatos.Location = new System.Drawing.Point(13, 930);
             this.btnBaseDeDatos.Name = "btnBaseDeDatos";
             this.btnBaseDeDatos.Size = new System.Drawing.Size(262, 71);
             this.btnBaseDeDatos.TabIndex = 23;
@@ -331,11 +336,43 @@ namespace Formulario
             this.btnBaseDeDatos.UseVisualStyleBackColor = true;
             this.btnBaseDeDatos.Click += new System.EventHandler(this.btnBaseDeDatos_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mostrarToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1269, 28);
+            this.menuStrip1.TabIndex = 24;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // mostrarToolStripMenuItem
+            // 
+            this.mostrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.jugadoresYAnalisisToolStripMenuItem,
+            this.agentesToolStripMenuItem});
+            this.mostrarToolStripMenuItem.Name = "mostrarToolStripMenuItem";
+            this.mostrarToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.mostrarToolStripMenuItem.Text = "Mostrar";
+            // 
+            // jugadoresYAnalisisToolStripMenuItem
+            // 
+            this.jugadoresYAnalisisToolStripMenuItem.Name = "jugadoresYAnalisisToolStripMenuItem";
+            this.jugadoresYAnalisisToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.jugadoresYAnalisisToolStripMenuItem.Text = "Jugadores y analisis";
+            // 
+            // agentesToolStripMenuItem
+            // 
+            this.agentesToolStripMenuItem.Name = "agentesToolStripMenuItem";
+            this.agentesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.agentesToolStripMenuItem.Text = "Agentes";
+            // 
             // FrmPpal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1269, 969);
+            this.ClientSize = new System.Drawing.Size(1269, 1001);
             this.Controls.Add(this.btnBaseDeDatos);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnCargarArchivos);
@@ -360,7 +397,9 @@ namespace Formulario
             this.Controls.Add(this.numUpDownEdad);
             this.Controls.Add(this.rtbJugadores);
             this.Controls.Add(this.btnAgregarJugador);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmPpal";
@@ -370,6 +409,8 @@ namespace Formulario
             this.Load += new System.EventHandler(this.FrmPpal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownEdad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownCantidadJugadores)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -401,6 +442,10 @@ namespace Formulario
         private System.Windows.Forms.Button btnCargarArchivos;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnBaseDeDatos;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem mostrarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem jugadoresYAnalisisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agentesToolStripMenuItem;
     }
 }
 

@@ -138,7 +138,10 @@ namespace Formulario
             {
                 if (this.cmbAgente.SelectedItem.ToString() == item.Nombre)
                 {
-                    Jugador jugador = new Jugador((int)this.numUpDownEdad.Value, this.cmbLocalidad.SelectedItem.ToString(), this.cmbRango.SelectedItem.ToString(), item);
+                    Jugador jugador = new Jugador((int)this.numUpDownEdad.Value, 
+                        this.cmbLocalidad.SelectedItem.ToString(), 
+                        this.cmbRango.SelectedItem.ToString(), 
+                        item);
 
                     this.AgregarJugador(jugador);
 
