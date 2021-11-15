@@ -53,13 +53,12 @@ namespace Formulario
             this.btnCargarArchivos = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnBaseDeDatos = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.mostrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.jugadoresYAnalisisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStripMostrar = new System.Windows.Forms.MenuStrip();
+            this.mostrarJugadoresAnalisis = new System.Windows.Forms.ToolStripMenuItem();
+            this.mostrarAgentes = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownEdad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownCantidadJugadores)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            this.menuStripMostrar.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAgregarJugador
@@ -77,7 +76,7 @@ namespace Formulario
             // 
             this.rtbJugadores.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.rtbJugadores.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rtbJugadores.Location = new System.Drawing.Point(305, 40);
+            this.rtbJugadores.Location = new System.Drawing.Point(305, 83);
             this.rtbJugadores.Name = "rtbJugadores";
             this.rtbJugadores.ReadOnly = true;
             this.rtbJugadores.Size = new System.Drawing.Size(355, 833);
@@ -222,7 +221,7 @@ namespace Formulario
             // 
             this.lblCantidadJugadores.AutoSize = true;
             this.lblCantidadJugadores.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCantidadJugadores.Location = new System.Drawing.Point(305, 9);
+            this.lblCantidadJugadores.Location = new System.Drawing.Point(305, 52);
             this.lblCantidadJugadores.Name = "lblCantidadJugadores";
             this.lblCantidadJugadores.Size = new System.Drawing.Size(221, 28);
             this.lblCantidadJugadores.TabIndex = 15;
@@ -232,7 +231,7 @@ namespace Formulario
             // 
             this.lblCount.AutoSize = true;
             this.lblCount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCount.Location = new System.Drawing.Point(533, 9);
+            this.lblCount.Location = new System.Drawing.Point(532, 52);
             this.lblCount.Name = "lblCount";
             this.lblCount.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblCount.Size = new System.Drawing.Size(23, 28);
@@ -336,37 +335,31 @@ namespace Formulario
             this.btnBaseDeDatos.UseVisualStyleBackColor = true;
             this.btnBaseDeDatos.Click += new System.EventHandler(this.btnBaseDeDatos_Click);
             // 
-            // menuStrip1
+            // menuStripMostrar
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mostrarToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1269, 28);
-            this.menuStrip1.TabIndex = 24;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStripMostrar.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStripMostrar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mostrarJugadoresAnalisis,
+            this.mostrarAgentes});
+            this.menuStripMostrar.Location = new System.Drawing.Point(0, 0);
+            this.menuStripMostrar.Name = "menuStripMostrar";
+            this.menuStripMostrar.Size = new System.Drawing.Size(1269, 28);
+            this.menuStripMostrar.TabIndex = 24;
+            this.menuStripMostrar.Text = "menuStrip1";
             // 
-            // mostrarToolStripMenuItem
+            // mostrarJugadoresAnalisis
             // 
-            this.mostrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.jugadoresYAnalisisToolStripMenuItem,
-            this.agentesToolStripMenuItem});
-            this.mostrarToolStripMenuItem.Name = "mostrarToolStripMenuItem";
-            this.mostrarToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
-            this.mostrarToolStripMenuItem.Text = "Mostrar";
+            this.mostrarJugadoresAnalisis.Name = "mostrarJugadoresAnalisis";
+            this.mostrarJugadoresAnalisis.Size = new System.Drawing.Size(210, 24);
+            this.mostrarJugadoresAnalisis.Text = "Mostrar Jugadores y Analisis";
+            this.mostrarJugadoresAnalisis.Click += new System.EventHandler(this.mostrarJugadoresAnalisis_Click);
             // 
-            // jugadoresYAnalisisToolStripMenuItem
+            // mostrarAgentes
             // 
-            this.jugadoresYAnalisisToolStripMenuItem.Name = "jugadoresYAnalisisToolStripMenuItem";
-            this.jugadoresYAnalisisToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.jugadoresYAnalisisToolStripMenuItem.Text = "Jugadores y analisis";
-            // 
-            // agentesToolStripMenuItem
-            // 
-            this.agentesToolStripMenuItem.Name = "agentesToolStripMenuItem";
-            this.agentesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.agentesToolStripMenuItem.Text = "Agentes";
+            this.mostrarAgentes.Name = "mostrarAgentes";
+            this.mostrarAgentes.Size = new System.Drawing.Size(132, 24);
+            this.mostrarAgentes.Text = "Mostrar Agentes";
+            this.mostrarAgentes.Click += new System.EventHandler(this.mostrarAgentes_Click);
             // 
             // FrmPpal
             // 
@@ -397,9 +390,9 @@ namespace Formulario
             this.Controls.Add(this.numUpDownEdad);
             this.Controls.Add(this.rtbJugadores);
             this.Controls.Add(this.btnAgregarJugador);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.menuStripMostrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.menuStripMostrar;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmPpal";
@@ -409,8 +402,8 @@ namespace Formulario
             this.Load += new System.EventHandler(this.FrmPpal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownEdad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownCantidadJugadores)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStripMostrar.ResumeLayout(false);
+            this.menuStripMostrar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -442,10 +435,9 @@ namespace Formulario
         private System.Windows.Forms.Button btnCargarArchivos;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnBaseDeDatos;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem mostrarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem jugadoresYAnalisisToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem agentesToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStripMostrar;
+        public System.Windows.Forms.ToolStripMenuItem mostrarJugadoresAnalisis;
+        public System.Windows.Forms.ToolStripMenuItem mostrarAgentes;
     }
 }
 

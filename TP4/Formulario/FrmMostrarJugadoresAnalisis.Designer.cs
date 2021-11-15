@@ -34,6 +34,7 @@ namespace Formulario
             this.rtbJugadores = new System.Windows.Forms.RichTextBox();
             this.lblAnalisis = new System.Windows.Forms.Label();
             this.rtbAnalisis = new System.Windows.Forms.RichTextBox();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCount
@@ -89,18 +90,33 @@ namespace Formulario
             this.rtbAnalisis.TabIndex = 23;
             this.rtbAnalisis.Text = "";
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(615, 503);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(278, 74);
+            this.btnCerrar.TabIndex = 24;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // FrmMostrarJugadoresAnalisis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(988, 605);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblAnalisis);
             this.Controls.Add(this.rtbAnalisis);
             this.Controls.Add(this.rtbJugadores);
             this.Controls.Add(this.lblCount);
             this.Controls.Add(this.lblCantidadJugadores);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmMostrarJugadoresAnalisis";
-            this.Text = "FrmMostrarJugadoresAnalisis";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Jugadores y Analisis de Datos";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,5 +129,6 @@ namespace Formulario
         private System.Windows.Forms.RichTextBox rtbJugadores;
         private System.Windows.Forms.Label lblAnalisis;
         private System.Windows.Forms.RichTextBox rtbAnalisis;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }

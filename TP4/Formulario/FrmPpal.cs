@@ -22,35 +22,6 @@ namespace Formulario
         private List<Jugador> jugadores;
         private List<Jugador> jugadoresLeidosXML;
         private string pathArchivosForm;
-        /*private string conexionString;
-        private SqlConnection conexionSql;
-        private SqlCommand comandoSql;*/
-
-        #endregion
-
-        #region Propiedades
-
-        /// <summary>
-        /// Propiedad de solo lectura de la lista de agentes
-        /// </summary>
-        public List<Agente> Agentes
-        {
-            get
-            {
-                return this.agentes;
-            }
-        }
-
-        /// <summary>
-        /// Propiedad de solo lectura de la lista de jugadores
-        /// </summary>
-        public List<Jugador> Jugadores
-        {
-            get
-            {
-                return this.jugadores;
-            }
-        }
 
         #endregion
 
@@ -67,7 +38,7 @@ namespace Formulario
             this.jugadores = new List<Jugador>();
             this.jugadoresLeidosXML = new List<Jugador>();
             this.serializadorXML = new Serializador<Jugador>(IArchivo<Jugador>.ETipoArchivo.XML); 
-            this.pathArchivosForm = @"..\..\..\..\JugadoresForm";
+            this.pathArchivosForm = Directory.GetCurrentDirectory() + @"\Archivos\JugadoresGuardados";
 
             this.agentes = Agente.CrearListaAgentes();
 
@@ -95,7 +66,7 @@ namespace Formulario
             cmbLocalidad.DataSource = Enum.GetValues(typeof(Localidades));
             cmbRango.DataSource = Enum.GetValues(typeof(Rangos));
 
-            foreach (Agente item in this.Agentes)
+            foreach (Agente item in this.agentes)
             {
                 this.cmbAgente.Items.Add(item.Nombre);
                 this.rtbAgentes.Text += item.ToString();
@@ -134,7 +105,7 @@ namespace Formulario
         /// <param name="e"></param>
         private void btnAgregarJugador_Click(object sender, EventArgs e)
         {
-            foreach (Agente item in this.Agentes)
+            foreach (Agente item in this.agentes)
             {
                 if (this.cmbAgente.SelectedItem.ToString() == item.Nombre)
                 {
@@ -258,7 +229,7 @@ namespace Formulario
         {
             try
             {
-                string path = @"..\..\..\CargarJugadores";
+                string path = Directory.GetCurrentDirectory() + @"\Archivos\CargarJugadores";
 
                 if (!Directory.Exists(path))
                 {
@@ -316,6 +287,24 @@ namespace Formulario
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void mostrarJugadoresAnalisis_Click(object sender, EventArgs e)
+        {
+            FrmMostrarJugadoresAnalisis frmMostrarJugadoresAnalisis = new FrmMostrarJugadoresAnalisis(this.jugadores, this.agentes);
+
+            frmMostrarJugadoresAnalisis.Show();
+
+            //mostrarJugadoresAnalisis.Enabled = false;
+        }
+
+        private void mostrarAgentes_Click(object sender, EventArgs e)
+        {
+            FrmMostrarAgentes frmMostrarAgentes = new FrmMostrarAgentes(this.agentes);
+
+            frmMostrarAgentes.Show();
+
+            //mostrarAgentes.Enabled = false;
         }
 
         #endregion

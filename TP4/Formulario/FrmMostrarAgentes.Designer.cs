@@ -31,6 +31,7 @@ namespace Formulario
         {
             this.label1 = new System.Windows.Forms.Label();
             this.rtbAgentes = new System.Windows.Forms.RichTextBox();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -54,15 +55,31 @@ namespace Formulario
             this.rtbAgentes.TabIndex = 21;
             this.rtbAgentes.Text = "";
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(158, 396);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(316, 55);
+            this.btnCerrar.TabIndex = 22;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // FrmMostrarAgentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(621, 402);
+            this.ClientSize = new System.Drawing.Size(621, 463);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rtbAgentes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmMostrarAgentes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMostrarAgentes";
+            this.Load += new System.EventHandler(this.FrmMostrarAgentes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -72,5 +89,6 @@ namespace Formulario
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox rtbAgentes;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }

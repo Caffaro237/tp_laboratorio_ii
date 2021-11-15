@@ -137,7 +137,7 @@ namespace Test
 
                 //Prueba de Serializacion y Deserializacion en XML con una lista de jugadores
 
-                string path = @"..\..\..\..\JugadoresTestConsola";
+                string path = Directory.GetCurrentDirectory() + @"\Archivos\JugadoresGuardados";
 
                 if (!Directory.Exists(path))
                 {

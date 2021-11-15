@@ -68,3 +68,5 @@ C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP4\Formulario
 C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP4\Formulario\obj\Debug\net5.0-windows\ref\Formulario.dll
 C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP4\Formulario\obj\Debug\net5.0-windows\Formulario.pdb
 C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP4\Formulario\obj\Debug\net5.0-windows\Formulario.genruntimeconfig.cache
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP4\Formulario\obj\Debug\net5.0-windows\Formulario.FrmMostrarAgentes.resources
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\TP4\Formulario\obj\Debug\net5.0-windows\Formulario.FrmMostrarJugadoresAnalisis.resources
