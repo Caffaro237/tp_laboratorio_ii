@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Jugador xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Edad>16</Edad>
+  <Localidad>LATAM</Localidad>
+  <Rango>Plata</Rango>
+  <AgenteElegido xsi:type="Controladores">
+    <Nombre>Omen</Nombre>
+    <EsRadiante>true</EsRadiante>
+  </AgenteElegido>
+</Jugador>

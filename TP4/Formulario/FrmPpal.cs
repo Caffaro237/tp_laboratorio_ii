@@ -25,6 +25,7 @@ namespace Formulario
         private List<Jugador> jugadores;
         private List<Jugador> jugadoresLeidosXML;
         private string pathArchivosForm;
+        FrmMostrarJugadoresAnalisis frmMostrarJugadoresAnalisis;
 
         public static event InformacionDatos InformarDatos;
 
@@ -44,6 +45,7 @@ namespace Formulario
             this.jugadoresLeidosXML = new List<Jugador>();
             this.serializadorXML = new Serializador<Jugador>(IArchivo<Jugador>.ETipoArchivo.XML); 
             this.pathArchivosForm = Directory.GetCurrentDirectory() + @"\Archivos\JugadoresGuardados";
+            this.frmMostrarJugadoresAnalisis = new FrmMostrarJugadoresAnalisis();
 
             this.agentes = Agente.CrearListaAgentes();
 
@@ -69,12 +71,9 @@ namespace Formulario
             foreach (Agente item in this.agentes)
             {
                 this.cmbAgente.Items.Add(item.Nombre);
-                this.rtbAgentes.Text += item.ToString();
             }
 
             this.cmbAgente.SelectedIndex = 0;
-
-            this.MostrarAnalisis();
         }
 
         /// <summary>
@@ -271,6 +270,8 @@ namespace Formulario
         {
             try
             {
+                this.jugadores.Clear();
+
                 foreach (Jugador item in Jugador.GetListaSQL())
                 {
                     this.jugadores.Add(item);
@@ -285,8 +286,6 @@ namespace Formulario
 
         private void mostrarJugadoresAnalisis_Click(object sender, EventArgs e)
         {
-            FrmMostrarJugadoresAnalisis frmMostrarJugadoresAnalisis = new FrmMostrarJugadoresAnalisis();
-
             frmMostrarJugadoresAnalisis.Show();
 
             this.EjecutarEvento();
@@ -298,7 +297,6 @@ namespace Formulario
 
             frmMostrarAgentes.Show();
 
-            //mostrarAgentes.Enabled = false;
         }
 
         #endregion
