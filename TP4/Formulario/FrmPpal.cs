@@ -7,12 +7,15 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 
 namespace Formulario
 {
+    public delegate void InformacionDatos(string dato);
+
     public partial class FrmPpal : Form
     {
         #region Atributos 
@@ -22,6 +25,8 @@ namespace Formulario
         private List<Jugador> jugadores;
         private List<Jugador> jugadoresLeidosXML;
         private string pathArchivosForm;
+
+        public static event InformacionDatos InformarDatos;
 
         #endregion
 
@@ -42,12 +47,7 @@ namespace Formulario
 
             this.agentes = Agente.CrearListaAgentes();
 
-            /*this.conexionString = "DataSource = localhost; Initial Catalog = ListaJugadores; Integrated Security = true";
-            this.conexionSql = new SqlConnection(conexionString);
-
-            this.comandoSql = new SqlCommand();
-            this.comandoSql.CommandType = CommandType.Text;
-            this.comandoSql.Connection = this.conexionSql;*/
+            //Task tarea = Task.Run(InformacionJugadores);
         }
 
         #endregion
@@ -119,8 +119,6 @@ namespace Formulario
                     break;
                 }
             }
-
-            this.RefrescarLista();
         }
 
         /// <summary>
@@ -152,7 +150,6 @@ namespace Formulario
                 }
             }
 
-            this.RefrescarLista();
         }
 
         /// <summary>
@@ -242,8 +239,6 @@ namespace Formulario
                 {
                     this.AgregarJugador(item);
                 }
-
-                this.RefrescarLista();
             }
             catch (Exception ex)
             {
@@ -279,9 +274,8 @@ namespace Formulario
                 foreach (Jugador item in Jugador.GetListaSQL())
                 {
                     this.jugadores.Add(item);
+                    this.EjecutarEvento();
                 }
-
-                this.RefrescarLista();
             }
             catch (Exception ex)
             {
@@ -291,11 +285,11 @@ namespace Formulario
 
         private void mostrarJugadoresAnalisis_Click(object sender, EventArgs e)
         {
-            FrmMostrarJugadoresAnalisis frmMostrarJugadoresAnalisis = new FrmMostrarJugadoresAnalisis(this.jugadores, this.agentes);
+            FrmMostrarJugadoresAnalisis frmMostrarJugadoresAnalisis = new FrmMostrarJugadoresAnalisis();
 
             frmMostrarJugadoresAnalisis.Show();
 
-            //mostrarJugadoresAnalisis.Enabled = false;
+            this.EjecutarEvento();
         }
 
         private void mostrarAgentes_Click(object sender, EventArgs e)
@@ -318,25 +312,24 @@ namespace Formulario
         /// 
         /// Solucionable con hilos
         /// </summary>
-        public void RefrescarLista()
+        public string RefrescarListaJugadores()
         {
             StringBuilder sb = new StringBuilder();
             this.lblCount.Text = this.jugadores.Count.ToString();
 
-            foreach (Jugador item in jugadores)
+            foreach (Jugador item in this.jugadores)
             {
                 sb.Append(item.ToString());
             }
 
-            this.rtbJugadores.Text = sb.ToString();
-            this.MostrarAnalisis();
+            return sb.ToString();
         }
 
         /// <summary>
         /// Este metodo recorera la lista de agentes y obtendra los datos de cada uno
         /// Llamara a SacarPorcentaje y SacarPromedio
         /// </summary>
-        public void MostrarAnalisis()
+        public string MostrarAnalisis()
         {
             StringBuilder sb = new StringBuilder();
 
@@ -361,7 +354,7 @@ namespace Formulario
                 sb.AppendLine("---------------------------------------------------------------");
             }
 
-            this.rtbAnalisis.Text = sb.ToString();
+            return sb.ToString();
         }
 
         public void AgregarJugador(Jugador jugador)
@@ -369,6 +362,26 @@ namespace Formulario
             this.jugadores.Add(jugador);
 
             Jugador.InsertJugador(jugador.Edad, jugador.Localidad, jugador.Rango, jugador.AgenteElegido.Nombre);
+
+            this.EjecutarEvento();
+        }
+
+        public void EjecutarEvento()
+        {
+            if (!(FrmPpal.InformarDatos is null))
+            {
+                foreach (Delegate item in FrmPpal.InformarDatos.GetInvocationList())
+                {
+                    if (item.Method.Name == "MostrarJugadoresEvent")
+                    {
+                        ((InformacionDatos)item).Invoke(this.RefrescarListaJugadores());
+                    }
+                    else if (item.Method.Name == "MostrarAnalisisEvent")
+                    {
+                        ((InformacionDatos)item).Invoke(this.MostrarAnalisis());
+                    }
+                }
+            }
         }
 
         #endregion
