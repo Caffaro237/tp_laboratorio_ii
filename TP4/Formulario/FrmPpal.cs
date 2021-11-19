@@ -11,6 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
+using Extensiones;
 
 namespace Formulario
 {
@@ -388,7 +389,8 @@ namespace Formulario
         public string RefrescarListaJugadores()
         {
             StringBuilder sb = new StringBuilder();
-            this.lblCount.Text = this.jugadores.Count.ToString();
+
+            this.lblCount.Text = this.jugadores.CantidadDeJugadores();
 
             foreach (Jugador item in this.jugadores)
             {
