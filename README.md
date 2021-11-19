@@ -24,3 +24,12 @@ que rango y la edad promedio de los jugadores
 
 --------------------------------------------------------------------------------------------------------------------
 Trabajo Practico Numero 4:
+Este trabajo es la modificacion del TP3 agregando base de datos, hilos, eventos, delegados y metodos de extension
+
+Se crearon otros dos formularios para mostrar el formulario principal, los agentes y los jugadores con el analisis
+de datos por separado. El de los jugadores se actualiza mediante eventos y delegados cada vez que un jugador es agregado
+
+El boton de Cargar desde Base de Datos simulara una descarga pesada de 5 segundos en un hilo secundario, la cual 
+se vera reflejada en una barra de progreso debajo del boton, ademas el texto cambia de Esperando Descarga a Descargando...
+el boton se inhabilitara mientras se ejecuta la descarga y una vez finalizada pasara a decir Descargado, el boton se 
+volvera a habilitar y la barra se vaciara, permitiendo descargar nuevamente
