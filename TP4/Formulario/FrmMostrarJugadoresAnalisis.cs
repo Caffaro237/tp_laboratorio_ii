@@ -14,8 +14,20 @@ namespace Formulario
 {
     public partial class FrmMostrarJugadoresAnalisis : Form
     {
+        #region Atributo 
+
         CancellationTokenSource tokenSource;
 
+        #endregion
+
+        #region Constructor
+
+        /// <summary>
+        /// Constructor por defecto
+        /// 
+        /// Este inicializara tokenSourse
+        /// Y asignara los manejadores al evento
+        /// </summary>
         public FrmMostrarJugadoresAnalisis()
         {
             InitializeComponent();
@@ -28,18 +40,37 @@ namespace Formulario
 
         }
 
+        #endregion
+
+        #region Eventos
+
+        /// <summary>
+        /// Evento del boton Cerrar
+        /// 
+        /// Cerrara el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        #endregion
+
+        #region Manejadores del evento
+
+        /// <summary>
+        /// Este manejador es el encargado pasar la informacion
+        /// de los jugadores de un formulario a otro
+        /// </summary>
+        /// <param name="datos"></param>
         private void MostrarJugadoresEvent(string datos)
         {
             if (this.rtbJugadores.InvokeRequired)
             {
                 InformacionDatos del = new InformacionDatos(this.MostrarJugadoresEvent);
                 object[] args = new object[] { datos };
-                //Invoco al hilo principal 
                 this.rtbJugadores.Invoke(del, args);
             }
             else
@@ -48,13 +79,17 @@ namespace Formulario
             }
         }
 
+        /// <summary>
+        /// Este manejador es el encargado pasar la informacion
+        /// del analisis de datos de un formulario a otro
+        /// </summary>
+        /// <param name="datos"></param>
         private void MostrarAnalisisEvent(string datos)
         {
             if (this.rtbAnalisis.InvokeRequired)
             {
                 InformacionDatos del = new InformacionDatos(this.MostrarAnalisisEvent);
                 object[] args = new object[] { datos };
-                //Invoco al hilo principal 
                 this.rtbAnalisis.Invoke(del, args);
             }
             else
@@ -62,5 +97,8 @@ namespace Formulario
                 this.rtbAnalisis.Text = datos;
             }
         }
+
+        #endregion
+
     }
 }

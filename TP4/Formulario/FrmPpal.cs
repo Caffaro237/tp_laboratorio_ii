@@ -102,7 +102,6 @@ namespace Formulario
         /// Evento del boton Agregar Jugador
         /// Este tomara los datos de los ComboBox y numericUpDown
         /// Llamara al metodo que agregara un jugador a la lista
-        /// Al finalizar llamara al metodo que refrescara la lista de jugadores
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -129,8 +128,6 @@ namespace Formulario
         /// Este tomara el numero que se le pase por el numericUpDown para saber cuantos jugadores agregar
         /// Este llamara a las Funciones Random obtendiendo los datos
         /// Luego llama al metodo que agregara un jugador a la lista
-        /// 
-        /// Al finalizar llamara al metodo que refrescara la lista de jugadores
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -193,7 +190,7 @@ namespace Formulario
         /// <summary>
         /// Evento del boton Mostrar Archivo
         /// Este creara una nueva instancia el cual creara otro formulario
-        /// este mostrara los archivos guardados previamente, 
+        /// Ese form mostrara los archivos guardados previamente, 
         /// si no se guardo nada se mostrara un mensaje que no hay archivos en la ruta
         /// </summary>
         /// <param name="sender"></param>
@@ -222,6 +219,7 @@ namespace Formulario
         /// 
         /// Este leera una ruta especifica la cual contiene jugadores guardados en archivos XML
         /// Este metodo leera los archivos y los agregara a la lista de jugadores
+        /// llamando a la funcion AgregarJugador
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -255,6 +253,7 @@ namespace Formulario
         /// Evento del boton Cerrar
         /// Este boton cerrara el programa sin previo aviso
         /// Guardando los archivos
+        /// Tambien cancelara cualquier hilo secundario que se este ejecutando en ese momento
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -268,6 +267,11 @@ namespace Formulario
         /// <summary>
         /// Evento del boton Base De Datos
         /// En este evento se conectara con la base de datos y traera los jugadores que contenga
+        /// Bloqueando el boton para que no se apriete mas de una vez
+        /// 
+        /// Este metodo lo modifique para que obtenga los datos desde un hilo secundario
+        /// ya que si la base de datos posee una gran cantidad de elementos va a quedarse trabado el programa
+        /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -286,13 +290,6 @@ namespace Formulario
                 {
                     this.Descargar(token);
                 });
-
-
-                /*foreach (Jugador item in Jugador.GetListaSQL())
-                {
-                    this.jugadores.Add(item);
-                    this.EjecutarEvento();
-                }*/
             }
             catch (Exception ex)
             {
@@ -300,64 +297,14 @@ namespace Formulario
             }
         }
 
-        public void Descargar(CancellationToken cancellationToken)
-        {
-            List<Jugador> jugadoresSQL = new List<Jugador>();
-
-            while (true)
-            {
-                if (cancellationToken.IsCancellationRequested)
-                {
-                    return;
-                }
-
-                if (!(FrmPpal.Descargando is null))
-                {
-                    jugadoresSQL = FrmPpal.Descargando.Invoke();
-
-                    foreach(Jugador item in jugadoresSQL)
-                    {
-                        this.jugadores.Add(item);
-                    }
-                }
-
-                //Pauso el hilo por 5 segundos para simular una descarga pesada desde la base de datos
-                for (int i = 0; i <= 6; i++)
-                {
-                    this.IncremetarProgressBarEvent(i);
-                    Thread.Sleep(1000);
-                    if(i == 6)
-                    {
-                        return;
-                    }
-                }
-            }
-        }
-
-        public delegate void IncrementarProgressBar(int steps);
-
-        public void IncremetarProgressBarEvent(int steps)
-        {
-            if(this.progressBarDescarga.InvokeRequired)
-            {
-                IncrementarProgressBar del = new IncrementarProgressBar(this.IncremetarProgressBarEvent);
-                object[] args = new object[] { steps };
-                //Invoco al hilo principal 
-                this.progressBarDescarga.Invoke(del, args);
-            }
-            else if(steps == 6)
-            {
-                this.progressBarDescarga.Value = 0;
-                this.lblDescarga.Text = "Descargado";
-                this.btnBaseDeDatos.Enabled = true;
-                this.EjecutarEvento();
-            }
-            else
-            {
-                this.progressBarDescarga.Value = steps;
-            }
-        }
-
+        /// <summary>
+        /// Evento del boton Mostrar Jugadores Y Analisis del menu strip
+        /// Este lo que hara es instanciar un nuevo formulario y mostrarlo
+        /// Invocara a los eventos
+        /// Los cual expondran la cantidad, los jugadores y el analisis de datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mostrarJugadoresAnalisis_Click(object sender, EventArgs e)
         {
             FrmMostrarJugadoresAnalisis frmMostrarJugadoresAnalisis = new FrmMostrarJugadoresAnalisis();
@@ -367,6 +314,13 @@ namespace Formulario
             this.EjecutarEvento();
         }
 
+        /// <summary>
+        /// Evento del boton Mostrar Agentes del menu strip
+        /// Este lo que hara es instanciar un nuevo formulario y mostrarlo
+        /// Pasandole por parametros del constructor la lista con los agentes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mostrarAgentes_Click(object sender, EventArgs e)
         {
             FrmMostrarAgentes frmMostrarAgentes = new FrmMostrarAgentes(this.agentes);
@@ -380,12 +334,13 @@ namespace Formulario
         #region Metodos
 
         /// <summary>
-        /// Metodo que refrescara la lista de jugadores
-        /// Por ahora no es recomendable porque si hay 3000 jugadores
-        /// el formulario no responde hasta que termine el proceso
+        /// Este metodo creara un StringBuilder con todos los jugadores de la lista
+        /// Tambien llamara al metodo de extension que retornara la cantidad de jugadores que hay
         /// 
-        /// Solucionable con hilos
+        /// Metodo modificado para poder usar eventos y delegados
+        /// 
         /// </summary>
+        /// <returns> Retornara un string con los datos de los jugadores </returns>
         public string RefrescarListaJugadores()
         {
             StringBuilder sb = new StringBuilder();
@@ -403,7 +358,11 @@ namespace Formulario
         /// <summary>
         /// Este metodo recorera la lista de agentes y obtendra los datos de cada uno
         /// Llamara a SacarPorcentaje y SacarPromedio
+        /// 
+        /// Metodo modificado para poder usar eventos y delegados
+        /// 
         /// </summary>
+        /// <returns> Retornara un string con todos los datos del analisis </returns>
         public string MostrarAnalisis()
         {
             StringBuilder sb = new StringBuilder();
@@ -432,6 +391,12 @@ namespace Formulario
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Metodo que recibe un jugador y lo agrega a la lista de jugadores
+        /// Tambien los agrega a la lista de la base de datos
+        /// Y ejecuta los eventos para mostrarlos por pantalla
+        /// </summary>
+        /// <param name="jugador"></param>
         public void AgregarJugador(Jugador jugador)
         {
             this.jugadores.Add(jugador);
@@ -441,6 +406,16 @@ namespace Formulario
             this.EjecutarEvento();
         }
 
+        /// <summary>
+        /// Este ejecutara los eventos 
+        /// Antes recorrera la lista de los manejadores asociados
+        /// Y segun el nombre es la accion que se ejecuta
+        /// 
+        /// Para mostrar los jugadores se llamara al metodo RefrescarListaJugadores
+        /// 
+        /// Y para mostrar el analisis de datos llamara al metodo MostrarAnalisis
+        /// 
+        /// </summary>
         public void EjecutarEvento()
         {
             if (!(FrmPpal.InformarDatos is null))
@@ -456,6 +431,85 @@ namespace Formulario
                         ((InformacionDatos)item).Invoke(this.MostrarAnalisis());
                     }
                 }
+            }
+        }
+        
+        /// <summary>
+        /// Metodo descargar el cual recibira un atributo para cancelar el hilo secundario
+        /// Este invocara el evento Descargando para comenzar la descarga de los datos
+        /// 
+        /// UNA DESCARGA PESADA FUE SIMULADO HACIENDO UN SLEEP DE 5 SEGUNDOS
+        /// 
+        /// Este terminara una vez pasados los 5 segundos o cuando el programa se cierre
+        /// </summary>
+        /// <param name="cancellationToken"></param>
+        public void Descargar(CancellationToken cancellationToken)
+        {
+            List<Jugador> jugadoresSQL = new List<Jugador>();
+
+            while (true)
+            {
+                if (cancellationToken.IsCancellationRequested)
+                {
+                    return;
+                }
+
+                if (!(FrmPpal.Descargando is null))
+                {
+                    jugadoresSQL = FrmPpal.Descargando.Invoke();
+
+                    foreach (Jugador item in jugadoresSQL)
+                    {
+                        this.jugadores.Add(item);
+                    }
+                }
+
+                //Pauso el hilo por 5 segundos para simular una descarga pesada desde la base de datos
+                for (int i = 0; i <= 6; i++)
+                {
+                    this.IncremetarProgressBarEvent(i);
+                    Thread.Sleep(1000);
+                    if (i == 6)
+                    {
+                        return;
+                    }
+                }
+            }
+        }
+
+        //Delegado creado para el metodo incrementar la barra de progreso
+        public delegate void IncrementarProgressBar(int steps);
+
+        /// <summary>
+        /// Este metodo incrementara la barra de progreso para mostrar que al apretar el boton
+        /// se esta ejecutando algo
+        /// 
+        /// Al finalizar el metodo
+        /// Pondra la barra en 0
+        /// Cambiara el mensaje a Descargado
+        /// Devolvera el boton a como estaba activado
+        /// E invocara a los eventos asi se muestra la cantidad
+        /// </summary>
+        /// <param name="steps"></param>
+        public void IncremetarProgressBarEvent(int steps)
+        {
+            if (this.progressBarDescarga.InvokeRequired)
+            {
+                IncrementarProgressBar del = new IncrementarProgressBar(this.IncremetarProgressBarEvent);
+                object[] args = new object[] { steps };
+                //Invoco al hilo principal 
+                this.progressBarDescarga.Invoke(del, args);
+            }
+            else if (steps == 6)
+            {
+                this.progressBarDescarga.Value = 0;
+                this.lblDescarga.Text = "Descargado";
+                this.btnBaseDeDatos.Enabled = true;
+                this.EjecutarEvento();
+            }
+            else
+            {
+                this.progressBarDescarga.Value = steps;
             }
         }
 

@@ -60,7 +60,7 @@ namespace Formulario
         /// <param name="e"></param>
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
         }
 
         #endregion

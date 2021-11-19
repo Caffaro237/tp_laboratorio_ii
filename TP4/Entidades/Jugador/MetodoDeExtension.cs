@@ -9,6 +9,8 @@ namespace Extensiones
 {
     public static class MetodoDeExtension
     {
+        #region Metodo de extension Cantidad De Jugadores
+
         /// <summary>
         /// Metodo de extension que retornara la cantidad de jugadores que hay en la lista como un string
         /// </summary>
@@ -18,5 +20,7 @@ namespace Extensiones
         {
             return jugadores.Count().ToString();
         }
+
+        #endregion
     }
 }
