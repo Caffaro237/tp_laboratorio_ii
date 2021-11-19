@@ -29,34 +29,11 @@ namespace Formulario
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblCount = new System.Windows.Forms.Label();
-            this.lblCantidadJugadores = new System.Windows.Forms.Label();
             this.rtbJugadores = new System.Windows.Forms.RichTextBox();
             this.lblAnalisis = new System.Windows.Forms.Label();
             this.rtbAnalisis = new System.Windows.Forms.RichTextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // lblCount
-            // 
-            this.lblCount.AutoSize = true;
-            this.lblCount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCount.Location = new System.Drawing.Point(240, 9);
-            this.lblCount.Name = "lblCount";
-            this.lblCount.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblCount.Size = new System.Drawing.Size(23, 28);
-            this.lblCount.TabIndex = 18;
-            this.lblCount.Text = "0";
-            // 
-            // lblCantidadJugadores
-            // 
-            this.lblCantidadJugadores.AutoSize = true;
-            this.lblCantidadJugadores.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCantidadJugadores.Location = new System.Drawing.Point(12, 9);
-            this.lblCantidadJugadores.Name = "lblCantidadJugadores";
-            this.lblCantidadJugadores.Size = new System.Drawing.Size(221, 28);
-            this.lblCantidadJugadores.TabIndex = 17;
-            this.lblCantidadJugadores.Text = "Cantidad de Jugadores: ";
             // 
             // rtbJugadores
             // 
@@ -109,8 +86,6 @@ namespace Formulario
             this.Controls.Add(this.lblAnalisis);
             this.Controls.Add(this.rtbAnalisis);
             this.Controls.Add(this.rtbJugadores);
-            this.Controls.Add(this.lblCount);
-            this.Controls.Add(this.lblCantidadJugadores);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -123,9 +98,6 @@ namespace Formulario
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblCount;
-        private System.Windows.Forms.Label lblCantidadJugadores;
         private System.Windows.Forms.RichTextBox rtbJugadores;
         private System.Windows.Forms.Label lblAnalisis;
         private System.Windows.Forms.RichTextBox rtbAnalisis;

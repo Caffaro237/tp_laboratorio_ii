@@ -15,6 +15,7 @@ using Entidades;
 namespace Formulario
 {
     public delegate void InformacionDatos(string dato);
+    public delegate List<Jugador> DescargaBaseDeDatos();
 
     public partial class FrmPpal : Form
     {
@@ -25,9 +26,10 @@ namespace Formulario
         private List<Jugador> jugadores;
         private List<Jugador> jugadoresLeidosXML;
         private string pathArchivosForm;
-        FrmMostrarJugadoresAnalisis frmMostrarJugadoresAnalisis;
+        CancellationTokenSource tokenSource;
 
         public static event InformacionDatos InformarDatos;
+        public static event DescargaBaseDeDatos Descargando;
 
         #endregion
 
@@ -45,11 +47,10 @@ namespace Formulario
             this.jugadoresLeidosXML = new List<Jugador>();
             this.serializadorXML = new Serializador<Jugador>(IArchivo<Jugador>.ETipoArchivo.XML); 
             this.pathArchivosForm = Directory.GetCurrentDirectory() + @"\Archivos\JugadoresGuardados";
-            this.frmMostrarJugadoresAnalisis = new FrmMostrarJugadoresAnalisis();
+            
+            FrmPpal.Descargando += Jugador.GetListaSQL;
 
             this.agentes = Agente.CrearListaAgentes();
-
-            //Task tarea = Task.Run(InformacionJugadores);
         }
 
         #endregion
@@ -92,6 +93,8 @@ namespace Formulario
             {
                 e.Cancel = true;
             }
+
+            tokenSource.Cancel();
         }
 
         /// <summary>
@@ -257,6 +260,7 @@ namespace Formulario
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             btnGuardarArchivo_Click(sender, e);
+            tokenSource.Cancel();
             this.Dispose();
         }
 
@@ -270,13 +274,24 @@ namespace Formulario
         {
             try
             {
-                this.jugadores.Clear();
+                this.tokenSource = new CancellationTokenSource();
+                CancellationToken token = this.tokenSource.Token;
 
-                foreach (Jugador item in Jugador.GetListaSQL())
+                this.jugadores.Clear();
+                this.lblDescarga.Text = "Descargando...";
+                this.btnBaseDeDatos.Enabled = false;
+
+                Task tarea = Task.Run(() =>
+                {
+                    this.Descargar(token);
+                });
+
+
+                /*foreach (Jugador item in Jugador.GetListaSQL())
                 {
                     this.jugadores.Add(item);
                     this.EjecutarEvento();
-                }
+                }*/
             }
             catch (Exception ex)
             {
@@ -284,8 +299,68 @@ namespace Formulario
             }
         }
 
+        public void Descargar(CancellationToken cancellationToken)
+        {
+            List<Jugador> jugadoresSQL = new List<Jugador>();
+
+            while (true)
+            {
+                if (cancellationToken.IsCancellationRequested)
+                {
+                    return;
+                }
+
+                if (!(FrmPpal.Descargando is null))
+                {
+                    jugadoresSQL = FrmPpal.Descargando.Invoke();
+
+                    foreach(Jugador item in jugadoresSQL)
+                    {
+                        this.jugadores.Add(item);
+                    }
+                }
+
+                //Pauso el hilo por 5 segundos para simular una descarga pesada desde la base de datos
+                for (int i = 0; i <= 6; i++)
+                {
+                    this.IncremetarProgressBarEvent(i);
+                    Thread.Sleep(1000);
+                    if(i == 6)
+                    {
+                        return;
+                    }
+                }
+            }
+        }
+
+        public delegate void IncrementarProgressBar(int steps);
+
+        public void IncremetarProgressBarEvent(int steps)
+        {
+            if(this.progressBarDescarga.InvokeRequired)
+            {
+                IncrementarProgressBar del = new IncrementarProgressBar(this.IncremetarProgressBarEvent);
+                object[] args = new object[] { steps };
+                //Invoco al hilo principal 
+                this.progressBarDescarga.Invoke(del, args);
+            }
+            else if(steps == 6)
+            {
+                this.progressBarDescarga.Value = 0;
+                this.lblDescarga.Text = "Descargado";
+                this.btnBaseDeDatos.Enabled = true;
+                this.EjecutarEvento();
+            }
+            else
+            {
+                this.progressBarDescarga.Value = steps;
+            }
+        }
+
         private void mostrarJugadoresAnalisis_Click(object sender, EventArgs e)
         {
+            FrmMostrarJugadoresAnalisis frmMostrarJugadoresAnalisis = new FrmMostrarJugadoresAnalisis();
+
             frmMostrarJugadoresAnalisis.Show();
 
             this.EjecutarEvento();

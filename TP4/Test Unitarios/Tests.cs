@@ -2,6 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Entidades;
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Test_Unitarios
 {
@@ -37,7 +38,7 @@ namespace Test_Unitarios
         {
             List<Jugador> jugadoresLeidosXML = new List<Jugador>(); 
             Serializador<Jugador> serializadorXML = new Serializador<Jugador>(IArchivo<Jugador>.ETipoArchivo.XML);
-            string path = @"..\..\..\..\JugadoresTestConsola";
+            string path = Directory.GetCurrentDirectory() + @"\Archivos\JugadoresGuardados";
 
             jugadoresLeidosXML = Jugador.LeerArchivos(path, serializadorXML);
 

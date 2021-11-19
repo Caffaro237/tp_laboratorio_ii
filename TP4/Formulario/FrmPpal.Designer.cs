@@ -51,6 +51,8 @@ namespace Formulario
             this.menuStripMostrar = new System.Windows.Forms.MenuStrip();
             this.mostrarJugadoresAnalisis = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarAgentes = new System.Windows.Forms.ToolStripMenuItem();
+            this.progressBarDescarga = new System.Windows.Forms.ProgressBar();
+            this.lblDescarga = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownEdad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownCantidadJugadores)).BeginInit();
             this.menuStripMostrar.SuspendLayout();
@@ -225,7 +227,7 @@ namespace Formulario
             // btnGuardarArchivo
             // 
             this.btnGuardarArchivo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnGuardarArchivo.Location = new System.Drawing.Point(622, 86);
+            this.btnGuardarArchivo.Location = new System.Drawing.Point(631, 86);
             this.btnGuardarArchivo.Name = "btnGuardarArchivo";
             this.btnGuardarArchivo.Size = new System.Drawing.Size(262, 71);
             this.btnGuardarArchivo.TabIndex = 13;
@@ -236,7 +238,7 @@ namespace Formulario
             // btnMostrarArchivo
             // 
             this.btnMostrarArchivo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMostrarArchivo.Location = new System.Drawing.Point(622, 163);
+            this.btnMostrarArchivo.Location = new System.Drawing.Point(631, 163);
             this.btnMostrarArchivo.Name = "btnMostrarArchivo";
             this.btnMostrarArchivo.Size = new System.Drawing.Size(262, 71);
             this.btnMostrarArchivo.TabIndex = 14;
@@ -258,7 +260,7 @@ namespace Formulario
             // btnCerrar
             // 
             this.btnCerrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCerrar.Location = new System.Drawing.Point(341, 399);
+            this.btnCerrar.Location = new System.Drawing.Point(631, 466);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(262, 71);
             this.btnCerrar.TabIndex = 22;
@@ -269,7 +271,7 @@ namespace Formulario
             // btnBaseDeDatos
             // 
             this.btnBaseDeDatos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBaseDeDatos.Location = new System.Drawing.Point(341, 322);
+            this.btnBaseDeDatos.Location = new System.Drawing.Point(301, 322);
             this.btnBaseDeDatos.Name = "btnBaseDeDatos";
             this.btnBaseDeDatos.Size = new System.Drawing.Size(262, 71);
             this.btnBaseDeDatos.TabIndex = 23;
@@ -303,11 +305,32 @@ namespace Formulario
             this.mostrarAgentes.Text = "Mostrar Agentes";
             this.mostrarAgentes.Click += new System.EventHandler(this.mostrarAgentes_Click);
             // 
+            // progressBarDescarga
+            // 
+            this.progressBarDescarga.Location = new System.Drawing.Point(301, 444);
+            this.progressBarDescarga.Maximum = 5;
+            this.progressBarDescarga.Name = "progressBarDescarga";
+            this.progressBarDescarga.Size = new System.Drawing.Size(262, 24);
+            this.progressBarDescarga.Step = 1;
+            this.progressBarDescarga.TabIndex = 25;
+            // 
+            // lblDescarga
+            // 
+            this.lblDescarga.AutoSize = true;
+            this.lblDescarga.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDescarga.Location = new System.Drawing.Point(301, 407);
+            this.lblDescarga.Name = "lblDescarga";
+            this.lblDescarga.Size = new System.Drawing.Size(189, 28);
+            this.lblDescarga.TabIndex = 26;
+            this.lblDescarga.Text = "Esperando Descarga";
+            // 
             // FrmPpal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(905, 549);
+            this.Controls.Add(this.lblDescarga);
+            this.Controls.Add(this.progressBarDescarga);
             this.Controls.Add(this.btnBaseDeDatos);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnCargarArchivos);
@@ -370,6 +393,8 @@ namespace Formulario
         private System.Windows.Forms.MenuStrip menuStripMostrar;
         public System.Windows.Forms.ToolStripMenuItem mostrarJugadoresAnalisis;
         public System.Windows.Forms.ToolStripMenuItem mostrarAgentes;
+        private System.Windows.Forms.ProgressBar progressBarDescarga;
+        private System.Windows.Forms.Label lblDescarga;
     }
 }
 
