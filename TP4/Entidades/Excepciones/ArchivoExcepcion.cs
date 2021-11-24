@@ -16,14 +16,5 @@ namespace Entidades
             : base(message)
         {
         }
-
-        /// <summary>
-        /// Recibe una excepcion como parametro y llama al constructor que recibe un mensaje
-        /// </summary>
-        /// <param name="innerException"></param>
-        public ArchivosExcepcion(Exception innerException)
-            : this("Se produjo un error en la lectura/escritura del archivo: " + innerException.Message)
-        {
-        }
     }
 }
