@@ -27,9 +27,8 @@ namespace Entidades
                     streamWriter.WriteLine(datos);
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                throw new ArchivosExcepcion(e);
             }
         }
 
@@ -58,9 +57,9 @@ namespace Entidades
                     }
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                throw new ArchivosExcepcion(e);
+                throw new ArchivosExcepcion("No se pudo leer el archivo");
             }
 
             return returnAux;

@@ -37,18 +37,22 @@ namespace Formulario
         #region Constructor
 
         /// <summary>
-        /// Constructor sin parametros que seteara las listas
-        /// y la ruta para guardar los archivos
+        /// Constructor sin parametros que seteara las listas,
+        /// la ruta para guardar los archivos,
+        /// el tokenSource para el cancelado del hilo secundario
+        /// y sumara un manejador al evento para descargar archivos
         /// </summary>
         public FrmPpal()
         {
             InitializeComponent();
+
             this.agentes = new List<Agente>();
             this.jugadores = new List<Jugador>();
             this.jugadoresLeidosXML = new List<Jugador>();
             this.serializadorXML = new Serializador<Jugador>(IArchivo<Jugador>.ETipoArchivo.XML); 
             this.pathArchivosForm = Directory.GetCurrentDirectory() + @"\Archivos\JugadoresGuardados";
-            
+            this.tokenSource = new CancellationTokenSource();
+
             FrmPpal.Descargando += Jugador.GetListaSQL;
 
             this.agentes = Agente.CrearListaAgentes();
@@ -60,8 +64,6 @@ namespace Formulario
 
         /// <summary>
         /// Evento load del formulario que seteara los datos de los ComboBox
-        /// Mostrara los datos de loa agentes en un rich text box
-        /// Tambien mostrara el analisis
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -279,7 +281,6 @@ namespace Formulario
         {
             try
             {
-                this.tokenSource = new CancellationTokenSource();
                 CancellationToken token = this.tokenSource.Token;
 
                 this.jugadores.Clear();
