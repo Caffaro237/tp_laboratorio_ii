@@ -29,6 +29,7 @@ namespace Formulario
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMostrarArchivosGuardados));
             this.rtcArchivosGuardados = new System.Windows.Forms.RichTextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblCount = new System.Windows.Forms.Label();
@@ -89,6 +90,7 @@ namespace Formulario
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.rtcArchivosGuardados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

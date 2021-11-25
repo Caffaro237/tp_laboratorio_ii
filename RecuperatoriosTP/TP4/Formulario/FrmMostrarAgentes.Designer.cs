@@ -29,6 +29,7 @@ namespace Formulario
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMostrarAgentes));
             this.label1 = new System.Windows.Forms.Label();
             this.rtbAgentes = new System.Windows.Forms.RichTextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
@@ -74,6 +75,7 @@ namespace Formulario
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rtbAgentes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmMostrarAgentes";

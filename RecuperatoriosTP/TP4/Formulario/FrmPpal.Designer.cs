@@ -29,6 +29,7 @@ namespace Formulario
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPpal));
             this.btnAgregarJugador = new System.Windows.Forms.Button();
             this.lblAgente = new System.Windows.Forms.Label();
             this.lblRango = new System.Windows.Forms.Label();
@@ -352,6 +353,7 @@ namespace Formulario
             this.Controls.Add(this.btnAgregarJugador);
             this.Controls.Add(this.menuStripMostrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStripMostrar;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
