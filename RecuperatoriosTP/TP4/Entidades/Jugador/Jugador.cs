@@ -355,6 +355,10 @@ namespace Entidades
                 {
                     throw new TimeOutExcepcion("La base de datos no existe");
                 }
+                else if(e.Message.Contains("The server was not found"))
+                {
+                    throw new TimeOutExcepcion("No se encuentra el servidor");
+                }
             }
             catch (Exception)
             {
@@ -389,6 +393,10 @@ namespace Entidades
                 if (e.Message.Contains("Cannot open database"))
                 {
                     throw new TimeOutExcepcion("La base de datos no existe");
+                }
+                else if (e.Message.Contains("The server was not found"))
+                {
+                    throw new TimeOutExcepcion("No se encuentra el servidor");
                 }
             }
             catch (Exception)
