@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Jugador xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Edad>20</Edad>
+  <Edad>18</Edad>
   <Localidad>USA</Localidad>
-  <Rango>Oro</Rango>
+  <Rango>Diamante</Rango>
   <AgenteElegido xsi:type="Duelistas">
     <Nombre>Phoenix</Nombre>
     <EsRadiante>true</EsRadiante>
