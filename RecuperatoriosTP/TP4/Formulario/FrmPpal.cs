@@ -15,8 +15,12 @@ using Extensiones;
 
 namespace Formulario
 {
+    #region Delegados
+
     public delegate void InformacionDatos(string dato);
     public delegate List<Jugador> DescargaBaseDeDatos();
+
+    #endregion
 
     public partial class FrmPpal : Form
     {
@@ -225,6 +229,7 @@ namespace Formulario
                 {
                     throw new ArchivosExcepcion("La ruta de la carpeta no se encontro o no existe");
                 }
+
                 FrmMostrarArchivosGuardados frmSecundario = new FrmMostrarArchivosGuardados(Jugador.LeerArchivos(pathArchivosForm, serializadorXML));
 
                 frmSecundario.ShowDialog();

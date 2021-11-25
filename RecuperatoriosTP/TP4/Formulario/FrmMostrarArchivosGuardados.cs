@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
+using Extensiones;
 
 namespace Formulario
 {
@@ -47,7 +48,7 @@ namespace Formulario
         {
             foreach (Jugador item in this.jugadores)
             {
-                this.lblCount.Text = this.jugadores.Count.ToString();
+                this.lblCount.Text = this.jugadores.CantidadDeJugadores();
                 this.rtcArchivosGuardados.Text += item.ToString();
             }
         }
