@@ -56,6 +56,18 @@ namespace Formulario
             this.Close();
         }
 
+        /// <summary>
+        /// Evento Form Closing que cancela el dispose
+        /// y oculta el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmMostrarJugadoresAnalisis_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            this.Hide();
+        }
+
         #endregion
 
         #region Manejadores del evento

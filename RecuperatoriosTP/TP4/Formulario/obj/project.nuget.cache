@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sfxw3zMYyQiDz+fQMWfgFtmTLOSQUMbw3HNurqXwCTcQx7LI4DRW/ysX8L4Fz4d/yJsextLedP7QlX8/kfiJTg==",
+  "dgSpecHash": "tz9Kt5VTF5hOArMVxq6f4UFhVRANZugM79Z+tuXvsz16yeLJrLWI1HacVDLFLVqcC9DQE/JPQEYKhZt+afgaRw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP4\\Formulario\\Formulario.csproj",
+  "projectFilePath": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\RecuperatoriosTP\\TP4\\Formulario\\Formulario.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Facu\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Facu\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

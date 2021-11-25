@@ -79,6 +79,7 @@ namespace Formulario
             this.Name = "FrmMostrarAgentes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMostrarAgentes";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMostrarAgentes_FormClosing);
             this.Load += new System.EventHandler(this.FrmMostrarAgentes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

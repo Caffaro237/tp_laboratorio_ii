@@ -377,9 +377,12 @@ namespace Entidades
 
                 Jugador.comandoSql.ExecuteNonQuery();
             }
-            catch (Exception)
+            catch (TimeoutException)
             {
                 throw;
+            }
+            catch (Exception)
+            {
             }
             finally
             {

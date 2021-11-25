@@ -28,6 +28,8 @@ namespace Formulario
         private List<Jugador> jugadoresLeidosXML;
         private string pathArchivosForm;
         CancellationTokenSource tokenSource;
+        FrmMostrarJugadoresAnalisis frmMostrarJugadoresAnalisis;
+        FrmMostrarAgentes frmMostrarAgentes;
 
         public static event InformacionDatos InformarDatos;
         public static event DescargaBaseDeDatos Descargando;
@@ -53,9 +55,12 @@ namespace Formulario
             this.pathArchivosForm = Directory.GetCurrentDirectory() + @"\Archivos\JugadoresGuardados";
             this.tokenSource = new CancellationTokenSource();
 
-            FrmPpal.Descargando += Jugador.GetListaSQL;
-
             this.agentes = Agente.CrearListaAgentes();
+
+            this.frmMostrarJugadoresAnalisis = new FrmMostrarJugadoresAnalisis();
+            this.frmMostrarAgentes = new FrmMostrarAgentes(this.agentes);
+
+            FrmPpal.Descargando += Jugador.GetListaSQL;
         }
 
         #endregion
@@ -109,20 +114,28 @@ namespace Formulario
         /// <param name="e"></param>
         private void btnAgregarJugador_Click(object sender, EventArgs e)
         {
-            foreach (Agente item in this.agentes)
+            try
             {
-                if (this.cmbAgente.SelectedItem.ToString() == item.Nombre)
+                foreach (Agente item in this.agentes)
                 {
-                    Jugador jugador = new Jugador((int)this.numUpDownEdad.Value, 
-                        this.cmbLocalidad.SelectedItem.ToString(), 
-                        this.cmbRango.SelectedItem.ToString(), 
-                        item);
+                    if (this.cmbAgente.SelectedItem.ToString() == item.Nombre)
+                    {
+                        Jugador jugador = new Jugador((int)this.numUpDownEdad.Value,
+                            this.cmbLocalidad.SelectedItem.ToString(),
+                            this.cmbRango.SelectedItem.ToString(),
+                            item);
 
-                    this.AgregarJugador(jugador);
+                        this.AgregarJugador(jugador);
 
-                    break;
+                        break;
+                    }
                 }
             }
+            catch(TimeOutExcepcion ex)
+            {
+                MessageBox.Show(ex.Message, "Tiempo de espera excedido");
+            }
+            
         }
 
         /// <summary>
@@ -135,21 +148,28 @@ namespace Formulario
         /// <param name="e"></param>
         private void btnAgregarJugadoresRandom_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < (int)this.numUpDownCantidadJugadores.Value; i++)
+            try
             {
-                string nombreRandom = FuncionesRandom.SwitchAgente(FuncionesRandom.HacerRandom(1, 5));
-
-                foreach (Agente item in agentes)
+                for (int i = 0; i < (int)this.numUpDownCantidadJugadores.Value; i++)
                 {
-                    if (item.Nombre == nombreRandom)
+                    string nombreRandom = FuncionesRandom.SwitchAgente(FuncionesRandom.HacerRandom(1, 5));
+
+                    foreach (Agente item in agentes)
                     {
-                        Jugador j = new Jugador(FuncionesRandom.HacerRandom(15, 31),
-                                                FuncionesRandom.SwitchLocalidad(FuncionesRandom.HacerRandom(1, 4)),
-                                                FuncionesRandom.SwitchRango(FuncionesRandom.HacerRandom(1, 4)),
-                                                item);
-                        this.AgregarJugador(j);
+                        if (item.Nombre == nombreRandom)
+                        {
+                            Jugador j = new Jugador(FuncionesRandom.HacerRandom(15, 31),
+                                                    FuncionesRandom.SwitchLocalidad(FuncionesRandom.HacerRandom(1, 4)),
+                                                    FuncionesRandom.SwitchRango(FuncionesRandom.HacerRandom(1, 4)),
+                                                    item);
+                            this.AgregarJugador(j);
+                        }
                     }
                 }
+            }
+            catch (TimeOutExcepcion ex)
+            {
+                MessageBox.Show(ex.Message, "Tiempo de espera excedido");
             }
 
         }
@@ -308,9 +328,7 @@ namespace Formulario
         /// <param name="e"></param>
         private void mostrarJugadoresAnalisis_Click(object sender, EventArgs e)
         {
-            FrmMostrarJugadoresAnalisis frmMostrarJugadoresAnalisis = new FrmMostrarJugadoresAnalisis();
-
-            frmMostrarJugadoresAnalisis.Show();
+            this.frmMostrarJugadoresAnalisis.Show();
 
             this.EjecutarEvento();
         }
@@ -324,10 +342,7 @@ namespace Formulario
         /// <param name="e"></param>
         private void mostrarAgentes_Click(object sender, EventArgs e)
         {
-            FrmMostrarAgentes frmMostrarAgentes = new FrmMostrarAgentes(this.agentes);
-
-            frmMostrarAgentes.Show();
-
+            this.frmMostrarAgentes.Show();
         }
 
         #endregion
@@ -448,37 +463,48 @@ namespace Formulario
         {
             List<Jugador> jugadoresSQL = new List<Jugador>();
 
-            while (true)
+            try
             {
-                if (cancellationToken.IsCancellationRequested)
+                while (true)
                 {
-                    return;
-                }
-
-                if (!(FrmPpal.Descargando is null))
-                {
-                    jugadoresSQL = FrmPpal.Descargando.Invoke();
-
-                    foreach (Jugador item in jugadoresSQL)
-                    {
-                        this.jugadores.Add(item);
-                    }
-                }
-
-                //Pauso el hilo por 5 segundos para simular una descarga pesada desde la base de datos
-                for (int i = 0; i <= 6; i++)
-                {
-                    this.IncremetarProgressBarEvent(i);
-                    Thread.Sleep(1000);
-                    if (i == 6)
+                    if (cancellationToken.IsCancellationRequested)
                     {
                         return;
                     }
+
+                    if (!(FrmPpal.Descargando is null))
+                    {
+                        jugadoresSQL = FrmPpal.Descargando.Invoke();
+
+                        foreach (Jugador item in jugadoresSQL)
+                        {
+                            this.jugadores.Add(item);
+                        }
+                    }
+
+                    //Pauso el hilo por 5 segundos para simular una descarga pesada desde la base de datos
+                    for (int i = 0; i <= 6; i++)
+                    {
+                        this.IncremetarProgressBarEvent(i);
+                        Thread.Sleep(1000);
+                        if (i == 6)
+                        {
+                            return;
+                        }
+                    }
                 }
+            }
+            catch (TimeOutExcepcion ex)
+            {
+                MessageBox.Show(ex.Message, "Tiempo de espera excedido");
+                this.IncremetarProgressBarEvent(-1);
             }
         }
 
-        //Delegado creado para el metodo incrementar la barra de progreso
+        /// <summary>
+        /// Delegado creado para el metodo incrementar la barra de progreso
+        /// </summary>
+        /// <param name="steps"></param>
         public delegate void IncrementarProgressBar(int steps);
 
         /// <summary>
@@ -507,6 +533,12 @@ namespace Formulario
                 this.lblDescarga.Text = "Descargado";
                 this.btnBaseDeDatos.Enabled = true;
                 this.EjecutarEvento();
+            }
+            else if(steps == -1)
+            {
+                this.progressBarDescarga.Value = 0;
+                this.lblDescarga.Text = "Falla en la descarga";
+                this.btnBaseDeDatos.Enabled = true;
             }
             else
             {

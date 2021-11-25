@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T4W5Uw8wuHS8QpcUIyBjv15uIWoSBEHQxd7T+iUC2v6BxlSZcvb3yORyO7axycfFymPQN76D+Q/1q3bvE5ptXA==",
+  "dgSpecHash": "AyBLlyalmSVSYVWXFBFoZwSC1b4pSaPhhI7ttcfUWEYyJXpnNf0N4xUzUA9CKDyqhbWgXWjCCiwktGwtiZFPgw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\TP4\\Test Unitarios\\Test Unitarios.csproj",
+  "projectFilePath": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\RecuperatoriosTP\\TP4\\Test Unitarios\\Test Unitarios.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Facu\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\Facu\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",

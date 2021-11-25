@@ -349,9 +349,15 @@ namespace Entidades
                 }
 
             }
+            catch (SqlException e)
+            {
+                if (e.Message.Contains("Cannot open database"))
+                {
+                    throw new TimeOutExcepcion("La base de datos no existe");
+                }
+            }
             catch (Exception)
             {
-                throw;
             }
             finally
             {
@@ -367,6 +373,7 @@ namespace Entidades
             try
             {
                 Jugador.comandoSql.Parameters.Clear();
+
                 Jugador.conexionSql.Open();
                 Jugador.comandoSql.CommandText = "INSERT INTO jugadores (edad, localidad, rango, agenteElegido) VALUES (@edad, @localidad, @rango, @agenteElegido)";
 
@@ -377,9 +384,15 @@ namespace Entidades
 
                 Jugador.comandoSql.ExecuteNonQuery();
             }
+            catch (SqlException e)
+            {
+                if (e.Message.Contains("Cannot open database"))
+                {
+                    throw new TimeOutExcepcion("La base de datos no existe");
+                }
+            }
             catch (Exception)
             {
-                throw;
             }
             finally
             {

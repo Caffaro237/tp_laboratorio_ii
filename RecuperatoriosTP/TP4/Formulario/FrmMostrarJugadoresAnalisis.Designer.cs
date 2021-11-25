@@ -92,6 +92,7 @@ namespace Formulario
             this.Name = "FrmMostrarJugadoresAnalisis";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jugadores y Analisis de Datos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMostrarJugadoresAnalisis_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
