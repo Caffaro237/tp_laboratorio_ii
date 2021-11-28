@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a4790f47-4bd1-478f-b86f-77d0d6875677": {
+      "ProjectGuid": "a4790f47-4bd1-478f-b86f-77d0d6875677",
+      "DisplayName": "Entidades",
+      "ColorIndex": 0
+    },
+    "e048b672-7470-48df-8711-a53603b0f824": {
+      "ProjectGuid": "e048b672-7470-48df-8711-a53603b0f824",
+      "DisplayName": "MiCalculadora",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
