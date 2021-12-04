@@ -68,6 +68,8 @@ namespace MiCalculadora
         {
             double respuesta = 0;
             string operadorDefault = "+";
+            string strNum1;
+            string strNum2;
 
             respuesta = FormCalculadora.Operar(this.txtNumero1.Text, this.txtNumero2.Text, this.cmbOperador.Text);
 
@@ -78,7 +80,25 @@ namespace MiCalculadora
                 operadorDefault = this.cmbOperador.Text;
             }
 
-            this.lstOperaciones.Items.Add(this.txtNumero1.Text + " " + operadorDefault + " " + this.txtNumero2.Text + " = " + respuesta.ToString());
+            if (this.txtNumero1.Text == string.Empty)
+            {
+                strNum1 = "0";
+            }
+            else
+            {
+                strNum1 = this.txtNumero1.Text;
+            }
+
+            if (this.txtNumero2.Text == string.Empty)
+            {
+                strNum2 = "0";
+            }
+            else
+            {
+                strNum2 = this.txtNumero2.Text;
+            }
+
+            this.lstOperaciones.Items.Add(strNum1 + " " + operadorDefault + " " + strNum2 + " = " + respuesta.ToString());
         }
 
         /// <summary>
@@ -149,12 +169,12 @@ namespace MiCalculadora
         /// </summary>
         public void Limpiar()
         {
-            this.txtNumero1.Text = string.Empty;
-            this.txtNumero2.Text = string.Empty;
+            this.txtNumero1.ResetText();
+            this.txtNumero2.ResetText();
 
-            this.cmbOperador.Text = string.Empty;
+            this.cmbOperador.SelectedIndex = -1;
 
-            this.lblResultado.Text = string.Empty;
+            this.lblResultado.ResetText();
         }
 
         /// <summary>
@@ -168,8 +188,21 @@ namespace MiCalculadora
         /// <returns> Retorna un double que va a ser obtenido desde la funcion Operar de la clase Calculadora </returns>
         public static double Operar(string numero1, string numero2, string operador)
         {
-            Operando n1 = new Operando(numero1);
-            Operando n2 = new Operando(numero2);
+            int num1;
+            int num2;
+
+            if (!int.TryParse(numero1, out num1))
+            {
+                num1 = 0;
+            }
+            
+            if(!int.TryParse(numero2, out num2))
+            {
+                num2 = 0;
+            }
+
+            Operando n1 = new Operando(num1);
+            Operando n2 = new Operando(num2);
             char operadorChar;
 
             char.TryParse(operador, out operadorChar);

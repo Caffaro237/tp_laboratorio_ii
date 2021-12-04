@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\analia\\.nuget\\packages\\": {}
+    "C:\\Users\\Facu\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\analia\\Desktop\\tp_laboratorio_ii-master\\tp_laboratorio_ii-master\\RecuperatoriosTP\\TP1\\Entidades\\Entidades.csproj",
+      "projectUniqueName": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\RecuperatoriosTP\\TP1\\Entidades\\Entidades.csproj",
       "projectName": "Entidades",
-      "projectPath": "C:\\Users\\analia\\Desktop\\tp_laboratorio_ii-master\\tp_laboratorio_ii-master\\RecuperatoriosTP\\TP1\\Entidades\\Entidades.csproj",
-      "packagesPath": "C:\\Users\\analia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\analia\\Desktop\\tp_laboratorio_ii-master\\tp_laboratorio_ii-master\\RecuperatoriosTP\\TP1\\Entidades\\obj\\",
+      "projectPath": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\RecuperatoriosTP\\TP1\\Entidades\\Entidades.csproj",
+      "packagesPath": "C:\\Users\\Facu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\RecuperatoriosTP\\TP1\\Entidades\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\analia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Facu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

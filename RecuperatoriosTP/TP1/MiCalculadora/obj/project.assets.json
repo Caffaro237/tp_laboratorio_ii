@@ -27,19 +27,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\analia\\.nuget\\packages\\": {}
+    "C:\\Users\\Facu\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\analia\\Desktop\\tp_laboratorio_ii-master\\tp_laboratorio_ii-master\\RecuperatoriosTP\\TP1\\MiCalculadora\\MiCalculadora.csproj",
+      "projectUniqueName": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\RecuperatoriosTP\\TP1\\MiCalculadora\\MiCalculadora.csproj",
       "projectName": "MiCalculadora",
-      "projectPath": "C:\\Users\\analia\\Desktop\\tp_laboratorio_ii-master\\tp_laboratorio_ii-master\\RecuperatoriosTP\\TP1\\MiCalculadora\\MiCalculadora.csproj",
-      "packagesPath": "C:\\Users\\analia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\analia\\Desktop\\tp_laboratorio_ii-master\\tp_laboratorio_ii-master\\RecuperatoriosTP\\TP1\\MiCalculadora\\obj\\",
+      "projectPath": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\RecuperatoriosTP\\TP1\\MiCalculadora\\MiCalculadora.csproj",
+      "packagesPath": "C:\\Users\\Facu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\RecuperatoriosTP\\TP1\\MiCalculadora\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\analia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Facu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -53,8 +53,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\analia\\Desktop\\tp_laboratorio_ii-master\\tp_laboratorio_ii-master\\RecuperatoriosTP\\TP1\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\analia\\Desktop\\tp_laboratorio_ii-master\\tp_laboratorio_ii-master\\RecuperatoriosTP\\TP1\\Entidades\\Entidades.csproj"
+            "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\RecuperatoriosTP\\TP1\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\Facu\\Desktop\\Facultad\\Prog II - Lab II\\tp_laboratorio_ii\\RecuperatoriosTP\\TP1\\Entidades\\Entidades.csproj"
             }
           }
         }
@@ -86,7 +86,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

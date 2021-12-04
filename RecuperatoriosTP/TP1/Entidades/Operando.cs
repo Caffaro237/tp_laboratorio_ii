@@ -29,9 +29,8 @@ namespace Entidades
         /// Por la propiedad asignara el numero convertido a string
         /// </summary>
         /// <param name="numero"></param>
-        public Operando(double numero)
+        public Operando(double numero) : this(numero.ToString())
         {
-            this.Numero = numero.ToString();
         }
 
         /// <summary>
@@ -39,8 +38,9 @@ namespace Entidades
         /// Llamara al constructor que recibe un double y seteara el numero
         /// </summary>
         /// <param name="srtNumero"></param>
-        public Operando(string srtNumero) : this(double.Parse(srtNumero))
+        public Operando(string srtNumero) : this()
         {
+            this.Numero = srtNumero;
         }
 
         #endregion
