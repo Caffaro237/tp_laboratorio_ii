@@ -10,18 +10,6 @@ D:\Datos M.2\Desktop\Facultad\Prog II - Lab II\Proyectos Visual\Ejercicios\TP1\E
 D:\Datos M.2\Desktop\Facultad\Prog II - Lab II\Proyectos Visual\Ejercicios\TP1\Entidades\obj\Debug\net5.0\Entidades.dll
 D:\Datos M.2\Desktop\Facultad\Prog II - Lab II\Proyectos Visual\Ejercicios\TP1\Entidades\obj\Debug\net5.0\ref\Entidades.dll
 D:\Datos M.2\Desktop\Facultad\Prog II - Lab II\Proyectos Visual\Ejercicios\TP1\Entidades\obj\Debug\net5.0\Entidades.pdb
-C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\Entidades\bin\Debug\net5.0\Entidades.deps.json
-C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\Entidades\bin\Debug\net5.0\Entidades.dll
-C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\Entidades\bin\Debug\net5.0\ref\Entidades.dll
-C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\Entidades\bin\Debug\net5.0\Entidades.pdb
-C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\Entidades.csproj.AssemblyReference.cache
-C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\Entidades.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\Entidades.AssemblyInfoInputs.cache
-C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\Entidades.AssemblyInfo.cs
-C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\Entidades.csproj.CoreCompileInputs.cache
-C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\Entidades.dll
-C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\ref\Entidades.dll
-C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\Entidades.pdb
 C:\Users\analia\Desktop\tp_laboratorio_ii-master\tp_laboratorio_ii-master\RecuperatoriosTP\TP1\Entidades\bin\Debug\net5.0\Entidades.deps.json
 C:\Users\analia\Desktop\tp_laboratorio_ii-master\tp_laboratorio_ii-master\RecuperatoriosTP\TP1\Entidades\bin\Debug\net5.0\Entidades.dll
 C:\Users\analia\Desktop\tp_laboratorio_ii-master\tp_laboratorio_ii-master\RecuperatoriosTP\TP1\Entidades\bin\Debug\net5.0\ref\Entidades.dll
@@ -34,3 +22,14 @@ C:\Users\analia\Desktop\tp_laboratorio_ii-master\tp_laboratorio_ii-master\Recupe
 C:\Users\analia\Desktop\tp_laboratorio_ii-master\tp_laboratorio_ii-master\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\Entidades.dll
 C:\Users\analia\Desktop\tp_laboratorio_ii-master\tp_laboratorio_ii-master\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\ref\Entidades.dll
 C:\Users\analia\Desktop\tp_laboratorio_ii-master\tp_laboratorio_ii-master\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\Entidades.pdb
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\Entidades\bin\Debug\net5.0\Entidades.deps.json
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\Entidades\bin\Debug\net5.0\Entidades.dll
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\Entidades\bin\Debug\net5.0\ref\Entidades.dll
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\Entidades\bin\Debug\net5.0\Entidades.pdb
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\Entidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\Entidades.AssemblyInfoInputs.cache
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\Entidades.AssemblyInfo.cs
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\Entidades.dll
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\ref\Entidades.dll
+C:\Users\Facu\Desktop\Facultad\Prog II - Lab II\tp_laboratorio_ii\RecuperatoriosTP\TP1\Entidades\obj\Debug\net5.0\Entidades.pdb

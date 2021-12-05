@@ -19,14 +19,14 @@ namespace Entidades
         /// <summary>
         /// Constructor por defecto sin parametros que inicializa el numero en 0
         /// </summary>
-        public Operando()
+        public Operando() : this(0)
         {
-            this.numero = 0;
         }
 
         /// <summary>
-        /// Constructor que recibe un numero
-        /// Por la propiedad asignara el numero convertido a string
+        /// Constructor que recibe un numero double
+        /// Este llamara al constructor que recibe un string 
+        /// y le pasara el double convertido
         /// </summary>
         /// <param name="numero"></param>
         public Operando(double numero) : this(numero.ToString())
@@ -35,10 +35,10 @@ namespace Entidades
 
         /// <summary>
         /// Constructor que recibe un numero como string
-        /// Llamara al constructor que recibe un double y seteara el numero
+        /// Este llamara al constructor si parametros que inicializara el numero en 0
         /// </summary>
         /// <param name="srtNumero"></param>
-        public Operando(string srtNumero) : this()
+        public Operando(string srtNumero)
         {
             this.Numero = srtNumero;
         }
